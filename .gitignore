@@ -102,3 +102,9 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# SQLite shit
+devdata.db
+
+# PyCharm shit
+.idea

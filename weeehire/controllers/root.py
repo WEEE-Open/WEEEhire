@@ -14,6 +14,7 @@ from tgext.admin.controller import AdminController
 
 from weeehire.lib.base import BaseController
 from weeehire.controllers.error import ErrorController
+from weeehire.controllers.signup import SignupController
 
 __all__ = ['RootController']
 
@@ -34,6 +35,7 @@ class RootController(BaseController):
     """
     secc = SecureController()
     admin = AdminController(model, DBSession, config_type=TGAdminConfig)
+    signup = SignupController()
 
     error = ErrorController()
 
