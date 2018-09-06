@@ -45,40 +45,15 @@ class RootController(BaseController):
     @expose('weeehire.templates.index')
     def index(self):
         """Handle the front-page."""
+        if not request.identity:
+            return redirect('/signup')
         return dict(page='index')
-    @expose('weeehire.templates.about')
-    def about(self):
-        """Handle the 'about' page."""
-        return dict(page='about')
-
-    @expose('weeehire.templates.environ')
-    def environ(self):
-        """This method showcases TG's access to the wsgi environment."""
-        return dict(page='environ', environment=request.environ)
-
-    @expose('weeehire.templates.data')
-    @expose('json')
-    def data(self, **kw):
-        """
-        This method showcases how you can use the same controller
-        for a data page and a display page.
-        """
-        return dict(page='data', params=kw)
-    @expose('weeehire.templates.index')
-    @require(predicates.has_permission('manage', msg=l_('Only for managers')))
-    def manage_permission_only(self, **kw):
-        """Illustrate how a page for managers only works."""
-        return dict(page='managers stuff')
-
-    @expose('weeehire.templates.index')
-    @require(predicates.is_user('editor', msg=l_('Only for the editor')))
-    def editor_user_only(self, **kw):
-        """Illustrate how a page exclusive for the editor works."""
-        return dict(page='editor stuff')
 
     @expose('weeehire.templates.login')
     def login(self, came_from=lurl('/'), failure=None, login=''):
         """Start the user login."""
+        if request.identity:
+            return redirect('/')
         if failure is not None:
             if failure == 'user-not-found':
                 flash(_('User not found'), 'error')
