@@ -3,6 +3,7 @@
 from __future__ import print_function, unicode_literals
 import transaction
 from weeehire import model
+from datetime import datetime
 
 
 def bootstrap(command, conf, vars):
@@ -16,6 +17,7 @@ def bootstrap(command, conf, vars):
         u.display_name = 'admin'
         u.email_address = 'weeeopen@yandex.ru'
         u.password = 'open'
+        u.created = datetime.now()
 
         model.DBSession.add(u)
 

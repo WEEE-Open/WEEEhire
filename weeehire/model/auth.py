@@ -121,7 +121,9 @@ class User(DeclarativeBase):
 
     @classmethod
     def is_activated(cls, username):
-        return DBSession.query(cls).filter_by(user_name=username).first().created is not None
+        user = cls.by_user_name(username)
+        if user:
+            return user.created is not None
 
     @classmethod
     def _hash_password(cls, password):
