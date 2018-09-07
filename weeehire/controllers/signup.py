@@ -38,9 +38,9 @@ def is_polito_mail(email: str):
 
 class SignupForm(twf.Form):
     class child(twf.widgets.BaseLayout):
-        email = twf.TextField(css_class="form-control")
+        email = twf.TextField(css_class="form-control mt-10")
     action = lurl('/signup/verify')
-    submit = twf.SubmitButton(value='Submit', css_class="btn btn-success")
+    submit = twf.SubmitButton(value='Submit', css_class="btn btn-success mt-10")
 
 
 class SignupController(BaseController):
