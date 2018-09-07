@@ -13,8 +13,8 @@ def bootstrap(command, conf, vars):
     try:
         u = model.User()
         u.user_name = 'admin'
-        u.display_name = 'Example manager'
-        u.email_address = 'manager@somedomain.com'
+        u.display_name = 'admin'
+        u.email_address = 'weeeopen@yandex.ru'
         u.password = 'open'
 
         model.DBSession.add(u)

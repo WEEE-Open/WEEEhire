@@ -57,6 +57,8 @@ class RootController(BaseController):
         if failure is not None:
             if failure == 'user-not-found':
                 flash(_('User not found'), 'error')
+            elif failure == 'user-not-verified':
+                flash(_('User not verified'), 'error')
             elif failure == 'invalid-password':
                 flash(_('Invalid Password'), 'error')
 

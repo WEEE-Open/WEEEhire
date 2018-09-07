@@ -87,8 +87,9 @@ class User(DeclarativeBase):
     user_name = Column(Unicode(16), unique=True, nullable=False)
     email_address = Column(Unicode(255), unique=True, nullable=False)
     display_name = Column(Unicode(255))
+    token = Column(Unicode(16))
     _password = Column('password', Unicode(128))
-    created = Column(DateTime, default=datetime.now)
+    created = Column(DateTime, default=None)
 
     def __repr__(self):
         return '<User: name=%s, email=%s, display=%s>' % (
@@ -119,6 +120,10 @@ class User(DeclarativeBase):
         return DBSession.query(cls).filter_by(user_name=username).first()
 
     @classmethod
+    def is_activated(cls, username):
+        return DBSession.query(cls).filter_by(user_name=username).first().created is not None
+
+    @classmethod
     def _hash_password(cls, password):
         salt = sha256()
         salt.update(os.urandom(60))
@@ -130,7 +135,6 @@ class User(DeclarativeBase):
         hash = hash.hexdigest()
 
         password = salt + hash
-
 
         return password
 

@@ -62,11 +62,14 @@ class ApplicationAuthMetadata(TGAuthMetadata):
 
     def authenticate(self, environ, identity):
         login = identity['login']
+        activated = model.User.is_activated(login)
         user = self.sa_auth.dbsession.query(self.sa_auth.user_class).filter_by(
             user_name=login
         ).first()
 
         if not user:
+            login = None
+        if not activated:
             login = None
         elif not user.validate_password(identity['password']):
             login = None
@@ -83,6 +86,9 @@ class ApplicationAuthMetadata(TGAuthMetadata):
             params.pop('password', None)  # Remove password in case it was there
             if user is None:
                 params['failure'] = 'user-not-found'
+            elif not activated:
+                params['login'] = identity['login']
+                params['failure'] = 'user-not-verified'
             else:
                 params['login'] = identity['login']
                 params['failure'] = 'invalid-password'
