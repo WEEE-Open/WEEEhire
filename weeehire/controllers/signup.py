@@ -8,13 +8,15 @@ from weeehire.model import DBSession, User
 from tw2.core import RegexValidator, EmailValidator, Required, _
 import tw2.forms as twf
 from tgext.mailer import get_mailer, Message
-import string
-import secrets
+from string import ascii_letters, digits
+from random import randint
 
 
 def generate_password():
-    alphabet = string.ascii_letters + string.digits
-    password = ''.join(secrets.choice(alphabet) for i in range(16))
+    alphabet = ascii_letters + digits
+    password = ""
+    for c in range(32):
+        password += str(alphabet[randint(0, len(alphabet)-1)])
     return password
 
 

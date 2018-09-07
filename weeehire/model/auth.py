@@ -87,7 +87,7 @@ class User(DeclarativeBase):
     user_name = Column(Unicode(16), unique=True, nullable=False)
     email_address = Column(Unicode(255), unique=True, nullable=False)
     display_name = Column(Unicode(255))
-    token = Column(Unicode(16))
+    token = Column(Unicode(32))
     _password = Column('password', Unicode(128))
     created = Column(DateTime, default=None)
 
