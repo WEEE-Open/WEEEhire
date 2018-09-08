@@ -21,21 +21,23 @@ def generate_password():
 
 
 def is_valid_sn(sn: str):
-    print(len(sn))
-    if len(sn) != 6:
+    if len(sn) != 7:
         return False
-    for i in range(len(sn)):
-        if not sn[i].isdigit():
-            return False
+    if sn[0] not in ['s', 'd']:
+        return False
+    sn = sn[1:7]
+    if not sn.isdigit():
+        return False
     return True
 
 
 class SignupForm(twf.Form):
     class child(twf.widgets.BaseLayout):
-        sn = twf.TextField(css_class="form-control mt-10")
+        sn = twf.TextField(css_class="form-control mt-10",
+                           placeholder="s123456")
 
     action = lurl('/signup/verify')
-    submit = twf.SubmitButton(value='Submit', css_class="btn btn-success mt-10")
+    submit = twf.SubmitButton(value='Invia', css_class="btn btn-success mt-10")
 
 
 class SignupController(BaseController):
@@ -45,7 +47,7 @@ class SignupController(BaseController):
     @expose('weeehire.templates.signup')
     def index(self, status=None, **kw):
         if status == 'badsn':
-            flash(_('Caro utonto, inserisci il numero di matricola (senza la S davanti)'), 'error')
+            flash(_('Caro utonto, inserisci il tuo numero di matricola nel formato indicato.'), 'error')
         if status == 'login':
             flash(_('Questa mail è già in uso, fai il login'), 'error')
         if status == 'success':
@@ -57,8 +59,12 @@ class SignupController(BaseController):
         if len(kw) < 1:
             abort(404)
         matricola = kw['sn']
+        matricola.lower()
         if is_valid_sn(matricola):
-            email = 's' + matricola + '@studenti.polito.it'
+            if matricola.isdigit():
+                email = matricola + '@studenti.polito.it'
+            else:
+                email = matricola + '@studenti.polito.it'
             user = User.by_email_address(email)
             if not user:
                 confirm_link = 'http://127.0.0.1:8080/signup/register?email=' + email
@@ -67,8 +73,8 @@ class SignupController(BaseController):
                 password = generate_password()
 
                 u = User()
-                u.user_name = 's' + matricola
-                u.display_name = 's' + matricola
+                u.user_name = matricola
+                u.display_name = matricola
                 u.email_address = email
                 u.token = token
                 u.password = password
@@ -80,11 +86,19 @@ class SignupController(BaseController):
                                   sender="weeeopen@yandex.ru",
                                   recipients=[email],
                                   body=("Ciawa! asd\nClicca qua per attivare l'account " + confirm_link +
-                                        "\n\n------------------CREDENZIALI-DI-ACCESSO------------------"
-                                        "\nIl tuo username: s" + matricola +
-                                        "\nLa tua password: " + password + "   (se la perdi sono cazzi tuoi asd)" +
-                                        "\n----------------------------------------------------------"
-                                        "\n\nCiawa di nuovo! asd")
+                                        "\n\n------------------CREDENZIALI-DI-ACCESSO------------------" +
+                                        "\nIl tuo username: " + matricola +
+                                        "\nLa tua password: " + password +
+                                        "\n----------------------------------------------------------" +
+                                        "\n\nCiawa di nuovo! asd" +
+                                        "\n\n\nPS: Ciao, sono il developer di questo ameno sito web,\n" +
+                                        "volevo solo avvisarti del fatto che non ho intenzione di implementare\n" +
+                                        "un sistema per permetterti di cambiare la password, quindi se la perdi\n" +
+                                        "sono cazzi tuoi. Ti consiglio di non cancellare questa mail, o se proprio\n" +
+                                        "vuoi essere scartato ancor prima che leggiamo il tuo form, stampa questa\n" +
+                                        "mail, tanto gli alberi ricrescono in fretta e amano essere abbattuti :)\n" +
+                                        "SEEEH!! Fanculo l'ambiente! Viva il consumismo spropositato! :O"
+                                        )
                                   )
                 mailer.send(message)
             else:

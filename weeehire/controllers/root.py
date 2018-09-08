@@ -55,12 +55,10 @@ class RootController(BaseController):
         if request.identity:
             return redirect('/')
         if failure is not None:
-            if failure == 'user-not-found':
-                flash(_('User not found'), 'error')
+            if failure == 'user-not-found' or failure == 'invalid-password':
+                flash(_('Username o password non validi'), 'error')
             elif failure == 'user-not-verified':
-                flash(_('User not verified'), 'error')
-            elif failure == 'invalid-password':
-                flash(_('Invalid Password'), 'error')
+                flash(_('Utente non verificato'), 'error')
 
         login_counter = request.environ.get('repoze.who.logins', 0)
         if failure is None and login_counter > 0:
@@ -81,7 +79,7 @@ class RootController(BaseController):
             redirect('/login',
                      params=dict(came_from=came_from, __logins=login_counter))
         userid = request.identity['repoze.who.userid']
-        flash(_('Welcome back, %s!') % userid)
+        flash(_('Bentornato, %s!') % userid)
 
         # Do not use tg.redirect with tg.url as it will add the mountpoint
         # of the application twice.
@@ -94,5 +92,5 @@ class RootController(BaseController):
         goodbye as well.
 
         """
-        flash(_('We hope to see you soon!'))
+        flash(_('Ciawa asd!'))
         return HTTPFound(location=came_from)
