@@ -20,7 +20,7 @@ def generate_password():
     return password
 
 
-def is_valid_sn(sn: str):
+def is_valid_sn(sn):
     if len(sn) != 7:
         return False
     if sn[0] not in ['s', 'd']:
