@@ -49,7 +49,7 @@ class SignupController(BaseController):
         if status == 'badsn':
             flash(_('Caro utonto, inserisci il tuo numero di matricola nel formato indicato.'), 'error')
         if status == 'login':
-            flash(_('Questa mail è già in uso, fai il login'), 'error')
+            flash(_('Questa matricola è già in uso, fai il login!'), 'error')
         if status == 'success':
             flash(_('Apri il link di conferma che hai ricevuto sulla tua mail del poli'))
         return dict(page='signup-index', form=SignupForm)
