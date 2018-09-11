@@ -15,7 +15,7 @@ def bootstrap(command, conf, vars):
         u = model.User()
         u.user_name = 'admin'
         u.display_name = 'admin'
-        u.email_address = 'weeeopen@yandex.ru'
+        u.email_address = 'admin@example.com'
         u.password = 'open'
         u.created = datetime.now()
 

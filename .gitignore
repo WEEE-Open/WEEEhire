@@ -108,3 +108,7 @@ devdata.db
 
 # PyCharm shit
 .idea
+
+# INI files
+development.ini
+production.ini

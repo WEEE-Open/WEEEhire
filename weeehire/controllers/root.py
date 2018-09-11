@@ -15,6 +15,7 @@ from tgext.admin.controller import AdminController
 from weeehire.lib.base import BaseController
 from weeehire.controllers.error import ErrorController
 from weeehire.controllers.signup import SignupController
+from weeehire.controllers.form import FormController
 
 __all__ = ['RootController']
 
@@ -36,6 +37,7 @@ class RootController(BaseController):
     secc = SecureController()
     admin = AdminController(model, DBSession, config_type=TGAdminConfig)
     signup = SignupController()
+    form = FormController()
 
     error = ErrorController()
 
@@ -47,7 +49,8 @@ class RootController(BaseController):
         """Handle the front-page."""
         if not request.identity:
             return redirect('/signup')
-        return dict(page='index')
+        else:
+            return redirect('/form')
 
     @expose('weeehire.templates.login')
     def login(self, came_from=lurl('/'), failure=None, login=''):
