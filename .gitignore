@@ -112,3 +112,6 @@ devdata.db
 # INI files
 development.ini
 production.ini
+
+# Apache script
+app.wsgi
