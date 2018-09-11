@@ -4,6 +4,7 @@ from __future__ import print_function, unicode_literals
 import transaction
 from weeehire import model
 from datetime import datetime
+from os import environ as env
 
 
 def bootstrap(command, conf, vars):
@@ -13,10 +14,10 @@ def bootstrap(command, conf, vars):
     from sqlalchemy.exc import IntegrityError
     try:
         u = model.User()
-        u.user_name = 'admin'
-        u.display_name = 'admin'
-        u.email_address = 'admin@example.com'
-        u.password = 'open'
+        u.user_name = env['ADMIN_USERNAME']
+        u.display_name = env['ADMIN_USERNAME']
+        u.email_address = env['ADMIN_EMAIL']
+        u.password = env['ADMIN_PASS']
         u.created = datetime.now()
 
         model.DBSession.add(u)

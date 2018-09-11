@@ -2,7 +2,7 @@
 """Signup controller module"""
 
 from datetime import datetime
-from tg import expose, redirect, validate, flash, lurl, request, abort
+from tg import expose, redirect, validate, flash, url, lurl, request, abort
 from weeehire.lib.base import BaseController
 from weeehire.model import DBSession, User
 from tw2.core import RegexValidator, EmailValidator, Required, _
@@ -67,7 +67,7 @@ class SignupController(BaseController):
                 email = matricola + '@studenti.polito.it'
             user = User.by_email_address(email)
             if not user:
-                confirm_link = 'http://127.0.0.1:8080/signup/register?email=' + email
+                confirm_link = url('/signup/register?email=', None, True) + email
                 token = generate_password()
                 confirm_link += '&auth=' + token
                 password = generate_password()
