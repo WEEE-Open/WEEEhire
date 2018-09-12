@@ -91,6 +91,7 @@ class User(DeclarativeBase):
     last_name = Column(Unicode(255))
     study_course = Column(Unicode(255))
     year = Column(Unicode(16))
+    compiled = Column(DateTime, default=None)
     token = Column(Unicode(32))
     _password = Column('password', Unicode(128))
     created = Column(DateTime, default=None)

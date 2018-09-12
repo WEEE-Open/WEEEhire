@@ -28,6 +28,7 @@
     </div>
     <div class="collapse navbar-collapse" id="navbar-content">
       <ul py:if="tg.auth_stack_enabled" class="nav navbar-nav navbar-right">
+        <li py:if="tg.predicates.has_permission('manage')"><a href="${tg.url('/soviet')}">Admin</a></li>
         <li py:if="not request.identity"><a href="${tg.url('/login')}">Login</a></li>
         <li py:if="request.identity"><a href="${tg.url('/logout_handler')}">Logout</a></li>
       </ul>

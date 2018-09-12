@@ -2,7 +2,7 @@
 """Main Controller"""
 
 from tg import expose, flash, require, url, lurl
-from tg import request, redirect, tmpl_context
+from tg import predicates, request, redirect, tmpl_context
 from tg.i18n import ugettext as _, lazy_ugettext as l_
 from tg.exceptions import HTTPFound
 from tg import predicates
@@ -16,6 +16,7 @@ from weeehire.lib.base import BaseController
 from weeehire.controllers.error import ErrorController
 from weeehire.controllers.signup import SignupController
 from weeehire.controllers.form import FormController
+from weeehire.controllers.soviet import SovietController
 
 __all__ = ['RootController']
 
@@ -36,6 +37,7 @@ class RootController(BaseController):
     """
     secc = SecureController()
     admin = AdminController(model, DBSession, config_type=TGAdminConfig)
+    soviet = SovietController()
     signup = SignupController()
     form = FormController()
 
