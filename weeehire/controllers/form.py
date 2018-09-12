@@ -13,6 +13,14 @@ class FormController(BaseController):
     # Uncomment this line if your controller requires an authenticated user
     allow_only = predicates.not_anonymous()
     
-    @expose('weeehire.templates.form')
+    @expose('weeehire.templates.form-index')
     def index(self, **kw):
         return dict(page='form-index')
+
+    @expose('weeehire.templates.form')
+    def edit(self, **kw):
+        return dict(page='form-edit')
+
+    @expose('weeehire.templates.form-status')
+    def status(self, **kw):
+        return dict(page='form-status')

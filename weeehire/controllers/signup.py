@@ -119,6 +119,7 @@ class SignupController(BaseController):
             if user.token == auth:
                 user.created = datetime.now()
                 flash(_('Autenticazione riuscita'))
+                redirect('/login')
             else:
                 flash(_('Autenticazione fallita'), 'error')
         else:
