@@ -14,7 +14,7 @@ from hashlib import sha256
 __all__ = ['User', 'Group', 'Permission']
 
 from sqlalchemy import Table, ForeignKey, Column
-from sqlalchemy.types import Unicode, Integer, DateTime
+from sqlalchemy.types import Unicode, Integer, DateTime, Boolean
 from sqlalchemy.orm import relation, synonym
 
 from weeehire.model import DeclarativeBase, metadata, DBSession
@@ -92,6 +92,7 @@ class User(DeclarativeBase):
     study_course = Column(Unicode(255))
     year = Column(Unicode(16))
     letter = Column(Unicode(2048))
+    status = Column(Boolean(), default=None)
     compiled = Column(DateTime, default=None)
     token = Column(Unicode(32))
     _password = Column('password', Unicode(128))

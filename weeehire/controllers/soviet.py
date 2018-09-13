@@ -34,6 +34,7 @@ class SovietController(BaseController):
         user = User.by_user_id(uid)
         if not user:
             abort(404)
+        user.status = True
         return redirect('/soviet')
 
     @expose()
@@ -43,4 +44,5 @@ class SovietController(BaseController):
         user = User.by_user_id(uid)
         if not user:
             abort(404)
+        user.status = False
         return redirect('/soviet')
