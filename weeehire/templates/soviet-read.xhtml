@@ -1,0 +1,54 @@
+<html py:extends="master.xhtml" py:strip="True">
+    <head py:block="head" py:strip="True">
+        <title py:block="master_title">Soviet</title>
+    </head>
+
+    <body py:block="body" py:strip="True">
+      <div class="row">
+        <div class="col-md-12">
+          <form class="form-horizontal">
+            <div class="form-group">
+              <label class="control-label col-sm-1">Nome</label>
+              <div class="col-sm-3">
+                <input type="text" class="form-control" value="${user.first_name}"
+                       disabled="disabled" readonly="readonly"/>
+              </div>
+              <label class="control-label col-sm-2">Cognome</label>
+              <div class="col-sm-3">
+                <input type="text" class="form-control" value="${user.last_name}"
+                       disabled="disabled" readonly="readonly"/>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-1">Matricola</label>
+              <div class="col-sm-2">
+                <input type="text" class="form-control" value="${user.user_name}"
+                       disabled="disabled" readonly="readonly"/>
+              </div>
+              <label class="control-label col-sm-1">CDL</label>
+              <div class="col-sm-3">
+                <input type="text" class="form-control" value="${user.study_course}"
+                       disabled="disabled" readonly="readonly"/>
+              </div>
+              <label class="control-label col-sm-1">Anno</label>
+              <div class="col-sm-1">
+                <input type="text" class="form-control" value="${user.year}"
+                       disabled="disabled" readonly="readonly"/>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-2">Lettera motivazionale</label>
+              <textarea class="form-control no-resize col-sm-12" disabled="disabled"
+                        readonly="readonly" rows="20">${user.letter}</textarea>
+            </div>
+            <div class="form-group text-center">
+              <a type="button" class="bnt btn-lg btn-success"
+                 href="${tg.url('/soviet/accept')}?uid=${user.user_id}">Accetta</a>
+              <a type="button" class="bnt btn-lg btn-danger"
+                 href="${tg.url('/soviet/reject')}?uid=${user.user_id}">Scarta</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </body>
+</html>

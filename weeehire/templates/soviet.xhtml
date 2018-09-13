@@ -6,6 +6,31 @@
     <body py:block="body" py:strip="True">
       <div class="row">
         <div class="col-md-12">
+          <div class="table-responsive">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Nome</th>
+                  <th>Cognome</th>
+                  <th>Matricola</th>
+                  <th>Stato</th>
+                  <th>Form</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr py:for="user in users">
+                  <td>${user.user_id}</td>
+                  <td>${user.first_name}</td>
+                  <td>${user.last_name}</td>
+                  <td>${user.user_name}</td>
+                  <td>${user.compiled}</td>
+                  <td><a class="btn btn-sm btn-primary"
+                         href="${tg.url('/soviet/read')}?uid=${user.user_id}">Apri</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </body>

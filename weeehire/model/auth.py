@@ -91,6 +91,7 @@ class User(DeclarativeBase):
     last_name = Column(Unicode(255))
     study_course = Column(Unicode(255))
     year = Column(Unicode(16))
+    letter = Column(Unicode(2048))
     compiled = Column(DateTime, default=None)
     token = Column(Unicode(32))
     _password = Column('password', Unicode(128))
@@ -123,6 +124,11 @@ class User(DeclarativeBase):
     def by_user_name(cls, username):
         """Return the user object whose user name is ``username``."""
         return DBSession.query(cls).filter_by(user_name=username).first()
+
+    @classmethod
+    def by_user_id(cls, uid):
+        """Return the user object whose user id is ``uid``."""
+        return DBSession.query(cls).filter_by(user_id=uid).first()
 
     @classmethod
     def is_activated(cls, username):

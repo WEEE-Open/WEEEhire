@@ -13,20 +13,37 @@ def bootstrap(command, conf, vars):
     # <websetup.bootstrap.before.auth
     from sqlalchemy.exc import IntegrityError
     try:
-        u = model.User()
-        u.user_name = env['ADMIN_USERNAME']
-        u.display_name = env['ADMIN_USERNAME']
-        u.email_address = env['ADMIN_EMAIL']
-        u.password = env['ADMIN_PASS']
-        u.created = datetime.now()
+        a = model.User()
+        a.user_name = env['ADMIN_USERNAME']
+        a.display_name = env['ADMIN_USERNAME']
+        a.email_address = env['ADMIN_EMAIL']
+        a.password = env['ADMIN_PASS']
+        a.created = datetime.now()
 
-        model.DBSession.add(u)
+        model.DBSession.add(a)
+
+        s = model.User()
+        s.user_name = 's000000'
+        s.display_name = s.user_name
+        s.first_name = 'Aspirante'
+        s.last_name = 'Svitabulloni'
+        s.email_address = 'aspirante_svitabulloni@fatmax.com'
+        s.study_course = 'FISICA DELLE VITI'
+        s.year = 'LM1'
+        s.letter = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+        s.compiled = datetime.now()
+        s.password = 'asd'
+        s.token = 'asd'
+        s.created = datetime.now()
+
+        model.DBSession.add(s)
+
 
         g = model.Group()
         g.group_name = 'managers'
         g.display_name = 'Managers Group'
 
-        g.users.append(u)
+        g.users.append(a)
 
         model.DBSession.add(g)
 
