@@ -46,3 +46,13 @@ class SovietController(BaseController):
             abort(404)
         user.status = False
         return redirect('/soviet')
+
+    @expose()
+    def delete(self, uid, **kw):
+        if not uid:
+            abort(404)
+        user = User.by_user_id(uid)
+        if not user:
+            abort(404)
+        DBSession.delete(user)
+        return redirect('/soviet')

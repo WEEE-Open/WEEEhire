@@ -9,8 +9,6 @@ from tg import predicates
 from weeehire import model
 from weeehire.controllers.secure import SecureController
 from weeehire.model import DBSession
-from tgext.admin.tgadminconfig import BootstrapTGAdminConfig as TGAdminConfig
-from tgext.admin.controller import AdminController
 
 from weeehire.lib.base import BaseController
 from weeehire.controllers.error import ErrorController
@@ -36,7 +34,6 @@ class RootController(BaseController):
 
     """
     secc = SecureController()
-    admin = AdminController(model, DBSession, config_type=TGAdminConfig)
     soviet = SovietController()
     signup = SignupController()
     form = FormController()

@@ -1,6 +1,22 @@
 <html py:extends="master.xhtml" py:strip="True">
     <head py:block="head" py:strip="True">
-        <title py:block="master_title">Form</title>
+      <title py:block="master_title">Form</title>
+      <script type="text/javascript">
+          function changePlaceHolder() {
+              var interest = document.getElementById("pref").value;
+              switch(interest) {
+                  case "":
+                      document.getElementById("mlet").placeholder = "";
+                      break;
+                  case "Elettronica":
+                      document.getElementById("mlet").placeholder = "Ciawa asd";
+                      break;
+                  case "Altro":
+                      document.getElementById("mlet").placeholder = "Ciawa asd";
+                      break;
+              }
+          }
+      </script>
     </head>
 
     <body py:block="body" py:strip="True">
@@ -22,23 +38,29 @@
               <label class="control-label col-sm-1">Percorso</label>
               <div class="col-sm-5">
                 <select class="form-control" required="required" name="cdl">
-                  <option/>
                   <option py:for="c in courses" value="${c}">${c}</option>
                 </select>
               </div>
               <label class="control-label col-sm-1">Anno</label>
               <div class="col-sm-1">
                 <select class="form-control" required="required" name="year">
-                  <option/>
                   <option py:for="y in years" value="${y}">${y}</option>
                 </select>
               </div>
             </div>
             <div class="form-group">
-              <label class="control-label col-sm-2">Lettera motivazionale</label>
-              <textarea class="form-control no-resize col-sm-12"
-                        rows="20" maxlength="2048" name="letter" required="required"
-                        placeholder="Facci capire quanto ce l'hai lungo..."/>
+              <label class="control-label col-sm-3">Di cosa vorresti occuparti?</label>
+              <div class="col-sm-3">
+                <select id="pref" class="form-control" required="required"
+                        name="interest" onchange="changePlaceHolder()">
+                  <option py:for="i in interests" value="${i}">${i}</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-offset-1">Lettera motivazionale</label>
+              <textarea id="mlet" class="form-control no-resize col-sm-12"
+                        rows="20" maxlength="2048" name="letter" required="required"/>
             </div>
             <div class="form-group">
               <div class="col-sm-12 text-center">

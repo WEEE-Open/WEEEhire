@@ -25,6 +25,7 @@ class FormController(BaseController):
     @expose('weeehire.templates.form')
     def edit(self, **kw):
         courses = [
+            "",
             "INGEGNERIA ELETTRONICA E DELLE COMUNICAZIONI",
             "ELECTRONIC AND COMMUNICATIONS ENGINEERING",
             "INGEGNERIA AEROSPAZIALE",
@@ -51,13 +52,24 @@ class FormController(BaseController):
         ]
 
         years = [
+            "",
             "1",
             "2",
             "3",
             "LM1",
             "LM2"
         ]
-        return dict(page='form-edit', courses=courses, years=years)
+
+        interests = [
+            "",
+            "Elettronica",
+            "Programmazione",
+            "Design",
+            "Amministrazione",
+            "Pubbliche relazioni",
+            "Altro"
+        ]
+        return dict(page='form-edit', courses=courses, years=years, interests=interests)
 
     @expose()
     def save(self, **kw):
@@ -67,6 +79,7 @@ class FormController(BaseController):
         user.last_name = kw['last_name']
         user.study_course = kw['cdl']
         user.year = kw['year']
+        user.interest = kw['interest']
         user.letter = kw['letter']
         user.compiled = datetime.now()
         return redirect('/')
