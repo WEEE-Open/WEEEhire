@@ -13,6 +13,18 @@
 
     <body py:block="body" py:strip="True">
       <div class="row">
+        <div class="col-md-5">
+          <label class="control-label">Filtra per :</label>
+          <a class="btn btn-sm btn-default" href="${tg.url('soviet?filter=awaiting')}">Da decidere</a>
+          <a class="btn btn-sm btn-success" href="${tg.url('soviet?filter=approved')}">Approvati</a>
+          <a class="btn btn-sm btn-danger"  href="${tg.url('soviet?filter=rejected')}">Scartati</a>
+          <a class="btn btn-sm btn-primary"  href="${tg.url('soviet')}">Vedi tutti</a>
+        </div>
+        <div class="text-right">
+          <a class="btn btn-primary text-right" href="${tg.url('soviet/publish')}">Pubblica risultati</a>
+        </div>
+      </div>
+      <div class="row">
         <div class="col-md-12">
           <div class="table-responsive">
             <table class="table table-hover">

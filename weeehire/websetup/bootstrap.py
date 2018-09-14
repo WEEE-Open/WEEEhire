@@ -22,38 +22,6 @@ def bootstrap(command, conf, vars):
 
         model.DBSession.add(a)
 
-        s = model.User()
-        s.user_name = 's000000'
-        s.display_name = s.user_name
-        s.first_name = 'Aspirante'
-        s.last_name = 'Svitabulloni'
-        s.email_address = 'aspirante_svitabulloni@fatmax.com'
-        s.study_course = 'FISICA DELLE VITI'
-        s.year = 'LM1'
-        s.letter = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
-        s.compiled = datetime.now()
-        s.password = 'asd'
-        s.token = 'asd'
-        s.created = datetime.now()
-
-        model.DBSession.add(s)
-
-        iamdoor = model.User()
-        iamdoor.user_name = 's666999'
-        iamdoor.display_name = 's666999'
-        iamdoor.first_name = 'Sono'
-        iamdoor.last_name = 'Porta'
-        iamdoor.email_address = 'SonoPorta@polimi.exe'
-        iamdoor.study_course = 'FALEGNAMERIA'
-        iamdoor.year = '8'
-        iamdoor.letter = "Ciao, Sono Porta,\nso:\n- Programmare in C, Java, PHP, HTML e MySQL perchè me lo hanno insegnato al Poli\n- Saldare ventole sulle schede madri\n- Rompere i maroni alla direzione\n- Minacciare di copiarmi le chiavi dei laboratori"
-        iamdoor.compiled = datetime.now()
-        iamdoor.password = 'asd'
-        iamdoor.token = 'asd'
-        iamdoor.created = datetime.now()
-
-        model.DBSession.add(iamdoor)
-
         g = model.Group()
         g.group_name = 'managers'
         g.display_name = 'Managers Group'

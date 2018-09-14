@@ -29,7 +29,10 @@
   border-color: #bce8f1;
 }
 
-/* Footer styling */
+.navbar-default {
+    border-radius: 0 !important;
+}
+
 .footer {
     margin-top: 45px;
     padding: 35px 30px 36px;
@@ -51,4 +54,22 @@
 
 .btn-static {
     cursor: default;
+}
+
+.status-waiting {
+    height: 50px;
+    line-height: 50px;
+    background-color: #C7E1F3;
+}
+
+.status-approved {
+    height: 50px;
+    line-height: 50px;
+	background-color: #7BFC91;
+}
+
+.status-rejected {
+    height: 50px;
+    line-height: 50px;
+    background-color: #FC6464;
 }

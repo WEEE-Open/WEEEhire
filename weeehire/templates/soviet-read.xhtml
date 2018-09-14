@@ -13,7 +13,7 @@
                 <input type="text" class="form-control" value="${user.first_name}"
                        disabled="disabled" readonly="readonly"/>
               </div>
-              <label class="control-label col-sm-1">Cognome</label>
+              <label class="control-label col-sm-2">Cognome</label>
               <div class="col-sm-3">
                 <input type="text" class="form-control" value="${user.last_name}"
                        disabled="disabled" readonly="readonly"/>
@@ -35,6 +35,11 @@
                 <input type="text" class="form-control" value="${user.year}"
                        disabled="disabled" readonly="readonly"/>
               </div>
+              <label class="control-label col-sm-2">Interesse</label>
+              <div class="col-sm-2">
+                <input type="text" class="form-control" value="${user.interest}"
+                       disabled="disabled" readonly="readonly"/>
+              </div>
             </div>
             <div class="form-group">
               <label class="control-label col-sm-2">Lettera motivazionale</label>
@@ -42,10 +47,12 @@
                         readonly="readonly" rows="20">${user.letter}</textarea>
             </div>
             <div class="form-group text-center">
-              <a type="button" class="bnt btn-lg btn-success"
+              <a py:if="not user.published" type="button" class="bnt btn-lg btn-success"
                  href="${tg.url('/soviet/accept')}?uid=${user.user_id}">Approva</a>
-              <a type="button" class="bnt btn-lg btn-danger"
+              <h2 py:if="user.published and user.status is True" class="status-approved">Approvato</h2>
+              <a py:if="not user.published" type="button" class="bnt btn-lg btn-danger"
                  href="${tg.url('/soviet/reject')}?uid=${user.user_id}">Scarta</a>
+              <h2 py:if="user.published and user.status is False" class="status-rejected">Scartato</h2>
             </div>
           </form>
         </div>

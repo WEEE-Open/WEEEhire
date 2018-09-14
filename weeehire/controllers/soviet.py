@@ -1,21 +1,26 @@
 # -*- coding: utf-8 -*-
 """Soviet controller module"""
 
-from tg import expose, redirect, abort, validate, flash, url
-# from tg.i18n import ugettext as _
+from tg import expose, flash, redirect, abort
 from tg import predicates
-
+from tgext.mailer import get_mailer, Message
 from weeehire.lib.base import BaseController
 from weeehire.model import DBSession, User
 
 
 class SovietController(BaseController):
-    # Uncomment this line if your controller requires an authenticated user
     allow_only = predicates.has_permission('manage')
     
     @expose('weeehire.templates.soviet')
-    def index(self, **kw):
-        users = DBSession.query(User).filter(User.user_id != 1).all()
+    def index(self, filter=None, **kw):
+        if filter == 'awaiting':
+            users = DBSession.query(User).filter(User.user_id != 1).filter_by(status=None).all()
+        elif filter == 'approved':
+            users = DBSession.query(User).filter(User.user_id != 1).filter_by(status=True).all()
+        elif filter == 'rejected':
+            users = DBSession.query(User).filter(User.user_id != 1).filter_by(status=False).all()
+        else:
+            users = DBSession.query(User).filter(User.user_id != 1).all()
         return dict(page='soviet-index', users=users)
 
     @expose('weeehire.templates.soviet-read')
@@ -45,6 +50,18 @@ class SovietController(BaseController):
         if not user:
             abort(404)
         user.status = False
+        return redirect('/soviet')
+
+    @expose()
+    def publish(self, **kw):
+        approved_users = DBSession.query(User).filter_by(published=False).filter_by(status=True).all()
+        rejected_users = DBSession.query(User).filter_by(published=False).filter_by(status=False).all()
+        for user in approved_users:
+            user.published = True
+        for user in rejected_users:
+            user.published = True
+
+        flash('Risultati pubblicati correttamente')
         return redirect('/soviet')
 
     @expose()

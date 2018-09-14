@@ -1,9 +1,8 @@
 # -*- coding: utf-8 -*-
 """Form controller module"""
 
-from tg import expose, redirect, request, validate, flash, url, abort
+from tg import expose, redirect, request, flash, url, abort
 from tg.i18n import ugettext as _
-# from tg import predicates
 
 from weeehire.lib.base import BaseController
 from weeehire.model import DBSession, User
@@ -11,6 +10,7 @@ from tgext.mailer import get_mailer, Message
 from datetime import datetime
 from string import ascii_letters, digits
 from random import randint
+from os import environ as env
 
 
 def generate_password():
@@ -33,15 +33,8 @@ def is_valid_sn(sn):
 
 
 class FormController(BaseController):
-    # Uncomment this line if your controller requires an authenticated user
-    # allow_only = predicates.not_anonymous()
-    
     @expose('weeehire.templates.form-index')
     def index(self, status=None, **kw):
-        # uid = request.identity['user'].user_id
-        # user = User.by_user_id(uid)
-        # if user.compiled:
-        #    return redirect('/form/status')
         if status == 'success':
             flash(_('Candidatura inviata con successo! Controlla la tua mail del poli.'))
         return dict(page='form-index')
@@ -132,7 +125,7 @@ class FormController(BaseController):
 
         mailer = get_mailer(request)
         message = Message(subject="Reclutamento WEEE Open",
-                          sender="weeeopen@yandex.ru",
+                          sender=env['ADMIN_EMAIL'],
                           recipients=[user.email_address],
                           body=("Ciao!\n\nAbbiamo ricevuto la tua candidatura, di seguito troverai\n" +
                                 "il link che ti permetterà di verificare lo stato della tua domanda.\n\n" +
@@ -152,5 +145,5 @@ class FormController(BaseController):
         user = User.by_user_name(m)
         if user:
             if user.token == auth:
-                return dict(page='form-status')
+                return dict(page='form-status', user=user)
         abort(404)

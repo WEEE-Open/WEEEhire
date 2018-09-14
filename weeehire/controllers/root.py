@@ -1,18 +1,13 @@
 # -*- coding: utf-8 -*-
 """Main Controller"""
 
-from tg import expose, flash, require, url, lurl
-from tg import predicates, request, redirect, tmpl_context
-from tg.i18n import ugettext as _, lazy_ugettext as l_
+from tg import expose, flash, lurl
+from tg import request, redirect, tmpl_context
+from tg.i18n import ugettext as _
 from tg.exceptions import HTTPFound
-from tg import predicates
-from weeehire import model
-from weeehire.controllers.secure import SecureController
-from weeehire.model import DBSession
 
 from weeehire.lib.base import BaseController
 from weeehire.controllers.error import ErrorController
-from weeehire.controllers.signup import SignupController
 from weeehire.controllers.form import FormController
 from weeehire.controllers.soviet import SovietController
 
@@ -33,9 +28,7 @@ class RootController(BaseController):
     must be wrapped around with :class:`tg.controllers.WSGIAppController`.
 
     """
-    secc = SecureController()
     soviet = SovietController()
-    signup = SignupController()
     form = FormController()
 
     error = ErrorController()
