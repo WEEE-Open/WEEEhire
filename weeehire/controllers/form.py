@@ -10,7 +10,6 @@ from tgext.mailer import get_mailer, Message
 from datetime import datetime
 from string import ascii_letters, digits
 from random import randint
-from os import environ as env
 
 
 def generate_password():
@@ -125,7 +124,7 @@ class FormController(BaseController):
 
         mailer = get_mailer(request)
         message = Message(subject="Reclutamento WEEE Open",
-                          sender=env['ADMIN_EMAIL'],
+                          sender="weeeopen@yandex.ru",
                           recipients=[user.email_address],
                           body=("Ciao!\n\nAbbiamo ricevuto la tua candidatura, di seguito troverai\n" +
                                 "il link che ti permetterà di verificare lo stato della tua domanda.\n\n" +

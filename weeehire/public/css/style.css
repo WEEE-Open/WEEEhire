@@ -73,3 +73,7 @@
     line-height: 50px;
     background-color: #FC6464;
 }
+
+.grayout {
+    opacity: 0.5;
+}
