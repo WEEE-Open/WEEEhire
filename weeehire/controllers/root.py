@@ -46,13 +46,11 @@ class RootController(BaseController):
     @expose('weeehire.templates.index')
     def index(self):
         """Handle the front-page."""
-        if not request.identity:
-            return redirect('/signup')
-        else:
+        if request.identity:
             if request.identity['user'].user_id == 1:
                 return redirect('/soviet')
-            else:
-                return redirect('/form')
+        else:
+            return redirect('/form')
 
     @expose('weeehire.templates.login')
     def login(self, came_from=lurl('/'), failure=None, login=''):
