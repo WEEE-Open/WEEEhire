@@ -11,9 +11,9 @@
       <form action="${tg.url('/login_handler', params=dict(came_from=came_from, __logins=login_counter))}"
             method="post" accept-charset="UTF-8" class="form-horizontal">
         <div class="form-group">
-          <label class="col-sm-2 control-label">Username:</label>
+          <label class="col-sm-2 control-label">Matricola:</label>
           <div class="col-sm-10">
-            <input class="form-control" type="text" name="login" value="${login}"/>
+            <input class="form-control" type="text" name="login" value="${login}" placeholder="s123456"/>
           </div>
         </div>
         <div class="form-group">

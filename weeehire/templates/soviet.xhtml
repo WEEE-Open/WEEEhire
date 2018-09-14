@@ -24,12 +24,9 @@
                   <td>${user.first_name}</td>
                   <td>${user.last_name}</td>
                   <td>${user.user_name}</td>
-                  <td py:if="user.status is None"><button class="btn btn-sm btn-default"
-                                                          style="cursor: default;">Da leggere</button></td>
-                  <td py:if="user.status is True"><button class="btn btn-sm btn-success"
-                                                          style="cursor: default;">Approvato</button></td>
-                  <td py:if="user.status is False"><button class="btn btn-sm btn-danger"
-                                                          style="cursor: default;">Scartato</button></td>
+                  <td py:if="user.status is None"><button class="btn btn-sm btn-default btn-static">Da decidere</button></td>
+                  <td py:if="user.status is True"><button class="btn btn-sm btn-success btn-static">Approvato</button></td>
+                  <td py:if="user.status is False"><button class="btn btn-sm btn-danger btn-static">Scartato</button></td>
                   <td><a class="btn btn-sm btn-primary"
                          href="${tg.url('/soviet/read')}?uid=${user.user_id}">Apri</a></td>
                 </tr>

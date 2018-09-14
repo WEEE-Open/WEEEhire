@@ -6,35 +6,44 @@
     <body py:block="body" py:strip="True">
       <div class="row">
         <div class="col-md-12">
-          <form class="form-horizontal">
+          <form action="${tg.url('/form/save')}"
+                method="post" accept-charset="UTF-8" class="form-horizontal">
             <div class="form-group">
               <label class="control-label col-sm-1">Nome</label>
               <div class="col-sm-3">
-                <input type="text" class="form-control"/>
+                <input type="text" class="form-control" required="required" name="first_name"/>
               </div>
               <label class="control-label col-sm-2">Cognome</label>
               <div class="col-sm-3">
-                <input type="text" class="form-control"/>
+                <input type="text" class="form-control" required="required" name="last_name"/>
               </div>
             </div>
             <div class="form-group">
               <label class="control-label col-sm-1">Percorso</label>
-              <div class="col-sm-3">
-                <select class="form-control">
-                  <option value="asd">Ci pensa lo schienaepilogo asd</option>
+              <div class="col-sm-5">
+                <select class="form-control" required="required" name="cdl">
+                  <option/>
+                  <option py:for="c in courses" value="${c}">${c}</option>
                 </select>
               </div>
               <label class="control-label col-sm-1">Anno</label>
-              <div class="col-sm-2">
-                <select class="form-control">
-                  <option value="asd">Ci pensa il dietrofine asd</option>
+              <div class="col-sm-1">
+                <select class="form-control" required="required" name="year">
+                  <option/>
+                  <option py:for="y in years" value="${y}">${y}</option>
                 </select>
               </div>
             </div>
             <div class="form-group">
               <label class="control-label col-sm-2">Lettera motivazionale</label>
-              <textarea class="form-control no-resize col-sm-12" rows="20" maxlength="2048"
+              <textarea class="form-control no-resize col-sm-12"
+                        rows="20" maxlength="2048" name="letter" required="required"
                         placeholder="Facci capire quanto ce l'hai lungo..."/>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-12 text-center">
+                <button type="submit" class="btn btn-lg btn-success">Invia</button>
+              </div>
             </div>
           </form>
         </div>

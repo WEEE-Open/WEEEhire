@@ -38,6 +38,21 @@ def bootstrap(command, conf, vars):
 
         model.DBSession.add(s)
 
+        iamdoor = model.User()
+        iamdoor.user_name = 's666999'
+        iamdoor.display_name = 's666999'
+        iamdoor.first_name = 'Sono'
+        iamdoor.last_name = 'Porta'
+        iamdoor.email_address = 'SonoPorta@polimi.exe'
+        iamdoor.study_course = 'FALEGNAMERIA'
+        iamdoor.year = '8'
+        iamdoor.letter = "Ciao, Sono Porta,\nso:\n- Programmare in C, Java, PHP, HTML e MySQL perchè me lo hanno insegnato al Poli\n- Saldare ventole sulle schede madri\n- Rompere i maroni alla direzione\n- Minacciare di copiarmi le chiavi dei laboratori"
+        iamdoor.compiled = datetime.now()
+        iamdoor.password = 'asd'
+        iamdoor.token = 'asd'
+        iamdoor.created = datetime.now()
+
+        model.DBSession.add(iamdoor)
 
         g = model.Group()
         g.group_name = 'managers'

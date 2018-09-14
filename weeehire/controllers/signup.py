@@ -50,6 +50,7 @@ class SignupController(BaseController):
             flash(_('Caro utonto, inserisci il tuo numero di matricola nel formato indicato.'), 'error')
         if status == 'login':
             flash(_('Questa matricola è già in uso, fai il login!'), 'error')
+            return redirect('/login')
         if status == 'success':
             flash(_('Apri il link di conferma che hai ricevuto sulla tua mail del poli'))
         return dict(page='signup-index', form=SignupForm)
@@ -65,7 +66,7 @@ class SignupController(BaseController):
                 email = matricola + '@studenti.polito.it'
             else:
                 email = matricola + '@studenti.polito.it'
-            user = User.by_email_address(email)
+            user = User.by_user_name(matricola)
             if not user:
                 confirm_link = url('/signup/register?email=', None, True) + email
                 token = generate_password()
@@ -124,5 +125,4 @@ class SignupController(BaseController):
                 flash(_('Autenticazione fallita'), 'error')
         else:
             flash(_('Utente non registrato'), 'error')
-        DBSession.flush()
         return dict()

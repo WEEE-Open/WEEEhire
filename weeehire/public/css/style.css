@@ -48,3 +48,7 @@
 .no-resize {
     resize: none;
 }
+
+.btn-static {
+    cursor: default;
+}
