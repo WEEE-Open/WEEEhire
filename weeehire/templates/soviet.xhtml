@@ -2,9 +2,15 @@
     <head py:block="head" py:strip="True">
         <title py:block="master_title">Soviet</title>
         <script type="text/javascript">
-            function ask_confirm (id) {
+            function ask_confirm_del(id) {
                 if(confirm("Sei sicuro?")) {
-                    var endpoint = "${tg.url('soviet/delete?uid=')}"+String(id);
+                    var endpoint = "${tg.url('/soviet/delete?uid=')}"+String(id);
+                    window.location.replace(endpoint);
+                }
+            }
+            function ask_confirm_pub() {
+                if(confirm("Sei sicuro di voler pubblicare i risultati?")) {
+                    var endpoint = "${tg.url('/soviet/publish')}";
                     window.location.replace(endpoint);
                 }
             }
@@ -21,7 +27,7 @@
           <a class="btn btn-sm btn-primary"  href="${tg.url('soviet')}">Vedi tutti</a>
         </div>
         <div class="text-right">
-          <a class="btn btn-primary text-right" href="${tg.url('soviet/publish')}">Pubblica risultati</a>
+          <a class="btn btn-primary text-right" onclick="ask_confirm_pub()">Pubblica risultati</a>
         </div>
       </div>
       <div class="row">
@@ -54,7 +60,7 @@
                   <td py:if="user.published" class="grayout"><a class="btn btn-sm btn-primary"
                          href="${tg.url('/soviet/read')}?uid=${user.user_id}">Apri</a></td>
                   <td py:if="user.published" class="grayout">
-                    <a class="btn btn-sm btn-danger" onclick="ask_confirm(${user.user_id});">${h.icon('trash')}</a></td>
+                    <a class="btn btn-sm btn-danger" onclick="ask_confirm_del(${user.user_id});">${h.icon('trash')}</a></td>
                   <td py:if="not user.published">${user.user_id}</td>
                   <td py:if="not user.published">${user.first_name}</td>
                   <td py:if="not user.published">${user.last_name}</td>
@@ -65,7 +71,7 @@
                   <td py:if="not user.published"><a class="btn btn-sm btn-primary"
                          href="${tg.url('/soviet/read')}?uid=${user.user_id}">Apri</a></td>
                   <td py:if="not user.published">
-                    <a class="btn btn-sm btn-danger" onclick="ask_confirm(${user.user_id});">${h.icon('trash')}</a></td>
+                    <a class="btn btn-sm btn-danger" onclick="ask_confirm_del(${user.user_id});">${h.icon('trash')}</a></td>
                 </tr>
               </tbody>
             </table>
