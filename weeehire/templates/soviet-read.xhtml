@@ -4,6 +4,13 @@
     </head>
 
     <body py:block="body" py:strip="True">
+      <div class="row text-center">
+        <div class="col-md-10 col-md-push-1">
+          <h2 py:if="user.published and user.status is True" class="status-approved">Approvato</h2>
+          <h2 py:if="user.published and user.status is False" class="status-rejected">Scartato</h2>
+          <br/>
+        </div>
+      </div>
       <div class="row">
         <div class="col-md-12">
           <form class="form-horizontal">
@@ -49,13 +56,13 @@
             <div class="form-group text-center">
               <a py:if="not user.published" type="button" class="bnt btn-lg btn-success"
                  href="${tg.url('/soviet/accept')}?uid=${user.user_id}">Approva</a>
-              <h2 py:if="user.published and user.status is True" class="status-approved">Approvato</h2>
               <a py:if="not user.published" type="button" class="bnt btn-lg btn-danger"
                  href="${tg.url('/soviet/reject')}?uid=${user.user_id}">Scarta</a>
-              <h2 py:if="user.published and user.status is False" class="status-rejected">Scartato</h2>
             </div>
           </form>
         </div>
+        <a py:if="not user.published" type="button" class="btn btn-default"
+                 href="${tg.url('/soviet/clear')}?uid=${user.user_id}">Reset</a>
       </div>
     </body>
 </html>

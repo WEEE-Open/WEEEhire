@@ -53,6 +53,16 @@ class SovietController(BaseController):
         return redirect('/soviet')
 
     @expose()
+    def clear(self, uid, **kw):
+        if not uid:
+            abort(404)
+        user = User.by_user_id(uid)
+        if not user:
+            abort(404)
+        user.status = None
+        return redirect('/soviet')
+
+    @expose()
     def publish(self, **kw):
         approved_users = DBSession.query(User).filter_by(published=False).filter_by(status=True).all()
         rejected_users = DBSession.query(User).filter_by(published=False).filter_by(status=False).all()
