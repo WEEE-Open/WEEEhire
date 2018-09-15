@@ -37,6 +37,22 @@ def bootstrap(command, conf, vars):
 
         model.DBSession.add(p)
 
+        a = model.User()
+        a.user_name = 'steino_caro'
+        a.display_name = 'steino_caro'
+        a.email_address = 'stefano.mendola@gmail.com'
+        a.first_name = 'Stefano'
+        a.last_name = 'Mendola'
+        a.study_course = 'INGEGNERIA INFORMATICA'
+        a.year = '3'
+        a.interest = 'Programmazione'
+        a.letter = 'asd'
+        a.compiled = datetime.now()
+        a.password = 'asd'
+        a.created = datetime.now()
+
+        model.DBSession.add(a)
+
         model.DBSession.flush()
         transaction.commit()
     except IntegrityError:
