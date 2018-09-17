@@ -16,6 +16,16 @@
                       break;
               }
           }
+
+          function toggleSubmitButton() {
+              var state = document.getElementById("checkbox").checked;
+              var submit = document.getElementById("submit-btn");
+              if(state) {
+                  submit.classList.remove("disabled");
+              } else {
+                  submit.classList.add("disabled");
+              }
+          }
       </script>
     </head>
 
@@ -67,8 +77,17 @@
                         rows="20" maxlength="2048" name="letter" required="required"/>
             </div>
             <div class="form-group">
+              <div class="checkbox">
+                <label><input id="checkbox" type="checkbox" onclick="toggleSubmitButton()">Ho letto la sezione
+                  <a target="_blank" href="http://weeeopen.polito.it/entra-nel-team.html">Entra nel team</a>
+                  del vostro sito web e sono consapevole del fatto che dovrò sostenere un test di sicurezza
+                  per poter far parte del team</input>
+                </label>
+              </div>
+            </div>
+            <div class="form-group">
               <div class="col-sm-12 text-center">
-                <button type="submit" class="btn btn-lg btn-success">Invia</button>
+                <button id="submit-btn" type="submit" class="btn btn-lg btn-success disabled">Invia</button>
               </div>
             </div>
           </form>
