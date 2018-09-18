@@ -35,36 +35,36 @@
         <div class="col-md-12">
             <form action="${tg.url('/form/save')}" method="post" accept-charset="UTF-8" class="form-horizontal form-nonstorto">
                 <div class="form-group">
-                    <label for="first_name" class="control-label col-sm-2">Nome</label>
-                    <div class="col-sm-4">
+                    <label for="first_name" class="control-label col-sm-2 col-md-1">Nome</label>
+                    <div class="col-sm-4 col-md-5">
                         <input type="text" class="form-control" required="required" name="first_name" id="first_name"></input>
                     </div>
-                    <label class="control-label col-sm-2" for="last_name">Cognome</label>
-                    <div class="col-sm-4">
+                    <label class="control-label col-sm-2 col-md-1" for="last_name">Cognome</label>
+                    <div class="col-sm-4 col-md-5">
                         <input type="text" class="form-control" required="required" name="last_name" id="last_name"></input>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="control-label col-sm-2" for="cdl">Percorso</label>
-                    <div class="col-sm-7">
+                    <label class="control-label col-sm-2 col-md-1" for="cdl">Percorso</label>
+                    <div class="col-sm-7 col-md-8">
                         <select class="form-control" required="required" name="cdl" id="cdl">
 							<option py:for="c in courses" value="${c}">${c}</option>
 						</select>
                     </div>
-                    <label class="control-label col-sm-1" for="year">Anno</label>
-                    <div class="col-sm-2">
+                    <label class="control-label col-sm-1 col-md-1" for="year">Anno</label>
+                    <div class="col-sm-2 col-md-2">
                         <select class="form-control" required="required" name="year" id="year">
 							<option py:for="y in years" value="${y}">${y}</option>
 						</select>
                     </div>
                 </div>
                 <div class="form-group">
-					<label class="control-label col-sm-2" for="user_name">Matricola</label>
-                    <div class="col-sm-4">
+					<label class="control-label col-sm-2 col-md-1" for="user_name">Matricola</label>
+                    <div class="col-sm-4 col-md-5">
                         <input type="text" class="form-control" required="required" placeholder="s123456" name="user_name" id="user_name"></input>
                     </div>
-                    <label class="control-label col-sm-2" for="pref">Interesse</label>
-                    <div class="col-sm-4">
+                    <label class="control-label col-sm-2 col-md-1" for="pref">Interesse</label>
+                    <div class="col-sm-4 col-md-5">
                         <select id="pref" class="form-control" required="required" name="interest" onchange="changePlaceHolder()">
 							<option py:for="i in interests" value="${i}">${i}</option>
 						</select>
@@ -77,20 +77,20 @@
                     </div>
                 </div>
                 <div class="form-group">
-					<div class="checkbox col-sm-12">
-                        <label class="control-label col-sm-12"><input id="checkbox" type="checkbox" onclick="toggleSubmitButton()">Ho letto la sezione
+					<div class="checkbox col-sm-12 col-md-12">
+                        <label class="control-label col-sm-12 col-md-12"><input id="checkbox" type="checkbox" onclick="toggleSubmitButton()">Ho letto la sezione
 							<a target="_blank" href="http://weeeopen.polito.it/entra-nel-team.html">Entra nel team</a>
 							del vostro sito web e sono consapevole del fatto che dovrò sostenere un test di sicurezza
 							per poter far parte del team</input>
 						</label>
 							<!-- TODO: JS for dual checkbox -->
-						<label class="control-label col-sm-12"><input id="checkbox" type="checkbox" onclick="toggleSubmitButton()">Ho letto e accetto la
+						<label class="control-label col-sm-12 col-md-12"><input id="checkbox" type="checkbox" onclick="toggleSubmitButton()">Ho letto e accetto la
 							<a target="_blank" href="/privacy">Privacy policy</a> (e terms of service) che non abbiamo ancora.</input>
 						</label>
                     </div>
                 </div>
                 <div class="form-group">
-                    <div class="col-sm-12 text-center">
+                    <div class="col-sm-12 col-md-12 text-center">
                         <button id="submit-btn" type="submit" class="btn btn-lg btn-success disabled">Invia</button>
                     </div>
                 </div>
