@@ -83,9 +83,9 @@ class FormController(BaseController):
         interests = [
             "",
             "Elettronica",
-            "Programmazione",
-            "Design",
-            "Amministrazione",
+            "Sviluppo Software",
+            "Sysadmin",
+            "Design e comunicazione visiva",
             "Pubbliche relazioni",
             "Altro"
         ]

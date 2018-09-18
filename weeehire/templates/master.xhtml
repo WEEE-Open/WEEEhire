@@ -15,26 +15,11 @@
 </head>
 
 <body>
-  <!-- Navbar -->
-  <nav class="navbar navbar-default">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-content">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="${tg.url('/')}">
-        <img src="${tg.url('/img/weee_logo.png')}" height="20" alt="WEEE Open"/>
-      </a>
-    </div>
-    <div class="collapse navbar-collapse" id="navbar-content">
-      <ul py:if="tg.auth_stack_enabled" class="nav navbar-nav navbar-right">
-        <li py:if="request.identity"><a href="${tg.url('/logout_handler')}">Logout</a></li>
-      </ul>
-    </div>
-  </nav>
-
+  <a href="${tg.url('/')}">
+  <img src="${tg.url('/img/logo325.png')}"
+			srcset="${tg.url('/img/logo325.png')} 325w, ${tg.url('/img/logo650.png')} 650w, ${tg.url('/img/logo974.png')} 974w, ${tg.url('/img/logo3248.png')} 3248w"
+       sizes="(max-width: 26em) 100vw, 26em" alt="WEEE Open"/></a>
+  <br/><br/>
 
   <div class="container">
     <!-- Flash messages -->

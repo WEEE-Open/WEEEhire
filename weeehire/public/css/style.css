@@ -29,7 +29,7 @@
   border-color: #bce8f1;
 }
 
-.navbar-default {
+.navbar {
     border-radius: 0 !important;
 }
 
@@ -72,4 +72,10 @@
 
 .grayout {
     opacity: 0.5;
+}
+
+.textarea {
+    margin-left: auto;
+    margin-right: auto;
+    width: 81%;
 }
