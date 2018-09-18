@@ -75,6 +75,10 @@
 }
 
 .textarea {
-    margin-left: 10%;
+    margin-left: 18%;
     width: 72%;
+}
+
+.textarea-label {
+    margin-left: 10%;
 }
