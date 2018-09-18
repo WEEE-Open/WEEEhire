@@ -2,32 +2,6 @@
 
 <head py:block="head" py:strip="True">
     <title py:block="master_title">Form</title>
-    <script type="text/javascript">
-        function changePlaceHolder() {
-              var interest = document.getElementById("pref").value;
-              switch(interest) {
-                  case "":
-                      document.getElementById("mlet").placeholder = "";
-                      break;
-                  case "Elettronica":
-                      document.getElementById("mlet").placeholder = "Ciawa asd";
-                      break;
-                  case "Altro":
-                      document.getElementById("mlet").placeholder = "Ciawa asd";
-                      break;
-              }
-          }
-
-          function toggleSubmitButton() {
-              var state = document.getElementById("checkbox").checked;
-              var submit = document.getElementById("submit-btn");
-              if(state) {
-                  submit.classList.remove("disabled");
-              } else {
-                  submit.classList.add("disabled");
-              }
-          }
-    </script>
 </head>
 
 <body py:block="body" py:strip="True">
@@ -78,13 +52,12 @@
                 </div>
                 <div class="form-group">
 					<div class="checkbox col-sm-12 col-md-12">
-                        <label class="control-label col-sm-12 col-md-12"><input id="checkbox" type="checkbox" onclick="toggleSubmitButton()">Ho letto la sezione
+                        <label class="control-label col-sm-12 col-md-12"><input type="checkbox" onclick="toggleSubmitButton()" class="mandatory-checkbox">Ho letto la sezione
 							<a target="_blank" href="http://weeeopen.polito.it/entra-nel-team.html">Entra nel team</a>
 							del vostro sito web e sono consapevole del fatto che dovrò sostenere un test di sicurezza
 							per poter far parte del team</input>
 						</label>
-							<!-- TODO: JS for dual checkbox -->
-						<label class="control-label col-sm-12 col-md-12"><input id="checkbox" type="checkbox" onclick="toggleSubmitButton()">Ho letto e accetto la
+						<label class="control-label col-sm-12 col-md-12"><input type="checkbox" onclick="toggleSubmitButton()" class="mandatory-checkbox">Ho letto e accetto la
 							<a target="_blank" href="/privacy">Privacy policy</a> (e terms of service) che non abbiamo ancora.</input>
 						</label>
                     </div>
@@ -97,6 +70,39 @@
             </form>
         </div>
     </div>
+        <script type="text/javascript">
+        function changePlaceHolder() {
+              var interest = document.getElementById("pref").value;
+              switch(interest) {
+                  case "":
+                      document.getElementById("mlet").placeholder = "";
+                      break;
+                  case "Elettronica":
+                      document.getElementById("mlet").placeholder = "Ciawa asd";
+                      break;
+                  case "Altro":
+                      document.getElementById("mlet").placeholder = "Ciawa asd";
+                      break;
+              }
+          }
+
+          var checkboxes = document.querySelectorAll(".mandatory-checkbox");
+          var submit = document.getElementById("submit-btn");
+          function toggleSubmitButton() {
+			  var all_checked = true;
+			  for(var i = 0; checkboxes.length > i; i++) {
+			      if(!checkboxes[i].checked) {
+			          all_checked = false;
+			          break;
+			      }
+			  }
+              if(all_checked) {
+                  submit.classList.remove("disabled");
+              } else {
+                  submit.classList.add("disabled");
+              }
+          }
+    </script>
 </body>
 
 </html>
