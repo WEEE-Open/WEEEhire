@@ -35,7 +35,7 @@
                 <div class="form-group">
 					<label class="control-label col-sm-2 col-md-1" for="user_name">Matricola</label>
                     <div class="col-sm-4 col-md-5">
-                        <input type="text" class="form-control" required="required" placeholder="s123456" name="user_name" id="user_name"></input>
+                        <input type="text" class="form-control" required="required" placeholder="s123456" name="user_name" id="user_name" pattern="[sS]\d{6}|[dD]\d+" title="formato 's123456'"></input>
                     </div>
                     <label class="control-label col-sm-2 col-md-1" for="pref">Interesse</label>
                     <div class="col-sm-4 col-md-5">
@@ -102,6 +102,7 @@
                   submit.classList.add("disabled");
               }
           }
+          toggleSubmitButton();
     </script>
 </body>
 
