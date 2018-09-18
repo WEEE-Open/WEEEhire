@@ -33,9 +33,7 @@ def is_valid_sn(sn):
 
 class FormController(BaseController):
     @expose('weeehire.templates.form-index')
-    def index(self, status=None, **kw):
-        if status == 'success':
-            flash(_('Candidatura inviata con successo! Controlla la tua mail del poli.'))
+    def index(self, **kw):
         return dict(page='form-index')
 
     @expose('weeehire.templates.form')
@@ -135,7 +133,8 @@ class FormController(BaseController):
                                 )
                           )
         mailer.send(message)
-        return redirect('/form?status=success')
+        flash(_("Candidatura inviata con successo!\nSalvati questo link (che per scaramanzia ti abbiamo anche inviato sulla mail del poli) tra i preferiti."))
+        return redirect(status_link)
 
     @expose('weeehire.templates.form-status')
     def status(self, m, auth, **kw):
