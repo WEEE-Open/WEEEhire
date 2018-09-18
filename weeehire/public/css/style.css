@@ -52,6 +52,18 @@
     cursor: default;
 }
 
+.the-button {
+	margin-top: 2em;
+}
+
+.form-horizontal.form-nonstorto .control-label {
+	text-align: left;
+}
+
+.resize-vertical {
+	resize: vertical;
+}
+
 .status-waiting {
     height: 50px;
     line-height: 50px;
@@ -72,13 +84,4 @@
 
 .grayout {
     opacity: 0.5;
-}
-
-.textarea {
-    margin-left: 18%;
-    width: 72%;
-}
-
-.textarea-label {
-    margin-left: 10%;
 }

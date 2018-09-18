@@ -6,7 +6,7 @@
     <body py:block="body" py:strip="True">
       <div class="row">
         <div class="col-md-12 text-center">
-          <h1>STATO DELLA RICHIESTA:</h1>
+          <h1>Stato della richiesta:</h1>
           <h2 py:if="not user.published or user.status is None" class="status-waiting">Valutazione in corso</h2>
           <h2 py:if="user.published and user.status is True" class="status-approved">Ammesso al colloquio</h2>
           <h2 py:if="user.published and user.status is False" class="status-rejected">Respinto</h2>

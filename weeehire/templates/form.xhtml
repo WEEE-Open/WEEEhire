@@ -1,8 +1,9 @@
 <html py:extends="master.xhtml" py:strip="True">
-    <head py:block="head" py:strip="True">
-      <title py:block="master_title">Form</title>
-      <script type="text/javascript">
-          function changePlaceHolder() {
+
+<head py:block="head" py:strip="True">
+    <title py:block="master_title">Form</title>
+    <script type="text/javascript">
+        function changePlaceHolder() {
               var interest = document.getElementById("pref").value;
               switch(interest) {
                   case "":
@@ -26,73 +27,76 @@
                   submit.classList.add("disabled");
               }
           }
-      </script>
-    </head>
+    </script>
+</head>
 
-    <body py:block="body" py:strip="True"><br/>
-      <div class="row">
+<body py:block="body" py:strip="True">
+    <div class="row">
         <div class="col-md-12">
-          <form action="${tg.url('/form/save')}"
-                method="post" accept-charset="UTF-8" class="form-horizontal">
-            <div class="form-group">
-              <label class="control-label col-sm-2">Nome</label>
-              <div class="col-sm-3">
-                <input type="text" class="form-control" required="required" name="first_name"/>
-              </div>
-              <label class="control-label col-sm-3">Cognome</label>
-              <div class="col-sm-3">
-                <input type="text" class="form-control" required="required" name="last_name"/>
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="control-label col-sm-2">Percorso</label>
-              <div class="col-sm-5">
-                <select class="form-control" required="required" name="cdl">
-                  <option py:for="c in courses" value="${c}">${c}</option>
-                </select>
-              </div>
-              <label class="control-label col-sm-1">Matricola</label>
-              <div class="col-sm-2">
-                <input type="text" class="form-control" required="required" placeholder="s123456" name="user_name"/>
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="control-label col-sm-2">Anno</label>
-              <div class="col-sm-2">
-                <select class="form-control" required="required" name="year">
-                  <option py:for="y in years" value="${y}">${y}</option>
-                </select>
-              </div>
-              <label class="control-label col-sm-4">Interesse</label>
-              <div class="col-sm-3">
-                <select id="pref" class="form-control" required="required"
-                        name="interest" onchange="changePlaceHolder()">
-                  <option py:for="i in interests" value="${i}">${i}</option>
-                </select>
-              </div>
-            </div>
-            <div class="form-group">
-              <br/>
-              <h4 class="textarea-label"><b>Lettera motivazionale</b></h4>
-              <textarea id="mlet" class="form-control textarea no-resize"
-                        rows="20" maxlength="2048" name="letter" required="required"/>
-            </div>
-            <div class="form-group">
-              <div class="checkbox textarea">
-                <label><input id="checkbox" type="checkbox" onclick="toggleSubmitButton()">Ho letto la sezione
-                  <a target="_blank" href="http://weeeopen.polito.it/entra-nel-team.html">Entra nel team</a>
-                  del vostro sito web e sono consapevole del fatto che dovrò sostenere un test di sicurezza
-                  per poter far parte del team</input>
-                </label>
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="col-sm-12 text-center">
-                <button id="submit-btn" type="submit" class="btn btn-lg btn-success disabled">Invia</button>
-              </div>
-            </div>
-          </form>
+            <form action="${tg.url('/form/save')}" method="post" accept-charset="UTF-8" class="form-horizontal form-nonstorto">
+                <div class="form-group">
+                    <label for="first_name" class="control-label col-sm-2">Nome</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" required="required" name="first_name" id="first_name"></input>
+                    </div>
+                    <label class="control-label col-sm-2" for="last_name">Cognome</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" required="required" name="last_name" id="last_name"></input>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="cdl">Percorso</label>
+                    <div class="col-sm-7">
+                        <select class="form-control" required="required" name="cdl" id="cdl">
+							<option py:for="c in courses" value="${c}">${c}</option>
+						</select>
+                    </div>
+                    <label class="control-label col-sm-1" for="year">Anno</label>
+                    <div class="col-sm-2">
+                        <select class="form-control" required="required" name="year" id="year">
+							<option py:for="y in years" value="${y}">${y}</option>
+						</select>
+                    </div>
+                </div>
+                <div class="form-group">
+					<label class="control-label col-sm-2" for="user_name">Matricola</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" required="required" placeholder="s123456" name="user_name" id="user_name"></input>
+                    </div>
+                    <label class="control-label col-sm-2" for="pref">Interesse</label>
+                    <div class="col-sm-4">
+                        <select id="pref" class="form-control" required="required" name="interest" onchange="changePlaceHolder()">
+							<option py:for="i in interests" value="${i}">${i}</option>
+						</select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-12" for="mlet">Lettera motivazionale</label>
+                    <div class="col-sm-12">
+						<textarea id="mlet" class="form-control resize-vertical" rows="20" maxlength="2048" name="letter" required="required"></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+					<div class="checkbox col-sm-12">
+                        <label class="control-label col-sm-12"><input id="checkbox" type="checkbox" onclick="toggleSubmitButton()">Ho letto la sezione
+							<a target="_blank" href="http://weeeopen.polito.it/entra-nel-team.html">Entra nel team</a>
+							del vostro sito web e sono consapevole del fatto che dovrò sostenere un test di sicurezza
+							per poter far parte del team</input>
+						</label>
+							<!-- TODO: JS for dual checkbox -->
+						<label class="control-label col-sm-12"><input id="checkbox" type="checkbox" onclick="toggleSubmitButton()">Ho letto e accetto la
+							<a target="_blank" href="/privacy">Privacy policy</a> (e terms of service) che non abbiamo ancora.</input>
+						</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-12 text-center">
+                        <button id="submit-btn" type="submit" class="btn btn-lg btn-success disabled">Invia</button>
+                    </div>
+                </div>
+            </form>
         </div>
-      </div>
-    </body>
+    </div>
+</body>
+
 </html>
