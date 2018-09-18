@@ -64,6 +64,11 @@
 	resize: vertical;
 }
 
+.header-logo {
+	border-bottom: 0.1em solid #00983a;
+	margin-bottom: 1.5em;
+}
+
 .status-waiting {
     height: 50px;
     line-height: 50px;
