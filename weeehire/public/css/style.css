@@ -87,6 +87,10 @@
     background-color: #FC6464;
 }
 
+.explain {
+	padding-top: 0.8em;
+}
+
 .grayout {
     opacity: 0.5;
 }
