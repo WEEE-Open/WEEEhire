@@ -84,11 +84,12 @@ class FormController(BaseController):
 
         years = [
             "",
-            "1",
-            "2",
-            "3",
-            "LM1",
-            "LM2"
+            "1 Triennale",
+            "2 Triennale",
+            "3 Triennale",
+            "1 Magistrale",
+            "2 Magistrale",
+            "Dottorato"
         ]
 
         interests = [
