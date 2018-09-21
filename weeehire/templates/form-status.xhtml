@@ -8,8 +8,8 @@
         <div class="col-md-12 text-center">
           <h1>Stato della richiesta:</h1>
           <h2 py:if="not user.published or user.status is None" class="status-waiting">Valutazione in corso</h2>
-          <h2 py:if="user.published and user.status is True" class="status-approved">Ammesso al colloquio</h2>
-          <h2 py:if="user.published and user.status is False" class="status-rejected">Respinto</h2>
+          <h2 py:if="user.published and user.status is True" class="status-approved">Ammesso/a al colloquio</h2>
+          <h2 py:if="user.published and user.status is False" class="status-rejected">Domanda respinta</h2>
         </div>
       </div>
     </body>
