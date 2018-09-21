@@ -23,7 +23,7 @@ def generate_password():
 def is_valid_sn(sn):
     if len(sn) != 7:
         return False
-    if sn[0] not in ['s', 'd']:
+    if sn[0].lower() not in ['s', 'd']:
         return False
     sn = sn[1:7]
     if not sn.isdigit():
@@ -44,42 +44,42 @@ class FormController(BaseController):
             flash(_('Matricola già in uso!'), 'error')
         courses = [
             "",
-			"Automotive Engineering",
-			"Communications And Computer Networks Engineering",
-			"Design E Comunicazione Visiva",
-			"Design Sistemico",
-			"Electronic And Communications Engineering",
-			"Ict For Smart Societies",
-			"Ingegneria Aerospaziale",
-			"Ingegneria Biomedica",
-			"Ingegneria Chimica E Alimentare",
-			"Ingegneria Chimica E Dei Processi Sostenibili",
-			"Ingegneria Civile / Civil Engineering",
-			"Ingegneria Dei Materiali",
-			"Ingegneria Del Cinema E Dei Mezzi Di Comunicazione",
-			"Ingegneria Del Petrolio E Mineraria",
-			"Ingegneria Dell'Autoveicolo",
-			"Ingegneria Della Produzione Industriale E Dell'Innovazione Tecnologica",
-			"Ingegneria Della Produzione Industriale",
-			"Ingegneria Edile",
-			"Ingegneria Elettrica",
-			"Ingegneria Elettronica / Electronic Engineering",
-			"Ingegneria Elettronica E Delle Comunicazioni",
-			"Ingegneria Energetica E Nucleare",
-			"Ingegneria Energetica",
-			"Ingegneria Fisica",
-			"Ingegneria Gestionale / Engineering And Management",
-			"Ingegneria Informatica / Computer Engineering",
-			"Ingegneria Matematica",
-			"Ingegneria Meccanica / Mechanical Engineering",
-			"Ingegneria Meccatronica / Mechatronic Engineering",
-			"Ingegneria Per L'Ambiente E Il Territorio",
-			"Matematica Per L'Ingegneria",
-			"Nanotechnologies For Icts / Nanotecnologie Per Le Ict",
-			"Petroleum And Mining Engineering",
-			"Physics Of Complex Systems / Fisica Dei Sistemi Complessi",
-			"Pianificazione Territoriale, Urbanistica E Paesaggistico-Ambientale",
-			"Architettura"
+            "Automotive Engineering",
+            "Communications And Computer Networks Engineering",
+            "Design E Comunicazione Visiva",
+            "Design Sistemico",
+            "Electronic And Communications Engineering",
+            "Ict For Smart Societies",
+            "Ingegneria Aerospaziale",
+            "Ingegneria Biomedica",
+            "Ingegneria Chimica E Alimentare",
+            "Ingegneria Chimica E Dei Processi Sostenibili",
+            "Ingegneria Civile / Civil Engineering",
+            "Ingegneria Dei Materiali",
+            "Ingegneria Del Cinema E Dei Mezzi Di Comunicazione",
+            "Ingegneria Del Petrolio E Mineraria",
+            "Ingegneria Dell'Autoveicolo",
+            "Ingegneria Della Produzione Industriale E Dell'Innovazione Tecnologica",
+            "Ingegneria Della Produzione Industriale",
+            "Ingegneria Edile",
+            "Ingegneria Elettrica",
+            "Ingegneria Elettronica / Electronic Engineering",
+            "Ingegneria Elettronica E Delle Comunicazioni",
+            "Ingegneria Energetica E Nucleare",
+            "Ingegneria Energetica",
+            "Ingegneria Fisica",
+            "Ingegneria Gestionale / Engineering And Management",
+            "Ingegneria Informatica / Computer Engineering",
+            "Ingegneria Matematica",
+            "Ingegneria Meccanica / Mechanical Engineering",
+            "Ingegneria Meccatronica / Mechatronic Engineering",
+            "Ingegneria Per L'Ambiente E Il Territorio",
+            "Matematica Per L'Ingegneria",
+            "Nanotechnologies For Icts / Nanotecnologie Per Le Ict",
+            "Petroleum And Mining Engineering",
+            "Physics Of Complex Systems / Fisica Dei Sistemi Complessi",
+            "Pianificazione Territoriale, Urbanistica E Paesaggistico-Ambientale",
+            "Architettura"
         ]
 
         years = [
@@ -115,9 +115,10 @@ class FormController(BaseController):
         passwd = generate_password()
 
         user = User()
-        user.user_name = kw['user_name']
-        user.email_address = kw['user_name'] + '@studenti.polito.it'
-        user.display_name = kw['user_name']
+        user.user_name = kw['user_name'].lower()
+        user.email_address = user.user_name + \
+                             ('@studenti.polito.it' if user.user_name[0] == 's' else '@polito.it')
+        user.display_name = user.user_name
         user.first_name = kw['first_name']
         user.last_name = kw['last_name']
         user.study_course = kw['cdl']
