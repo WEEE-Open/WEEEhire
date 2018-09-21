@@ -13,56 +13,60 @@
       </div>
       <div class="row">
         <div class="col-md-12">
-          <form class="form-horizontal">
+          <form class="form-horizontal form-nonstorto">
             <div class="form-group">
-              <label class="control-label col-sm-1">Nome</label>
-              <div class="col-sm-3">
+              <label class="control-label col-sm-2 col-md-1">Nome</label>
+              <div class="col-sm-4 col-md-5">
                 <input type="text" class="form-control" value="${user.first_name}"
                        disabled="disabled" readonly="readonly"/>
               </div>
-              <label class="control-label col-sm-2">Cognome</label>
-              <div class="col-sm-3">
+              <label class="control-label col-sm-2 col-md-1">Cognome</label>
+              <div class="col-sm-4 col-md-5">
                 <input type="text" class="form-control" value="${user.last_name}"
                        disabled="disabled" readonly="readonly"/>
               </div>
-              <label class="control-label col-sm-1">Matricola</label>
-              <div class="col-sm-2">
+			</div>
+			<div class="form-group">
+              <label class="control-label col-sm-2 col-md-1">Matricola</label>
+              <div class="col-sm-4 col-md-5">
                 <input type="text" class="form-control" value="${user.user_name}"
                        disabled="disabled" readonly="readonly"/>
               </div>
-            </div>
-            <div class="form-group">
-              <label class="control-label col-sm-1">Corso di Laurea</label>
-              <div class="col-sm-5">
-                <input type="text" class="form-control" value="${user.study_course}"
-                       disabled="disabled" readonly="readonly"/>
-              </div>
-              <label class="control-label col-sm-1">Anno</label>
-              <div class="col-sm-1">
-                <input type="text" class="form-control" value="${user.year}"
-                       disabled="disabled" readonly="readonly"/>
-              </div>
-              <label class="control-label col-sm-2">Interesse</label>
-              <div class="col-sm-2">
+              <label class="control-label col-sm-2 col-md-1">Interesse</label>
+              <div class="col-sm-4 col-md-5">
                 <input type="text" class="form-control" value="${user.interest}"
                        disabled="disabled" readonly="readonly"/>
               </div>
             </div>
             <div class="form-group">
-              <label class="control-label col-sm-2">Lettera motivazionale</label>
-              <textarea class="form-control no-resize col-sm-12" disabled="disabled"
+              <label class="control-label col-sm-2 col-md-1">Percorso</label>
+              <div class="col-sm-7 col-md-8">
+                <input type="text" class="form-control" value="${user.study_course}"
+                       disabled="disabled" readonly="readonly"/>
+              </div>
+              <label class="control-label col-sm-1">Anno</label>
+              <div class="col-sm-2 col-md-2">
+                <input type="text" class="form-control" value="${user.year}"
+                       disabled="disabled" readonly="readonly"/>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-12" for="mlet">Lettera motivazionale</label>
+              <div class="col-sm-12">
+			    <textarea id="mlet" class="form-control resize-vertical" name="letter" disabled="disabled"
                         readonly="readonly" rows="20">${user.letter}</textarea>
+			  </div>
             </div>
             <div class="form-group text-center">
               <a py:if="not user.published" type="button" class="bnt btn-lg btn-success"
                  href="${tg.url('/soviet/accept')}?uid=${user.user_id}">Approva</a>
               <a py:if="not user.published" type="button" class="bnt btn-lg btn-danger"
                  href="${tg.url('/soviet/reject')}?uid=${user.user_id}">Scarta</a>
+			  <a py:if="not user.published" type="button" class="btn btn-default"
+                 href="${tg.url('/soviet/clear')}?uid=${user.user_id}">Reset</a>
             </div>
           </form>
         </div>
-        <a py:if="not user.published" type="button" class="btn btn-default"
-                 href="${tg.url('/soviet/clear')}?uid=${user.user_id}">Reset</a>
       </div>
     </body>
 </html>
