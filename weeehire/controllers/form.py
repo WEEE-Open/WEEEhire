@@ -94,6 +94,7 @@ class FormController(BaseController):
 
         interests = [
             "",
+            "Riparazione Hardware",
             "Elettronica",
             "Sviluppo Software",
             "Sysadmin",
