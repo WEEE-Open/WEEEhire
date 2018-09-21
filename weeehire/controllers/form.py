@@ -148,7 +148,8 @@ class FormController(BaseController):
                                 )
                           )
         mailer.send(message)
-        flash(_("Candidatura inviata con successo!\nSalvati questo link (che per scaramanzia ti abbiamo anche inviato sulla mail del poli) tra i preferiti."))
+        flash(_(
+            "Candidatura inviata con successo!\nSalvati questo link (che per scaramanzia ti abbiamo anche inviato sulla mail del poli) tra i preferiti."))
         return redirect(status_link)
 
     @expose('weeehire.templates.form-status')
