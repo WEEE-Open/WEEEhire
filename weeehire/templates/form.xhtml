@@ -27,7 +27,7 @@
                     </div>
                     <label class="control-label col-sm-1 col-md-1" for="year">Anno</label>
                     <div class="col-sm-2 col-md-2">
-                        <select class="form-control" required="required" name="year" id="year">
+                        <select class="form-control" required="required" name="year" id="year" onchange="dottorandize()">
 							<option py:for="y in years" value="${y}">${y}</option>
 						</select>
                     </div>
@@ -123,26 +123,35 @@
 			if(explain !== null) {
 				explain.classList.remove('hidden');
 			}
-          }
-          changePlaceHolder();
+        }
+		changePlaceHolder();
 
-          var checkboxes = document.querySelectorAll(".mandatory-checkbox");
-          var submit = document.getElementById("submit-btn");
-          function toggleSubmitButton() {
-			  var all_checked = true;
-			  for(var i = 0; checkboxes.length > i; i++) {
-			      if(!checkboxes[i].checked) {
-			          all_checked = false;
-			          break;
-			      }
-			  }
-              if(all_checked) {
-                  submit.classList.remove("disabled");
-              } else {
-                  submit.classList.add("disabled");
-              }
-          }
-          toggleSubmitButton();
+		var checkboxes = document.querySelectorAll(".mandatory-checkbox");
+		var submit = document.getElementById("submit-btn");
+		function toggleSubmitButton() {
+			var all_checked = true;
+			for(var i = 0; checkboxes.length > i; i++) {
+				if(!checkboxes[i].checked) {
+					all_checked = false;
+					break;
+				}
+			}
+			if(all_checked) {
+				submit.classList.remove("disabled");
+			} else {
+				submit.classList.add("disabled");
+			}
+		}
+		toggleSubmitButton();
+
+		function dottorandize() {
+			if(document.getElementById('year').value === 'Dottorato') {
+				document.getElementById('user_name').placeholder = 'd123456';
+			} else {
+				document.getElementById('user_name').placeholder = 's123456';
+			}
+        }
+        dottorandize();
     </script>
 </body>
 
