@@ -99,6 +99,7 @@ class FormController(BaseController):
             "Sviluppo Software",
             "Sysadmin",
             "Design e comunicazione visiva",
+            "Design per il riuso",
             "Pubbliche relazioni",
             "Altro"
         ]
