@@ -90,3 +90,7 @@ class RootController(BaseController):
         """
         flash(_('Ciawa asd!'))
         return HTTPFound(location=came_from)
+
+    @expose('weeehire.templates.privacy')
+    def privacy(self):
+        return dict(page='privacy-page')
