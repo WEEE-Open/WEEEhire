@@ -19,12 +19,14 @@
 
     <body py:block="body" py:strip="True">
       <div class="row">
-        <div class="col-md-5">
+        <div class="col-md-7">
           <label class="control-label">Filtra per :</label>
+          <a class="btn btn-sm btn-default"  href="${tg.url('soviet')}">Vedi tutti</a>
           <a class="btn btn-sm btn-default" href="${tg.url('soviet?filter=awaiting')}">Da decidere</a>
           <a class="btn btn-sm btn-success" href="${tg.url('soviet?filter=approved')}">Approvati</a>
           <a class="btn btn-sm btn-danger"  href="${tg.url('soviet?filter=rejected')}">Scartati</a>
-          <a class="btn btn-sm btn-primary"  href="${tg.url('soviet')}">Vedi tutti</a>
+          <a class="btn btn-sm btn-primary" href="${tg.url('soviet?filter=contact')}">Da contattare</a>
+          <a class="btn btn-sm btn-success" href="${tg.url('soviet?filter=done')}">Contattati</a>
         </div>
         <div class="text-right">
           <a class="btn btn-primary text-right" onclick="ask_confirm_pub()">Pubblica risultati</a>

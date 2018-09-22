@@ -16,9 +16,20 @@ class SovietController(BaseController):
         if filter == 'awaiting':
             users = DBSession.query(User).filter(User.user_id != 1).filter_by(status=None).all()
         elif filter == 'approved':
-            users = DBSession.query(User).filter(User.user_id != 1).filter_by(status=True).all()
+            users = DBSession.query(User).filter(User.user_id != 1) \
+                .filter_by(status=True).filter_by(published=False).all()
         elif filter == 'rejected':
             users = DBSession.query(User).filter(User.user_id != 1).filter_by(status=False).all()
+        elif filter == 'contact':
+            users = DBSession.query(User).filter(User.user_id != 1) \
+                .filter_by(status=True) \
+                .filter_by(published=True) \
+                .filter_by(recruiter=None).all()
+        elif filter == 'done':
+            users = DBSession.query(User).filter(User.user_id != 1) \
+                .filter_by(status=True) \
+                .filter_by(published=True) \
+                .filter(User.recruiter).all()
         else:
             users = DBSession.query(User).filter(User.user_id != 1).all()
         return dict(page='soviet-index', users=users)
