@@ -32,6 +32,10 @@ class SovietController(BaseController):
             abort(404)
         return dict(page='soviet-read', user=user)
 
+    @expose('weeehire.templates.soviet-contact')
+    def contact(self):
+        return dict(page='soviet-contact')
+
     @expose()
     def accept(self, uid, **kw):
         if not uid:

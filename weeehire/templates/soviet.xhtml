@@ -51,14 +51,12 @@
                   <td py:if="user.published" class="grayout">${user.first_name}</td>
                   <td py:if="user.published" class="grayout">${user.last_name}</td>
                   <td py:if="user.published" class="grayout">${user.user_name}</td>
-                  <td py:if="user.published and user.status is None" class="grayout">
-                    <button class="btn btn-sm btn-default btn-static">Da decidere</button></td>
-                  <td py:if="user.published and user.status is True" class="grayout">
-                    <button class="btn btn-sm btn-success btn-static">Approvato</button></td>
+                  <td py:if="user.published and user.status is True">
+                    <a class="btn btn-sm btn-primary" href="${tg.url('/soviet/contact')}?uid=${user.user_id}">Contatta</a></td>
+                  <td py:if="user.published and user.recruiter" class="grayout">${user.recruiter}</td>
                   <td py:if="user.published and user.status is False" class="grayout">
                     <button class="btn btn-sm btn-danger btn-static">Scartato</button></td>
-                  <td py:if="user.published" class="grayout"><a class="btn btn-sm btn-primary"
-                         href="${tg.url('/soviet/read')}?uid=${user.user_id}">Apri</a></td>
+                  <td py:if="user.published" class="grayout"><a class="btn btn-sm btn-primary" href="${tg.url('/soviet/read')}?uid=${user.user_id}">Apri</a></td>
                   <td py:if="user.published" class="grayout">
                     <a class="btn btn-sm btn-danger" onclick="ask_confirm_del(${user.user_id});">${h.icon('trash')}</a></td>
                   <td py:if="not user.published">${user.user_id}</td>

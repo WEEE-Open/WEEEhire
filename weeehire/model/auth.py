@@ -96,6 +96,7 @@ class User(DeclarativeBase):
     compiled = Column(DateTime, default=None)
     status = Column(Boolean(), default=None)
     published = Column(Boolean(), default=False)
+    recruiter = Column(Unicode(32), default=None)
     token = Column(Unicode(32))
     _password = Column('password', Unicode(128))
     created = Column(DateTime, default=None)
