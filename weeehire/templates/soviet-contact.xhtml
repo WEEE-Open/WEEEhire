@@ -13,7 +13,7 @@
                     <div class="col-sm-10">
                         <select class="form-control" required="required" name="recruiter" id="recruiter">
                             <option selected="selected" disabled="disabled"></option>
-							<option py:for="r in recruiters" value="${r['name']}" data-tg="${r['telegram']}" onchange="templatize()">${r['name']} (${r['telegram']})</option>
+							<option py:for="r in recruiters" value="${r.name}" data-tg="${r.telegram}" onchange="templatize()">${r.name} (${r.telegram})</option>
 						</select>
                     </div>
                 </div>

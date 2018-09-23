@@ -5,7 +5,7 @@ from tg import expose, flash, redirect, abort
 from tg import predicates, request
 from tgext.mailer import get_mailer, Message
 from weeehire.lib.base import BaseController
-from weeehire.model import DBSession, User
+from weeehire.model import DBSession, User, Recruiter
 
 
 class SovietController(BaseController):
@@ -95,13 +95,7 @@ class SovietController(BaseController):
         if not user:
             abort(404)
 
-        recruiters = [
-            {"name": "Emanuele Guido", "telegram": "@Gu1_bot"},
-            {"name": "Tommaso Marinelli", "telegram": "@zubattino_caro"},
-            {"name": "Stefano Mendola", "telegram": "@Hyd3L"},
-            {"name": "Ludovico Pavesi", "telegram": "@quel_tale"},
-            {"name": "Mattia Todero", "telegram": "@Travelskid"}
-        ]
+        recruiters = DBSession.query(Recruiter).all()
 
         return dict(page='soviet-contact', user=user, recruiters=recruiters)
 
