@@ -96,7 +96,6 @@ class SovietController(BaseController):
             abort(404)
 
         recruiters = [
-            {"name": ""},
             {"name": "Emanuele Guido", "telegram": "@Gu1_bot"},
             {"name": "Tommaso Marinelli", "telegram": "@zubattino_caro"},
             {"name": "Stefano Mendola", "telegram": "@Hyd3L"},

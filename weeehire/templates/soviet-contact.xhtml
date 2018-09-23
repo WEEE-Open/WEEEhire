@@ -1,18 +1,19 @@
 <html py:extends="master.xhtml" py:strip="True">
     <head py:block="head" py:strip="True">
-        <title py:block="master_title">Contact</title>
+        <title py:block="master_title">Contact ${user.first_name} ${user.last_name}, ${user.email_address}</title>
     </head>
 
 <body py:block="body" py:strip="True">
     <div class="row">
         <div class="col-md-12">
-            <form action="${tg.url('/soviet/send_email')}" method="post" accept-charset="UTF-8" class="form-horizontal form-nonstorto">
+            <form id="the-great-form" action="${tg.url('/soviet/send_email')}" method="post" accept-charset="UTF-8" class="form-horizontal form-nonstorto" data-firstname="${user.first_name}" data-lastname="${user.last_name}">
                 <input type="hidden" name="user_id" value="${user.user_id}"/>
                 <div class="form-group">
-                    <label class="control-label col-sm-1" for="recruiter">Reclutatore</label>
-                    <div class="col-sm-2 col-md-3">
+                    <label class="control-label col-sm-2" for="recruiter">Reclutatore</label>
+                    <div class="col-sm-10">
                         <select class="form-control" required="required" name="recruiter" id="recruiter">
-							<option py:for="r in recruiters" value="${r['name']}">${r['name']}</option>
+                            <option selected="selected" disabled="disabled"></option>
+							<option py:for="r in recruiters" value="${r['name']}" data-tg="${r['telegram']}" onchange="templatize()">${r['name']} (${r['telegram']})</option>
 						</select>
                     </div>
                 </div>
@@ -30,5 +31,42 @@
             </form>
         </div>
     </div>
+    <script>
+    // <![CDATA[
+    let recruiter = document.getElementById('recruiter');
+    let mail = document.getElementById('mail');
+    let firstname = document.getElementById('the-great-form').dataset.firstname;
+
+    function templatize(event) {
+        if(recruiter.selectedIndex < 0) {
+            mail.value = '';
+            return;
+        }
+
+        let name = recruiter.value;
+        let telegram = recruiter.options[recruiter.selectedIndex].dataset.tg;
+        //let recruiter_email = 'questo_va_preso_dal_db@e_dal_dataset.com';
+        mail.value = `Ciao $${firstname},
+
+Ci fa piacere il tuo interesse per il nostro progetto!
+
+Abbiamo valutato le tue risposte al questionario e ci sembri un buon candidato:
+...
+...
+...
+
+A questo punto vorremmo scambiare due parole in maniera più diretta con te, sia per discutere delle attività che potresti svolgere nel team e per chiarire gli aspetti e organizzativi, sia in modo che tu possa farci domande, se vuoi.
+
+Poiché utilizziamo Telegram per coordinare tutte le attività del team, ti chiedo di contattarmi lì: il mio username è $${telegram}, scrivimi pure.
+
+A presto,
+$${name}
+Team WEEE Open
+`;
+    }
+    recruiter.addEventListener('change', templatize.bind(null));
+    templatize();
+    // ]]>
+    </script>
 </body>
 </html>
