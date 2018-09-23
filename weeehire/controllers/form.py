@@ -37,11 +37,7 @@ class FormController(BaseController):
         return dict(page='form-index')
 
     @expose('weeehire.templates.form')
-    def edit(self, error=None, **kw):
-        if error == 'm_invalid':
-            flash(_('Caro utonto, inserisci il tuo numero di matricola nel formato indicato.'), 'error')
-        elif error == 'm_used':
-            flash(_('Matricola già in uso!'), 'error')
+    def edit(self, **kw):
         courses = [
             "",
             "Automotive Engineering",
@@ -108,10 +104,12 @@ class FormController(BaseController):
     @expose()
     def save(self, **kw):
         if not is_valid_sn(kw['user_name']):
-            return redirect('/form/edit?error=m_invalid')
+            flash(_('Caro utonto, inserisci il tuo numero di matricola nel formato indicato.'), 'error')
+            return redirect('/form/edit')
         user = User.by_user_name(kw['user_name'])
         if user:
-            return redirect('/form/edit?error=m_used')
+            flash(_('Matricola già in uso!'), 'error')
+            return redirect('/form/edit')
 
         token = generate_password()
         passwd = generate_password()
