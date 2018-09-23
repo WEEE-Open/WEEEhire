@@ -4,13 +4,20 @@
     </head>
 
     <body py:block="body" py:strip="True">
-      <div class="row">
-        <div class="col-md-12 text-center">
-          <h1>Stato della richiesta:</h1>
-          <h2 py:if="not user.published or user.status is None" class="status-waiting">Valutazione in corso</h2>
-          <h2 py:if="user.published and user.status is True" class="status-approved">Ammesso/a al colloquio</h2>
-          <h2 py:if="user.published and user.status is False" class="status-rejected">Domanda respinta</h2>
-        </div>
+      <div class="row col-md-12 text-center">
+		<h1>Stato della richiesta</h1>
+		<h2 py:if="not user.published or user.status is None" class="status-waiting">Valutazione in corso</h2>
+		<h2 py:if="user.published and user.status is True" class="status-approved">Ammesso/a al colloquio</h2>
+		<h2 py:if="user.published and user.status is False" class="status-rejected">Domanda respinta</h2>
+		<p py:if="not user.published or user.status is None">Salva questa pagina nei preferiti e torna a controllare lo stato più avanti.</p>
+		<p py:if="user.published and user.status is True">Ti abbiamo mandato un'email per informarti, ma se non fosse arrivata per favore contattata Nome Cognome (<a href="https://t.me/nome_cognome">@nome_cognome</a>) su Telegram per passare al colloquio.</p>
+      </div>
+      <div class="row col-md-12 text-center space-above">
+		 <button id="remove" class="btn btn-danger">Elimina candidatura</button>
+		 <button id="download" class="btn">Scarica tutti i miei dati</button>
+      </div>
+      <div class="row col-md-12 text-center">
+		<small>Visto come siamo GDPR-compliant?</small>
       </div>
     </body>
 </html>

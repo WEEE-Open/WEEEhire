@@ -70,21 +70,31 @@
 }
 
 .status-waiting {
-    height: 50px;
-    line-height: 50px;
+	font-size: 2.2em;
+	height: 2.2em;
+	line-height: 2.2em;
+	border-radius: 0.2em;
     background-color: #C7E1F3;
 }
 
 .status-approved {
-    height: 50px;
-    line-height: 50px;
+	font-size: 2.2em;
+	height: 2.2em;
+	line-height: 2.2em;
+	border-radius: 0.2em;
 	background-color: #7BFC91;
 }
 
 .status-rejected {
-    height: 50px;
-    line-height: 50px;
+	font-size: 2.2em;
+	height: 2.2em;
+	line-height: 2.2em;
+	border-radius: 0.2em;
     background-color: #FC6464;
+}
+
+.space-above {
+	margin-top: 2em;
 }
 
 .explain {
