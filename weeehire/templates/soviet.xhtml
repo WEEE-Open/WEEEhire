@@ -1,20 +1,6 @@
 <html py:extends="master.xhtml" py:strip="True">
     <head py:block="head" py:strip="True">
         <title py:block="master_title">Soviet</title>
-        <script type="text/javascript">
-            function ask_confirm_del(id) {
-                if(confirm("Sei sicuro?")) {
-                    var endpoint = "${tg.url('/soviet/delete?uid=')}"+String(id);
-                    window.location.replace(endpoint);
-                }
-            }
-            function ask_confirm_pub() {
-                if(confirm("Sei sicuro di voler pubblicare i risultati?")) {
-                    var endpoint = "${tg.url('/soviet/publish')}";
-                    window.location.replace(endpoint);
-                }
-            }
-		</script>
     </head>
 
     <body py:block="body" py:strip="True">
@@ -53,9 +39,9 @@
                   <td py:if="user.published" class="grayout">${user.first_name}</td>
                   <td py:if="user.published" class="grayout">${user.last_name}</td>
                   <td py:if="user.published" class="grayout">${user.user_name}</td>
-                  <td py:if="user.published and user.status is True">
+                  <td py:if="user.published and user.status is True and not user.recruiter">
                     <a class="btn btn-sm btn-primary" href="${tg.url('/soviet/contact')}?uid=${user.user_id}">Contatta</a></td>
-                  <td py:if="user.published and user.recruiter" class="grayout">${user.recruiter}</td>
+                  <td py:if="user.published and user.recruiter" class="grayout">Contattato (${user.recruiter})</td>
                   <td py:if="user.published and user.status is False" class="grayout">
                     <button class="btn btn-sm btn-danger btn-static">Scartato</button></td>
                   <td py:if="user.published" class="grayout"><a class="btn btn-sm btn-primary" href="${tg.url('/soviet/read')}?uid=${user.user_id}">Apri</a></td>
@@ -78,5 +64,19 @@
           </div>
         </div>
       </div>
+      <script type="text/javascript">
+          function ask_confirm_del(id) {
+              if(confirm("Sei sicuro?")) {
+                  var endpoint = "${tg.url('/soviet/delete?uid=')}"+String(id);
+                  window.location.replace(endpoint);
+              }
+          }
+          function ask_confirm_pub() {
+              if(confirm("Sei sicuro di voler pubblicare i risultati?")) {
+                  var endpoint = "${tg.url('/soviet/publish')}";
+                  window.location.replace(endpoint);
+              }
+          }
+      </script>
     </body>
 </html>

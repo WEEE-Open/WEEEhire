@@ -43,10 +43,6 @@ class SovietController(BaseController):
             abort(404)
         return dict(page='soviet-read', user=user)
 
-    @expose('weeehire.templates.soviet-contact')
-    def contact(self):
-        return dict(page='soviet-contact')
-
     @expose()
     def accept(self, uid, **kw):
         if not uid:
@@ -84,29 +80,46 @@ class SovietController(BaseController):
 
         for i in range(len(approved_users)):
             approved_users[i].published = True
-            approved_users[i] = approved_users[i].email_address
 
         for i in range(len(rejected_users)):
             rejected_users[i].published = True
-            rejected_users[i] = rejected_users[i].email_address
-
-        mailer = get_mailer(request)
-        if approved_users:
-            message = Message(subject="Reclutamento WEEE Open",
-                              sender="weeeopen@yandex.ru",
-                              bcc=approved_users,
-                              body="Ciao, sei ammesso al colloquio!\n\nTeam WEEE Open"
-                              )
-            mailer.send(message)
-        if rejected_users:
-            message = Message(subject="Reclutamento WEEE Open",
-                              sender="weeeopen@yandex.ru",
-                              bcc=rejected_users,
-                              body="Ciao, sei stato scartato!\n\nTeam WEEE Open"
-                              )
-            mailer.send(message)
 
         flash('Risultati pubblicati correttamente')
+        return redirect('/soviet')
+
+    @expose('weeehire.templates.soviet-contact')
+    def contact(self, uid):
+        if not uid:
+            abort(404)
+        user = User.by_user_id(uid)
+        if not user:
+            abort(404)
+
+        recruiters = [
+            {"name": ""},
+            {"name": "Emanuele Guido", "telegram": "@Gu1_bot"},
+            {"name": "Tommaso Marinelli", "telegram": "@zubattino_caro"},
+            {"name": "Stefano Mendola", "telegram": "@Hyd3L"},
+            {"name": "Ludovico Pavesi", "telegram": "@quel_tale"},
+            {"name": "Mattia Todero", "telegram": "@Travelskid"}
+        ]
+
+        return dict(page='soviet-contact', user=user, recruiters=recruiters)
+
+    @expose()
+    def send_email(self, **kw):
+        user = User.by_user_id(kw['user_id'])
+        if user.recruiter:  # This line avoids us to pestarci i piedi a vicenda asd
+            abort(403)
+        user.recruiter = kw['recruiter']
+        mailer = get_mailer(request)
+        message = Message(subject="Reclutamento WEEE Open",
+                          sender="weeeopen@yandex.ru",
+                          recipients=[user.email_address],
+                          body=kw['mail']
+                          )
+        mailer.send(message)
+        flash("Messaggio inviato")
         return redirect('/soviet')
 
     @expose()

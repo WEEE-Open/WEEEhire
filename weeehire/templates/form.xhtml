@@ -25,7 +25,7 @@
                     </div>
                     <label class="control-label col-sm-2 col-md-1" for="pref">Interesse</label>
                     <div class="col-sm-4 col-md-5">
-                        <select id="pref" class="form-control" required="required" name="interest" onchange="changePlaceHolder()">
+                        <select id="pref" class="form-control" required="required" name="interest" onchange="updateHints()">
 							<option py:for="i in interests" value="${i}">${i}</option>
 						</select>
                     </div>
@@ -130,7 +130,7 @@
         <script type="text/javascript">
         var interest = document.getElementById("pref");
         var explanations = document.getElementById('mlet-explain').children;
-        function changePlaceHolder() {
+        function updateHints() {
 			for(var i = 0; explanations.length > i; i++) {
 				explanations[i].classList.add('hidden');
 			}
@@ -139,7 +139,7 @@
 				explain.classList.remove('hidden');
 			}
         }
-		changePlaceHolder();
+		updateHints();
 
 		var checkboxes = document.querySelectorAll(".mandatory-checkbox");
 		var submit = document.getElementById("submit-btn");
