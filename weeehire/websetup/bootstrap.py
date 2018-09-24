@@ -37,6 +37,11 @@ def bootstrap(command, conf, vars):
 
         model.DBSession.add(p)
 
+        r = model.Recruiter()
+        r.name = "Hyd3L"
+        r.telegram = "@Hyd3L"
+        model.DBSession.add(r)
+
         model.DBSession.flush()
         transaction.commit()
     except IntegrityError:

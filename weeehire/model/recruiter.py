@@ -11,9 +11,12 @@ from weeehire.model import DeclarativeBase, metadata, DBSession
 class Recruiter(DeclarativeBase):
     __tablename__ = 'recruiters'
 
-    uid = Column(Integer, primary_key=True, autoincrement=True)
+    id = Column(Integer, primary_key=True, autoincrement=True)
     name = Column(Unicode(32), nullable=False)
-    telegram = Column(Unicode(32), nullable=False)
+    telegram = Column(Unicode(32), unique=True, nullable=False)
 
+    @classmethod
+    def by_telegram(cls, telegram):
+        return DBSession.query(cls).filter_by(telegram=telegram).first()
 
 __all__ = ['Recruiter']

@@ -41,7 +41,7 @@
                   <td py:if="user.published" class="grayout">${user.user_name}</td>
                   <td py:if="user.published and user.status is True and not user.recruiter">
                     <a class="btn btn-sm btn-primary" href="${tg.url('/soviet/contact')}?uid=${user.user_id}">Contatta</a></td>
-                  <td py:if="user.published and user.recruiter" class="grayout">Contattato (${user.recruiter})</td>
+                  <td py:if="user.published and user.recruiter" class="grayout">Contattato (${user.recruiter.name})</td>
                   <td py:if="user.published and user.status is False" class="grayout">
                     <button class="btn btn-sm btn-danger btn-static">Scartato</button></td>
                   <td py:if="user.published" class="grayout"><a class="btn btn-sm btn-primary" href="${tg.url('/soviet/read')}?uid=${user.user_id}">Apri</a></td>

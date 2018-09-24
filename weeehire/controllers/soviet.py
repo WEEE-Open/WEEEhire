@@ -104,7 +104,8 @@ class SovietController(BaseController):
         user = User.by_user_id(kw['user_id'])
         if user.recruiter:  # This line avoids us to pestarci i piedi a vicenda asd
             abort(403)
-        user.recruiter = kw['recruiter']
+        recruiter = Recruiter.by_telegram(kw['recruiter'])
+        user.recruiter_id = recruiter.id
         mailer = get_mailer(request)
         message = Message(subject="Reclutamento WEEE Open",
                           sender="weeeopen@yandex.ru",

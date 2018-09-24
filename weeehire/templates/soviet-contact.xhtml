@@ -13,7 +13,7 @@
                     <div class="col-sm-10">
                         <select class="form-control" required="required" name="recruiter" id="recruiter">
                             <option selected="selected" disabled="disabled"></option>
-							<option py:for="r in recruiters" value="${r.name}" data-tg="${r.telegram}" onchange="templatize()">${r.name} (${r.telegram})</option>
+							<option py:for="r in recruiters" value="${r.telegram}" data-name="${r.name}" onchange="templatize()">${r.telegram}</option>
 						</select>
                     </div>
                 </div>
@@ -43,8 +43,8 @@
             return;
         }
 
-        let name = recruiter.value;
-        let telegram = recruiter.options[recruiter.selectedIndex].dataset.tg;
+        let name = recruiter.options[recruiter.selectedIndex].dataset.name;
+        let telegram = recruiter.value;
         //let recruiter_email = 'questo_va_preso_dal_db@e_dal_dataset.com';
         mail.value = `Ciao $${firstname},
 

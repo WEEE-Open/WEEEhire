@@ -15,7 +15,7 @@ __all__ = ['User', 'Group', 'Permission']
 
 from sqlalchemy import Table, ForeignKey, Column
 from sqlalchemy.types import Unicode, Integer, DateTime, Boolean
-from sqlalchemy.orm import relation, synonym
+from sqlalchemy.orm import relation, synonym, relationship
 
 from weeehire.model import DeclarativeBase, metadata, DBSession
 
@@ -96,7 +96,8 @@ class User(DeclarativeBase):
     compiled = Column(DateTime, default=None)
     status = Column(Boolean(), default=None)
     published = Column(Boolean(), default=False)
-    recruiter = Column(Unicode(32), default=None)
+    recruiter_id = Column(Integer, ForeignKey('recruiters.id'))
+    recruiter = relationship('Recruiter')
     token = Column(Unicode(32))
     _password = Column('password', Unicode(128))
     created = Column(DateTime, default=None)
