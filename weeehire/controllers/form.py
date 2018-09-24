@@ -159,5 +159,18 @@ class FormController(BaseController):
         user = User.by_user_name(m)
         if user:
             if user.token == auth:
-                return dict(page='form-status', user=user)
+                deletion_link = url("/form/delete?m=") + user.user_name + "&auth=" + user.token
+                return dict(page='form-status', user=user, deletion_link=deletion_link)
+        abort(404)
+
+    @expose()
+    def delete(self, m, auth, **kw):
+        if not m or not auth:
+            abort(404)
+        user = User.by_user_name(m)
+        if user:
+            if user.token == auth:
+                DBSession.delete(user)
+                flash(_('Tutti i tuoi dati sono stati cancellati!'))
+                return redirect('/')
         abort(404)
