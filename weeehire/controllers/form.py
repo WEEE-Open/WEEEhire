@@ -139,12 +139,17 @@ class FormController(BaseController):
         message = Message(subject="Reclutamento WEEE Open",
                           sender="weeeopen@yandex.ru",
                           recipients=[user.email_address],
-                          body=("Ciao!\n\nAbbiamo ricevuto la tua candidatura, di seguito troverai\n" +
-                                "il link che ti permetterà di verificare lo stato della tua domanda.\n\n" +
-                                status_link +
-                                "\n\nNon è necessario refreshare la pagina come un forsennato!\n" +
-                                "Una mail automatica ti avviserà quando avremo preso una decisione.\n" +
-                                "Ciawa! asd\n\nTeam WEEE Open"
+                          body=("""Ciao!
+
+Abbiamo ricevuto la tua candidatura per il team WEEE Open, questa è la pagina da cui potrai verificare lo stato della tua domanda:
+
+{status_link}
+
+Se la domanda sarà approvata, riceverai un'email sempre a questo indirizzo con scritto chi contattare per passare al colloquio. Le stesse informazioni saranno visibili anche alla pagina di cui sopra.
+
+Buona fortuna ;)
+Il software WEEEHire per conto del team WEEE Open
+"""
                                 )
                           )
         mailer.send(message)
