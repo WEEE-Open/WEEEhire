@@ -20,6 +20,7 @@
 		<img src="${tg.url('/img/logo325.png')}"
 					srcset="${tg.url('/img/logo325.png')} 325w, ${tg.url('/img/logo650.png')} 650w, ${tg.url('/img/logo974.png')} 974w, ${tg.url('/img/logo3248.png')} 3248w"
 			sizes="(min-width: 768px) 350px, (min-width: 350px) 300px, 150px" alt="WEEE Open"/></a>
+        <a py:if="request.identity" href="/logout_handler" class="pull-right"><br/>Logout</a>
 	</div>
   <div class="container">
     <!-- Flash messages -->
@@ -30,7 +31,6 @@
         </div>
       </div>
     </py:with>
-		<a href="/logout" class="btn btn-default pull-right">Logout</a>
     <!-- Main included content -->
     <py:block name="body"></py:block>
   </div>
