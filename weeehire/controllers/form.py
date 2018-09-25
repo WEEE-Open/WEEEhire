@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Form controller module"""
 
-from tg import expose, redirect, request, flash, url, abort
+from tg import expose, redirect, response, request, flash, url, abort
 from tg.i18n import ugettext as _
 
 from weeehire.lib.base import BaseController
@@ -10,6 +10,7 @@ from tgext.mailer import get_mailer, Message
 from datetime import datetime
 from string import ascii_letters, digits
 from random import randint
+from json import dumps
 
 
 def generate_password():
@@ -165,7 +166,32 @@ Il software WEEEHire per conto del team WEEE Open
         if user:
             if user.token == auth:
                 deletion_link = url("/form/delete?m=") + user.user_name + "&auth=" + user.token
-                return dict(page='form-status', user=user, deletion_link=deletion_link)
+                gdpr_link = url("/form/gdpr_data?m=") + user.user_name + "&auth=" + user.token
+                return dict(page='form-status', user=user, deletion_link=deletion_link, gdpr_link=gdpr_link)
+        abort(404)
+
+    @expose('json', content_type="application/json")
+    def gdpr_data(self, m, auth, **kw):
+        if not m or not auth:
+            abort(404)
+        user = User.by_user_name(m)
+        if user:
+            if user.token == auth:
+                response.headerlist.append(('Content-Disposition',
+                                            str('attachment;filename=%s-gdpr-data.json' % user.user_name)))
+                user_dict = dict(
+                    id=user.user_id,
+                    username=user.user_name,
+                    auth_token=user.token,
+                    email=user.email_address,
+                    first_name=user.first_name,
+                    last_name=user.last_name,
+                    study_course=user.study_course,
+                    study_year=user.year,
+                    interest=user.interest,
+                    motivation_letter=user.letter
+                )
+                return dumps(user_dict, indent=2)
         abort(404)
 
     @expose()
