@@ -144,7 +144,7 @@ class FormController(BaseController):
 
 Abbiamo ricevuto la tua candidatura per il team WEEE Open, questa è la pagina da cui potrai verificare lo stato della tua domanda:
 
-{status_link}
+${status_link}
 
 Se la domanda sarà approvata, riceverai un'email sempre a questo indirizzo con scritto chi contattare per passare al colloquio. Le stesse informazioni saranno visibili anche alla pagina di cui sopra.
 
