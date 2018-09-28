@@ -6,6 +6,7 @@ from tg import predicates, request
 from tgext.mailer import get_mailer, Message
 from weeehire.lib.base import BaseController
 from weeehire.model import DBSession, User, Recruiter
+from os import environ as env
 
 
 class SovietController(BaseController):
@@ -106,9 +107,10 @@ class SovietController(BaseController):
             abort(403)
         recruiter = Recruiter.by_telegram(kw['recruiter'])
         user.recruiter_id = recruiter.id
+        noreply_email = str(env['NOREPLY_EMAIL'])
         mailer = get_mailer(request)
         message = Message(subject="Reclutamento WEEE Open",
-                          sender="weeeopen@yandex.ru",
+                          sender=noreply_email,
                           recipients=[user.email_address],
                           body=kw['mail']
                           )

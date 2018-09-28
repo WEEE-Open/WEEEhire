@@ -7,6 +7,7 @@ from tg.i18n import ugettext as _
 from weeehire.lib.base import BaseController
 from weeehire.model import DBSession, User
 from tgext.mailer import get_mailer, Message
+from os import environ as env
 from datetime import datetime
 from string import ascii_letters, digits
 from random import randint
@@ -136,9 +137,10 @@ class FormController(BaseController):
         status_link = url('/form/status?m=', None, True) + user.user_name
         status_link += '&auth=' + token
 
+        noreply_email = str(env['NOREPLY_EMAIL'])
         mailer = get_mailer(request)
         message = Message(subject="Reclutamento WEEE Open",
-                          sender="weeeopen@yandex.ru",
+                          sender=noreply_email,
                           recipients=[user.email_address],
                           body=("""Ciao!
 
