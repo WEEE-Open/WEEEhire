@@ -94,3 +94,7 @@ class RootController(BaseController):
     @expose('weeehire.templates.privacy')
     def privacy(self):
         return dict(page='privacy-page')
+
+    @expose('weeehire.templates.server')
+    def server(self):
+        return dict(page='server-img')
