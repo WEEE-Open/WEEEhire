@@ -105,6 +105,7 @@ venv.bak/
 
 # SQLite shit
 devdata.db
+weeehire.db
 
 # PyCharm shit
 .idea
@@ -115,3 +116,6 @@ production.ini
 
 # Apache script
 app.wsgi
+
+# Scripts dir
+scripts/
