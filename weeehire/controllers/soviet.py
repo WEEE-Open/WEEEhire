@@ -5,7 +5,7 @@ from tg import expose, flash, redirect, abort
 from tg import predicates, request
 from tgext.mailer import get_mailer, Message
 from weeehire.lib.base import BaseController
-from weeehire.model import DBSession, User, Recruiter
+from weeehire.model import DBSession, User, Recruiter, Option
 
 
 class SovietController(BaseController):
@@ -106,7 +106,7 @@ class SovietController(BaseController):
             abort(403)
         recruiter = Recruiter.by_telegram(kw['recruiter'])
         user.recruiter_id = recruiter.id
-        noreply_email = User.by_user_id(1).email_address
+        noreply_email = Option.get_value('no_reply_email')
         mailer = get_mailer(request)
         message = Message(subject="Reclutamento WEEE Open",
                           sender=noreply_email,

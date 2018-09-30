@@ -5,7 +5,7 @@ from tg import expose, redirect, response, request, flash, url, abort
 from tg.i18n import ugettext as _
 
 from weeehire.lib.base import BaseController
-from weeehire.model import DBSession, User
+from weeehire.model import DBSession, User, Option
 from tgext.mailer import get_mailer, Message
 from datetime import datetime
 from string import ascii_letters, digits
@@ -136,7 +136,7 @@ class FormController(BaseController):
         status_link = url('/form/status?m=', None, True) + user.user_name
         status_link += '&auth=' + token
 
-        noreply_email = User.by_user_id(1).email_address
+        noreply_email = Option.get_value('no_reply_email')
         mailer = get_mailer(request)
         message = Message(subject="Reclutamento WEEE Open",
                           sender=noreply_email,

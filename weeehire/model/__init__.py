@@ -60,5 +60,6 @@ def init_model(engine):
 # Import your model modules here.
 from weeehire.model.auth import User, Group, Permission
 from weeehire.model.recruiter import Recruiter
+from weeehire.model.option import Option
 
-__all__ = ('User', 'Group', 'Permission', 'Recruiter')
+__all__ = ('User', 'Group', 'Permission', 'Recruiter', 'Option')

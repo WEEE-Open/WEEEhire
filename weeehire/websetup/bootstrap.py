@@ -37,10 +37,10 @@ def bootstrap(command, conf, vars):
 
         model.DBSession.add(p)
 
-        r = model.Recruiter()
-        r.name = "Hyd3L"
-        r.telegram = "@Hyd3L"
-        model.DBSession.add(r)
+        o = model.Option()
+        o.key = "no_reply_email"
+        o.value = env['NO_REPLY_EMAIL']
+        model.DBSession.add(o)
 
         model.DBSession.flush()
         transaction.commit()
