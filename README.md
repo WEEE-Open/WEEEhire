@@ -55,6 +55,7 @@ This web-application is powered by the [TurboGears](http://www.turbogears.org) P
 To update .po files with new strings:
 
 ```Shell
+python setup.py extract_messages
 python setup.py update_catalog
 ```
 
