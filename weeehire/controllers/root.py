@@ -52,13 +52,13 @@ class RootController(BaseController):
             return redirect('/')
         if failure is not None:
             if failure == 'user-not-found' or failure == 'invalid-password':
-                flash(_('Username o password non validi'), 'error')
+                flash(_('Username e/o password non validi'), 'error')
             elif failure == 'user-not-verified':
                 flash(_('Utente non verificato'), 'error')
 
         login_counter = request.environ.get('repoze.who.logins', 0)
         if failure is None and login_counter > 0:
-            flash(_('Wrong credentials'), 'warning')
+            flash(_('Username e/o password non validi'), 'error')
 
         return dict(page='login', login_counter=str(login_counter),
                     came_from=came_from, login=login)
