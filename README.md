@@ -29,6 +29,7 @@ mv /path/to/development.ini /path/to/weeehire
 python3 -m venv venv
 
 # Edit the venv/bin/activate script and append these lines
+# Do this only in developement, they're necessary to initially seed the database
 export ADMIN_USERNAME='admin'
 export ADMIN_EMAIL='admin@example.com'
 export ADMIN_PASS='ultrasecurepassword'
@@ -48,3 +49,13 @@ gearbox serve --reload --debug
 ```
 
 This web-application is powered by the [TurboGears](http://www.turbogears.org) Python web framework.
+
+## Translations
+
+To generate a new .po file, use:
+
+```Shell
+xgettext --from-code=UTF-8 -o weeehire/i18n/en/LC_MESSAGES/weeehire_new.po weeehire/controllers/*.py weeehire/model/*.py weeehire/templates/*.xhtml*
+msgmerge --backup=off --update weeehire/i18n/en/LC_MESSAGES/weeehire.po weeehire/i18n/en/LC_MESSAGES/weeehire_new.po
+mv weeehire/i18n/en/LC_MESSAGES/weeehire_new.po weeehire/i18n/en/LC_MESSAGES/weeehire.po
+```

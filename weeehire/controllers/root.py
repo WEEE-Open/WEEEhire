@@ -88,7 +88,7 @@ class RootController(BaseController):
         goodbye as well.
 
         """
-        flash(_('Ciawa asd!'))
+        flash('Ciawa asd!')
         return HTTPFound(location=came_from)
 
     @expose('weeehire.templates.privacy')

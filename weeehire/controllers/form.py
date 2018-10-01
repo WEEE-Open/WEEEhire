@@ -105,7 +105,7 @@ class FormController(BaseController):
     @expose()
     def save(self, **kw):
         if not is_valid_sn(kw['user_name']):
-            flash(_('Caro utonto, inserisci il tuo numero di matricola nel formato indicato.'), 'error')
+            flash(_('Inserisci il tuo numero di matricola nel formato indicato.'), 'error')
             return redirect('/form/edit')
         user = User.by_user_name(kw['user_name'])
         if user:
@@ -138,10 +138,10 @@ class FormController(BaseController):
 
         noreply_email = Option.get_value('no_reply_email')
         mailer = get_mailer(request)
-        message = Message(subject="Reclutamento WEEE Open",
+        message = Message(subject=_("Reclutamento WEEE Open"),
                           sender=noreply_email,
                           recipients=[user.email_address],
-                          body=("""Ciao!
+                          body=(_("""Ciao!
 
 Abbiamo ricevuto la tua candidatura per il team WEEE Open, questa è la pagina da cui potrai verificare lo stato della tua domanda:
 
@@ -151,12 +151,11 @@ Se la domanda sarà approvata, riceverai un'email sempre a questo indirizzo con 
 
 Buona fortuna ;)
 Il software WEEEHire per conto del team WEEE Open
-""" % status_link
+""") % status_link
                                 )
                           )
         mailer.send(message)
-        flash(_(
-            f"Candidatura inviata con successo!\nSalva questa pagina nei preferiti per controllare lo stato. Ti abbiamo inviato lo stesso link anche a {user.email_address}"))
+        flash(_("Candidatura inviata con successo!\nSalva questa pagina nei preferiti per controllare lo stato. Ti abbiamo inviato lo stesso link anche a %s") % user.email_address)
         return redirect(status_link)
 
     @expose('weeehire.templates.form-status')
