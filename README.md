@@ -52,10 +52,21 @@ This web-application is powered by the [TurboGears](http://www.turbogears.org) P
 
 ## Translations
 
-To generate a new .po file, use:
+To update .po files with new strings:
 
 ```Shell
-xgettext --from-code=UTF-8 -o weeehire/i18n/en/LC_MESSAGES/weeehire_new.po weeehire/controllers/*.py weeehire/model/*.py weeehire/templates/*.xhtml*
-msgmerge --backup=off --update weeehire/i18n/en/LC_MESSAGES/weeehire.po weeehire/i18n/en/LC_MESSAGES/weeehire_new.po
-mv weeehire/i18n/en/LC_MESSAGES/weeehire_new.po weeehire/i18n/en/LC_MESSAGES/weeehire.po
+python setup.py update_catalog
+```
+
+Compile the new translation:
+
+```Shell
+python setup.py compile_catalog
+```
+
+To add an entirely new language (japanese in this example):
+
+```Shell
+python setup.py extract_messages
+python setup.py init_catalog -l jp
 ```

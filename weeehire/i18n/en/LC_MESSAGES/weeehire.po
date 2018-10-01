@@ -1,18 +1,22 @@
-# English translations for ${package}.
-# Copyleft (ɔ) 2018 WEEE Open
-# This file is distributed under the same license as the ${package} project.
-# FIRST AUTHOR <hyd3l 4t gmx d0t c0m>, 2008.
+# English translations for weeehire.
+# Copyright (C) 2018 ORGANIZATION
+# This file is distributed under the same license as the weeehire project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-01 15:59+0200\n"
-"Language-Team: Random people <weeeopen.polito.it>\n"
-"Language: it\n"
+"Project-Id-Version: weeehire 0.1\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2018-10-01 16:19+0200\n"
+"PO-Revision-Date: 2018-10-01 16:20+0200\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
 
 #: weeehire/controllers/form.py:108
 msgid "Inserisci il tuo numero di matricola nel formato indicato."
@@ -36,9 +40,9 @@ msgid ""
 "\n"
 "%s\n"
 "\n"
-"Se la domanda sarà approvata, riceverai un'email sempre a questo indirizzo "
-"con scritto chi contattare per passare al colloquio. Le stesse informazioni "
-"saranno visibili anche alla pagina di cui sopra.\n"
+"Se la domanda sarà approvata, riceverai un'email sempre a questo "
+"indirizzo con scritto chi contattare per passare al colloquio. Le stesse "
+"informazioni saranno visibili anche alla pagina di cui sopra.\n"
 "\n"
 "Buona fortuna ;)\n"
 "Il software WEEEHire per conto del team WEEE Open\n"
@@ -69,6 +73,713 @@ msgstr ""
 msgid "Bentornato, %s!"
 msgstr ""
 
+#: weeehire/controllers/secure.py:18
+msgid "Only for people with the \"manage\" permission"
+msgstr ""
+
 #: weeehire/controllers/secure.py:24
 msgid "Secure Controller here"
 msgstr ""
+
+#: weeehire/templates/error.xhtml:3
+msgid "A "
+msgstr ""
+
+#: weeehire/templates/error.xhtml:3
+msgid " error has Occurred"
+msgstr ""
+
+#: weeehire/templates/error.xhtml:7
+msgid "Error "
+msgstr ""
+
+#: weeehire/templates/form-index.xhtml:3 weeehire/templates/form.xhtml:4
+#: weeehire/templates/soviet.xhtml:32
+msgid "Form"
+msgstr ""
+
+#: weeehire/templates/form-index.xhtml:7
+msgid "Entra in WEEE Open"
+msgstr ""
+
+#: weeehire/templates/form-index.xhtml:8
+msgid ""
+"Compila il questionario per fare richiesta di ammissione in team. Premi "
+"il bottone qui sotto per iniziare."
+msgstr ""
+
+#: weeehire/templates/form-index.xhtml:11
+msgid "Inizia"
+msgstr ""
+
+#: weeehire/templates/form-status.xhtml:3
+msgid "Status"
+msgstr ""
+
+#: weeehire/templates/form-status.xhtml:8
+msgid "Stato della richiesta"
+msgstr ""
+
+#: weeehire/templates/form-status.xhtml:9
+msgid "Valutazione in corso"
+msgstr ""
+
+#: weeehire/templates/form-status.xhtml:10
+msgid "Ammesso/a al colloquio"
+msgstr ""
+
+#: weeehire/templates/form-status.xhtml:11
+msgid "Domanda respinta"
+msgstr ""
+
+#: weeehire/templates/form-status.xhtml:12
+msgid ""
+"Salva questa pagina nei preferiti e torna a controllare lo stato più "
+"avanti."
+msgstr ""
+
+#: weeehire/templates/form-status.xhtml:13
+msgid ""
+"Ti abbiamo mandato un'email per informarti, ma se non fosse arrivata per "
+"favore contattata "
+msgstr ""
+
+#: weeehire/templates/form-status.xhtml:13
+msgid " ("
+msgstr ""
+
+#: weeehire/templates/form-status.xhtml:13
+msgid ") su Telegram per passare al colloquio."
+msgstr ""
+
+#: weeehire/templates/form-status.xhtml:16
+msgid "Elimina candidatura"
+msgstr ""
+
+#: weeehire/templates/form-status.xhtml:17
+msgid "Scarica tutti i miei dati"
+msgstr ""
+
+#: weeehire/templates/form-status.xhtml:20
+msgid "Visto come siamo GDPR-compliant?"
+msgstr ""
+
+#: weeehire/templates/form.xhtml:12 weeehire/templates/soviet-read.xhtml:18
+#: weeehire/templates/soviet.xhtml:28
+msgid "Nome"
+msgstr ""
+
+#: weeehire/templates/form.xhtml:16 weeehire/templates/soviet-read.xhtml:23
+#: weeehire/templates/soviet.xhtml:29
+msgid "Cognome"
+msgstr ""
+
+#: weeehire/templates/form.xhtml:22 weeehire/templates/soviet-read.xhtml:30
+#: weeehire/templates/soviet.xhtml:30
+msgid "Matricola"
+msgstr ""
+
+#: weeehire/templates/form.xhtml:26 weeehire/templates/soviet-read.xhtml:35
+msgid "Interesse"
+msgstr ""
+
+#: weeehire/templates/form.xhtml:34 weeehire/templates/soviet-read.xhtml:42
+msgid "Percorso"
+msgstr ""
+
+#: weeehire/templates/form.xhtml:40 weeehire/templates/soviet-read.xhtml:47
+msgid "Anno"
+msgstr ""
+
+#: weeehire/templates/form.xhtml:48 weeehire/templates/soviet-read.xhtml:54
+msgid "Lettera motivazionale"
+msgstr ""
+
+#: weeehire/templates/form.xhtml:51
+msgid ""
+"Seleziona l'area del team che più ti interessa e qui compariranno delle "
+"linee guida su cosa scrivere."
+msgstr ""
+
+#: weeehire/templates/form.xhtml:54
+msgid ""
+"Descrivi qualsiasi tua esperienza di riparazione di computer (fissi o "
+"portatili), o assemblaggio, o saldatura di componenti elettronici."
+msgstr ""
+
+#: weeehire/templates/form.xhtml:55
+msgid ""
+"Se non sai qualcosa, cosa fai per imparare in autonomia? Puoi anche "
+"fornire degli esempi."
+msgstr ""
+
+#: weeehire/templates/form.xhtml:56 weeehire/templates/form.xhtml:64
+msgid ""
+"Se hai mai usato Linux, parlane liberamente: su tutti i computer che "
+"ripariamo installiamo Linux."
+msgstr ""
+
+#: weeehire/templates/form.xhtml:57
+msgid ""
+"Menziona anche quanto tempo potresti dedicare alle attività in team e se "
+"fai altro di interessante nel tempo libero oltre a riparare computer."
+msgstr ""
+
+#: weeehire/templates/form.xhtml:58 weeehire/templates/form.xhtml:66
+#: weeehire/templates/form.xhtml:74 weeehire/templates/form.xhtml:81
+#: weeehire/templates/form.xhtml:88 weeehire/templates/form.xhtml:96
+#: weeehire/templates/form.xhtml:104
+msgid "Queste"
+msgstr ""
+
+#: weeehire/templates/form.xhtml:58 weeehire/templates/form.xhtml:66
+#: weeehire/templates/form.xhtml:74 weeehire/templates/form.xhtml:81
+#: weeehire/templates/form.xhtml:88 weeehire/templates/form.xhtml:96
+#: weeehire/templates/form.xhtml:104
+msgid "sono solo linee guida"
+msgstr ""
+
+#: weeehire/templates/form.xhtml:58 weeehire/templates/form.xhtml:66
+#: weeehire/templates/form.xhtml:74 weeehire/templates/form.xhtml:81
+#: weeehire/templates/form.xhtml:88 weeehire/templates/form.xhtml:96
+#: weeehire/templates/form.xhtml:104
+msgid ", scrivi tutto ciò che ti sembra rilevante dire."
+msgstr ""
+
+#: weeehire/templates/form.xhtml:61
+msgid ""
+"Parla di qualsiasi tua esperienza nello scrivere software. Va bene anche "
+"\"per l'esame di ... ho creato un programma che fa ...\" o \"ho fatto il "
+"sito web per la panetteria all'angolo\"."
+msgstr ""
+
+#: weeehire/templates/form.xhtml:62
+msgid ""
+"Oltre a seguire le lezioni, che metodo usi per imparare (e.g. seguire "
+"tutorial su internet, iniziare a scrivere codice e cercare man mano su "
+"Stack Overflow, etc...)?"
+msgstr ""
+
+#: weeehire/templates/form.xhtml:63
+msgid "La"
+msgstr ""
+
+#: weeehire/templates/form.xhtml:63
+msgid "maggior parte del software realizzato in team"
+msgstr ""
+
+#: weeehire/templates/form.xhtml:63
+msgid ""
+"(osserva in particolare Tarallo, turbofresa, bot e weeelab) è in PHP o "
+"Python. Cosa ne pensi di quei linguaggi e del codice di quei progetti?"
+msgstr ""
+
+#: weeehire/templates/form.xhtml:65
+msgid ""
+"Menziona anche quanto tempo potresti dedicare alle attività in team e se "
+"fai altro di interessante nel tempo libero oltre a digitare codice."
+msgstr ""
+
+#: weeehire/templates/form.xhtml:69
+msgid ""
+"Come team talvolta partecipiamo a eventi, dove vorremmo essere "
+"riconoscibili, quindi abbiamo bisogno di materiale \"pubblicitario\": "
+"biglietti da visita, magliette, cartellone con spiegazione di cosa fa il "
+"team, etc..."
+msgstr ""
+
+#: weeehire/templates/form.xhtml:70
+msgid ""
+"Descrivi la tua esperienza nel realizzare lavori di questo tipo, se ne "
+"hai. Che programmi useresti per realizzare questo materiale?"
+msgstr ""
+
+#: weeehire/templates/form.xhtml:71 weeehire/templates/form.xhtml:79
+msgid "Se dovessi spiegare in due righe cosa fa il team, cosa diresti?"
+msgstr ""
+
+#: weeehire/templates/form.xhtml:72
+msgid "Cosa ne pensi degli aspetti ambientali del progetto?"
+msgstr ""
+
+#: weeehire/templates/form.xhtml:73
+msgid ""
+"Quanta compassione provi per un branco di nerdoni che ripara pc in uno "
+"scantinato?"
+msgstr ""
+
+#: weeehire/templates/form.xhtml:77
+msgid ""
+"Descrivi qualsiasi tua esperienza nel gestire pagine o profili (e.g. "
+"personali, di attività commerciali, di"
+msgstr ""
+
+#: weeehire/templates/form.xhtml:77
+msgid "meme"
+msgstr ""
+
+#: weeehire/templates/form.xhtml:77
+msgid "nonsense, etc...) sui social network, in particolare Facebook e Instagram."
+msgstr ""
+
+#: weeehire/templates/form.xhtml:78
+msgid ""
+"Menziona anche i risultati raggiunti con tali attività promozionali, se "
+"possibile."
+msgstr ""
+
+#: weeehire/templates/form.xhtml:80
+msgid ""
+"Indica anche quanto tempo potresti dedicare a queste attività e se hai "
+"qualche altro interesse."
+msgstr ""
+
+#: weeehire/templates/form.xhtml:84
+msgid ""
+"Descrivi la tua esperienza nell'amministrazione di server (Linux o BSD), "
+"menzionando anche i software utilizzati."
+msgstr ""
+
+#: weeehire/templates/form.xhtml:85
+msgid ""
+"È inoltre apprezzata qualsiasi esperienza con software di gestione della "
+"configurazione (e.g. Ansible), virtualizzazione, container (e.g. Docker),"
+" o amministrazione di rete."
+msgstr ""
+
+#: weeehire/templates/form.xhtml:86
+msgid ""
+"Hai altre competenze o caratteristiche rilevanti che potrebbero essere "
+"utili per il ruolo che vuoi ricoprire?"
+msgstr ""
+
+#: weeehire/templates/form.xhtml:87
+msgid ""
+"Menziona anche quanto tempo potresti dedicare al team e se fai "
+"qualcos'altro di interessante nel tempo libero oltre a configurare "
+"server."
+msgstr ""
+
+#: weeehire/templates/form.xhtml:91
+msgid ""
+"Uno degli obiettivi del team è la progettazione di strumenti elettronici "
+"per la diagnostica a basso livello e il riuso dell'hardware recuperato."
+msgstr ""
+
+#: weeehire/templates/form.xhtml:92
+msgid ""
+"Qual è il tuo rapporto con il mondo dell'elettronica? Ti interessa di più"
+" l'elettronica analogica o digitale o ti interessano entrambe?"
+msgstr ""
+
+#: weeehire/templates/form.xhtml:93
+msgid ""
+"Se hai mai realizzato qualche circuito o progetto oltre a quelli nei "
+"laboratori didattici, parlane con riferimento anche al metodo con cui è "
+"stato realizzato (breadboard, millefori, circuito stampato, componenti "
+"through-hole o SMD, etc...)."
+msgstr ""
+
+#: weeehire/templates/form.xhtml:94
+msgid ""
+"Indica anche se hai dimestichezza con qualche software di Electronic "
+"Design Automation (progettazione, simulazione, test e verifica, etc...)."
+msgstr ""
+
+#: weeehire/templates/form.xhtml:95
+msgid ""
+"Menziona anche quanto tempo potresti dedicare al team e se fai "
+"qualcos'altro di interessante nel tempo libero oltre a progettare "
+"circuiti."
+msgstr ""
+
+#: weeehire/templates/form.xhtml:99
+msgid ""
+"Non tutti i computer che ci arrivano sono riparabili, ma vorremmo "
+"comunque minimizzare la quantità di materiale che finisce nel bidone."
+msgstr ""
+
+#: weeehire/templates/form.xhtml:100
+msgid ""
+"Se hai manualità e/o esperienze nel riuso creativo e/o making è il "
+"momento di dirlo."
+msgstr ""
+
+#: weeehire/templates/form.xhtml:101
+msgid "Puoi anche aggiungere se hai idee su come potremmo riutilizzare"
+msgstr ""
+
+#: weeehire/templates/form.xhtml:101
+msgid "case"
+msgstr ""
+
+#: weeehire/templates/form.xhtml:101
+msgid ""
+"vuoti, schede madri dall'estetica peculiare o i piatti a specchio di hard"
+" disk rotti."
+msgstr ""
+
+#: weeehire/templates/form.xhtml:102
+msgid "Accenna anche a che metodo seguiresti per progettare queste cose."
+msgstr ""
+
+#: weeehire/templates/form.xhtml:103
+msgid ""
+"Menziona anche quanto tempo potresti dedicare alle attività in team e se "
+"fai altro di interessante nel tempo libero."
+msgstr ""
+
+#: weeehire/templates/form.xhtml:107
+msgid "Stupiscici."
+msgstr ""
+
+#: weeehire/templates/form.xhtml:116
+msgid "Confermo che tutti i dati inseriti sono corretti e che ho letto la sezione"
+msgstr ""
+
+#: weeehire/templates/form.xhtml:116
+msgid "Entra nel team"
+msgstr ""
+
+#: weeehire/templates/form.xhtml:116
+msgid "del vostro sito web."
+msgstr ""
+
+#: weeehire/templates/form.xhtml:118
+msgid "Ho letto le"
+msgstr ""
+
+#: weeehire/templates/form.xhtml:119
+msgid "Informazioni sul trattamento dei dati personali"
+msgstr ""
+
+#: weeehire/templates/form.xhtml:119
+msgid "e acconsento al trattamento dei dati personali."
+msgstr ""
+
+#: weeehire/templates/form.xhtml:125 weeehire/templates/soviet-contact.xhtml:28
+msgid "Invia"
+msgstr ""
+
+#: weeehire/templates/index.xhtml:3 weeehire/templates/server.xhtml:3
+msgid "WEEE are hiring!"
+msgstr ""
+
+#: weeehire/templates/login.xhtml:3 weeehire/templates/login.xhtml:27
+msgid "Login"
+msgstr ""
+
+#: weeehire/templates/login.xhtml:7
+msgid "☭ ADMIN AREA ☭"
+msgstr ""
+
+#: weeehire/templates/login.xhtml:14
+msgid "Username:"
+msgstr ""
+
+#: weeehire/templates/login.xhtml:20
+msgid "Password:"
+msgstr ""
+
+#: weeehire/templates/master.xhtml:23
+msgid "Logout"
+msgstr ""
+
+#: weeehire/templates/master.xhtml:8
+msgid "Your generic title goes here"
+msgstr ""
+
+#: weeehire/templates/post_signup.xhtml:3
+msgid "Validate"
+msgstr ""
+
+#: weeehire/templates/privacy.xhtml:3
+msgid "Privacy"
+msgstr ""
+
+#: weeehire/templates/privacy.xhtml:7
+msgid "Informazioni sul trattamento dei dati personali (privacy policy)"
+msgstr ""
+
+#: weeehire/templates/privacy.xhtml:8
+msgid ""
+"In questa pagina si descrivono le modalità e le logiche del trattamento "
+"dei dati personali degli utenti (di seguito, gli \"utenti\") che "
+"interagendo con il sito join.weeeopen.it (di seguito il \"sito\") "
+"forniscono i propri dati personali, ai sensi dell'articolo 13 del "
+"Regolamento (UE) 2016/679."
+msgstr ""
+
+#: weeehire/templates/privacy.xhtml:9
+msgid "Titolare del trattamento"
+msgstr ""
+
+#: weeehire/templates/privacy.xhtml:10
+msgid ""
+"Titolare del trattamento è il Team WEEE Open, associazione non "
+"riconosciuta ai sensi degli articoli del 36, 37 e 38 del Codice civile. I"
+" contatti del Team WEEE Open sono disponibili sulla pagina \""
+msgstr ""
+
+#: weeehire/templates/privacy.xhtml:10
+msgid "contatti"
+msgstr ""
+
+#: weeehire/templates/privacy.xhtml:10
+msgid ""
+"\" del sito web weeeopen.polito.it oppure all'indirizzo di posta "
+"elettronica composto dalla stringa"
+msgstr ""
+
+#: weeehire/templates/privacy.xhtml:10
+msgid "weeeopen"
+msgstr ""
+
+#: weeehire/templates/privacy.xhtml:10
+msgid "seguita dal simbolo @ seguito dal dominio"
+msgstr ""
+
+#: weeehire/templates/privacy.xhtml:10
+msgid "polito.it"
+msgstr ""
+
+#: weeehire/templates/privacy.xhtml:10
+msgid "."
+msgstr ""
+
+#: weeehire/templates/privacy.xhtml:11
+msgid "Tipi di dati trattati"
+msgstr ""
+
+#: weeehire/templates/privacy.xhtml:12
+msgid ""
+"Sono trattati esclusivamente i dati comunicati dall'utente tramite la "
+"compilazione e l'invio, esplicito e volontario, dei moduli presenti sul "
+"sito."
+msgstr ""
+
+#: weeehire/templates/privacy.xhtml:13
+msgid ""
+"L'indirizzo email degli utenti viene ottenuto concatenando la matricola, "
+"inserita dagli utenti nei moduli, alla stringa \"@studenti.polito.it\" o "
+"\"@polito.it\" a seconda del tipo di matricola immesso nei moduli."
+msgstr ""
+
+#: weeehire/templates/privacy.xhtml:14
+msgid "Finalità e base giuridica del trattamento"
+msgstr ""
+
+#: weeehire/templates/privacy.xhtml:15
+msgid ""
+"I dati personali verranno trattati al fine di valutare le richieste di "
+"candidatura degli utenti. La base giuridica del predetto trattamento è il"
+" consenso."
+msgstr ""
+
+#: weeehire/templates/privacy.xhtml:16
+msgid ""
+"La comunicazione dei dati personali è necessaria affinché il Team WEEE "
+"Open possa prendere in considerazione la richiesta di candidatura. In "
+"caso di comunicazione mancata o incompleta o inesatta dei dati la "
+"candidatura non verrà presa in considerazione."
+msgstr ""
+
+#: weeehire/templates/privacy.xhtml:17
+msgid "Destinatari dei dati personali"
+msgstr ""
+
+#: weeehire/templates/privacy.xhtml:18
+msgid "Il destinatario dei dati raccolti è il Team WEEE Open."
+msgstr ""
+
+#: weeehire/templates/privacy.xhtml:19
+msgid "Modalità di trattamento e periodo di conservazione dei dati"
+msgstr ""
+
+#: weeehire/templates/privacy.xhtml:20
+msgid ""
+"Il trattamento dei dati sarà svolto in forma manuale da persone "
+"autorizzate al trattamento."
+msgstr ""
+
+#: weeehire/templates/privacy.xhtml:21
+msgid "I dati verranno cancellati dal"
+msgstr ""
+
+#: weeehire/templates/privacy.xhtml:21
+msgid "server"
+msgstr ""
+
+#: weeehire/templates/privacy.xhtml:21
+msgid "dopo un tempo massimo di 365 giorni dalla compilazione dei moduli."
+msgstr ""
+
+#: weeehire/templates/privacy.xhtml:22
+msgid ""
+"I dati potranno essere cancellati in qualsiasi momento dal Team WEEE Open"
+" qualora non venissero più ritenuti utili al perseguimento delle finalità"
+" indicate in precedenza."
+msgstr ""
+
+#: weeehire/templates/privacy.xhtml:23
+msgid ""
+"I dati possono essere cancellati in qualsiasi momento dagli utenti "
+"tramite la pagina di riepilogo (di seguito la \"pagina di riepilogo\") "
+"che compare dopo l'invio dei moduli e il cui indirizzo viene inoltre "
+"inviato via email agli utenti che hanno compilato i moduli."
+msgstr ""
+
+#: weeehire/templates/privacy.xhtml:24
+msgid "Diritti degli interessati"
+msgstr ""
+
+#: weeehire/templates/privacy.xhtml:25
+msgid "Diritto di accesso ai dati e portabilità dei dati"
+msgstr ""
+
+#: weeehire/templates/privacy.xhtml:26
+msgid ""
+"È possibile scaricare tutti i dati immessi nei moduli sul sito, tramite "
+"la pagina di riepilogo."
+msgstr ""
+
+#: weeehire/templates/privacy.xhtml:27
+msgid "I dati vengono forniti in formato JSON."
+msgstr ""
+
+#: weeehire/templates/privacy.xhtml:28
+msgid ""
+"Diritto di revoca del consenso al trattamento dei dati personali o "
+"cancellazione dei dati"
+msgstr ""
+
+#: weeehire/templates/privacy.xhtml:29
+msgid ""
+"Tramite la pagina di riepilogo è possibile eliminare tutti i dati "
+"inseriti nei moduli."
+msgstr ""
+
+#: weeehire/templates/privacy.xhtml:30
+msgid ""
+"L'eliminazione dei dati da parte degli utenti implica una rinuncia alla "
+"propria candidatura e una revoca del consenso prestato al trattamento dei"
+" dati personali, senza pregiudicare la liceità del trattamento basata sul"
+" consenso prestato prima della revoca."
+msgstr ""
+
+#: weeehire/templates/privacy.xhtml:31
+msgid "Diritto di rettifica dei dati"
+msgstr ""
+
+#: weeehire/templates/privacy.xhtml:32
+msgid ""
+"È possibile eliminare tutti i dati inseriti, tramite la pagina di "
+"riepilogo, e compilare nuovamente i moduli con le opportune modifiche al "
+"fine di rettificare eventuali dati errati."
+msgstr ""
+
+#: weeehire/templates/privacy.xhtml:33
+msgid "Diritto di proporre reclamo a un'autorità di controllo"
+msgstr ""
+
+#: weeehire/templates/privacy.xhtml:34
+msgid "Gli utenti hanno diritto di proporre reclamo a un'autorità di controllo."
+msgstr ""
+
+#: weeehire/templates/soviet-contact.xhtml:3
+msgid "Contact "
+msgstr ""
+
+#: weeehire/templates/soviet-contact.xhtml:3
+msgid ", "
+msgstr ""
+
+#: weeehire/templates/soviet-contact.xhtml:12
+msgid "Reclutatore"
+msgstr ""
+
+#: weeehire/templates/soviet-contact.xhtml:21
+msgid "Messaggio"
+msgstr ""
+
+#: weeehire/templates/soviet-read.xhtml:3 weeehire/templates/soviet.xhtml:3
+msgid "Soviet"
+msgstr ""
+
+#: weeehire/templates/soviet-read.xhtml:9 weeehire/templates/soviet.xhtml:55
+msgid "Approvato"
+msgstr ""
+
+#: weeehire/templates/soviet-read.xhtml:10 weeehire/templates/soviet.xhtml:46
+#: weeehire/templates/soviet.xhtml:56
+msgid "Scartato"
+msgstr ""
+
+#: weeehire/templates/soviet-read.xhtml:62
+msgid "Approva"
+msgstr ""
+
+#: weeehire/templates/soviet-read.xhtml:64
+msgid "Scarta"
+msgstr ""
+
+#: weeehire/templates/soviet-read.xhtml:66
+msgid "Reset"
+msgstr ""
+
+#: weeehire/templates/soviet.xhtml:9
+msgid "Filtra per :"
+msgstr ""
+
+#: weeehire/templates/soviet.xhtml:10
+msgid "Vedi tutti"
+msgstr ""
+
+#: weeehire/templates/soviet.xhtml:11 weeehire/templates/soviet.xhtml:54
+msgid "Da decidere"
+msgstr ""
+
+#: weeehire/templates/soviet.xhtml:12
+msgid "Approvati"
+msgstr ""
+
+#: weeehire/templates/soviet.xhtml:13
+msgid "Scartati"
+msgstr ""
+
+#: weeehire/templates/soviet.xhtml:14
+msgid "Da contattare"
+msgstr ""
+
+#: weeehire/templates/soviet.xhtml:15
+msgid "Contattati"
+msgstr ""
+
+#: weeehire/templates/soviet.xhtml:18
+msgid "Pubblica risultati"
+msgstr ""
+
+#: weeehire/templates/soviet.xhtml:27
+msgid "ID"
+msgstr ""
+
+#: weeehire/templates/soviet.xhtml:31
+msgid "Stato"
+msgstr ""
+
+#: weeehire/templates/soviet.xhtml:43
+msgid "Contatta"
+msgstr ""
+
+#: weeehire/templates/soviet.xhtml:44
+msgid "Contattato ("
+msgstr ""
+
+#: weeehire/templates/soviet.xhtml:44
+msgid ")"
+msgstr ""
+
+#: weeehire/templates/soviet.xhtml:47 weeehire/templates/soviet.xhtml:58
+msgid "Apri"
+msgstr ""
+
