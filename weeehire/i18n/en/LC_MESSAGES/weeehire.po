@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: weeehire 0.1\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2018-10-01 16:19+0200\n"
+"POT-Creation-Date: 2018-10-02 12:49+0200\n"
 "PO-Revision-Date: 2018-10-01 16:20+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -18,19 +18,19 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.6.0\n"
 
-#: weeehire/controllers/form.py:108
+#: weeehire/controllers/form.py:110
 msgid "Inserisci il tuo numero di matricola nel formato indicato."
 msgstr ""
 
-#: weeehire/controllers/form.py:112
+#: weeehire/controllers/form.py:114
 msgid "Matricola già in uso!"
 msgstr ""
 
-#: weeehire/controllers/form.py:141
+#: weeehire/controllers/form.py:143
 msgid "Reclutamento WEEE Open"
 msgstr ""
 
-#: weeehire/controllers/form.py:144
+#: weeehire/controllers/form.py:146
 #, python-format
 msgid ""
 "Ciao!\n"
@@ -47,28 +47,43 @@ msgid ""
 "Buona fortuna ;)\n"
 "Il software WEEEHire per conto del team WEEE Open\n"
 msgstr ""
+"Hi!\n"
+"\n"
+"We have received your application for the WEEE Open team, this is the "
+"page where you will be able to check the status of your request:\n"
+"\n"
+"%s\n"
+"\n"
+"If the request will be approved, you will receive an email at this "
+"address containing the contact informations of your interviewer. The same"
+" informations will be reported in the above link as well.\n"
+"/nGood luck ;)\n"
+"The software WEEEhire for the WEEE Open team\n"
 
-#: weeehire/controllers/form.py:158
+#: weeehire/controllers/form.py:160
 #, python-format
 msgid ""
 "Candidatura inviata con successo!\n"
 "Salva questa pagina nei preferiti per controllare lo stato. Ti abbiamo "
 "inviato lo stesso link anche a %s"
 msgstr ""
+"Application sent successfully!\n"
+"Save this link in your favorites to check the status. We've sent you the "
+"same link to %s as well"
 
-#: weeehire/controllers/form.py:205
+#: weeehire/controllers/form.py:207
 msgid "Tutti i tuoi dati sono stati cancellati!"
-msgstr ""
+msgstr "All your data have been deleted!"
 
-#: weeehire/controllers/root.py:55 weeehire/controllers/root.py:61
+#: weeehire/controllers/root.py:58 weeehire/controllers/root.py:64
 msgid "Username e/o password non validi"
-msgstr ""
+msgstr "Username and/or password not valid"
 
-#: weeehire/controllers/root.py:57
+#: weeehire/controllers/root.py:60
 msgid "Utente non verificato"
 msgstr ""
 
-#: weeehire/controllers/root.py:78
+#: weeehire/controllers/root.py:81
 #, python-format
 msgid "Bentornato, %s!"
 msgstr ""
@@ -100,13 +115,15 @@ msgstr ""
 
 #: weeehire/templates/form-index.xhtml:7
 msgid "Entra in WEEE Open"
-msgstr ""
+msgstr "Join WEEE Open"
 
 #: weeehire/templates/form-index.xhtml:8
 msgid ""
 "Compila il questionario per fare richiesta di ammissione in team. Premi "
 "il bottone qui sotto per iniziare."
 msgstr ""
+"Compile the form to apply for joining the team. Press the button below to"
+" start"
 
 #: weeehire/templates/form-index.xhtml:11
 msgid "Inizia"

@@ -4,6 +4,7 @@
 from tg import expose, flash, lurl
 from tg import request, redirect, tmpl_context
 from tg.i18n import ugettext as _
+from tg.i18n import get_lang, set_lang
 from tg.exceptions import HTTPFound
 
 from weeehire.lib.base import BaseController
@@ -39,6 +40,8 @@ class RootController(BaseController):
     @expose('weeehire.templates.index')
     def index(self):
         """Handle the front-page."""
+        print(get_lang())
+        set_lang('en')
         if request.identity:
             if request.identity['user'].user_id == 1:
                 return redirect('/soviet')
