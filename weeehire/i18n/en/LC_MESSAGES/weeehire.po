@@ -24,35 +24,35 @@ msgstr "1 Bachelor's Deg"
 
 #: weeehire/controllers/form.py:85
 msgid "2 Triennale"
-msgstr ""
+msgstr "2 Bachelor's Deg"
 
 #: weeehire/controllers/form.py:86
 msgid "3 Triennale"
-msgstr ""
+msgstr "3 Bachelor's Deg"
 
 #: weeehire/controllers/form.py:87
 msgid "1 Magistrale"
-msgstr ""
+msgstr "1 Master's Deg"
 
 #: weeehire/controllers/form.py:88
 msgid "2 Magistrale"
-msgstr ""
+msgstr "2 Master's Deg"
 
 #: weeehire/controllers/form.py:89
 msgid "Dottorato"
-msgstr ""
+msgstr "PhD"
 
 #: weeehire/controllers/form.py:94
 msgid "Riparazione Hardware"
-msgstr ""
+msgstr "Hardware Repair"
 
 #: weeehire/controllers/form.py:95
 msgid "Elettronica"
-msgstr ""
+msgstr "Electronics"
 
 #: weeehire/controllers/form.py:96
 msgid "Sviluppo Software"
-msgstr ""
+msgstr "Software Development"
 
 #: weeehire/controllers/form.py:97
 msgid "Sysadmin"
@@ -60,19 +60,19 @@ msgstr ""
 
 #: weeehire/controllers/form.py:98
 msgid "Design e comunicazione visiva"
-msgstr ""
+msgstr "Design and visual communication"
 
 #: weeehire/controllers/form.py:99
 msgid "Design per il riuso"
-msgstr ""
+msgstr "Design for the reuse"
 
 #: weeehire/controllers/form.py:100
 msgid "Pubbliche relazioni"
-msgstr ""
+msgstr "Public relations"
 
 #: weeehire/controllers/form.py:101
 msgid "Altro"
-msgstr ""
+msgstr "Other"
 
 #: weeehire/controllers/form.py:108
 msgid "Inserisci il tuo numero di matricola nel formato indicato."

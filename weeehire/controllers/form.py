@@ -80,25 +80,25 @@ class FormController(BaseController):
         ]
 
         years = [
-            "",
-            _("1 Triennale"),
-            _("2 Triennale"),
-            _("3 Triennale"),
-            _("1 Magistrale"),
-            _("2 Magistrale"),
-            _("Dottorato")
+            {"value": "", "text": ""},
+            {"value": "1 Triennale", "text": _("1 Triennale")},
+            {"value": "2 Triennale", "text": _("2 Triennale")},
+            {"value": "3 Triennale", "text": _("3 Triennale")},
+            {"value": "1 Magistrale", "text": _("1 Magistrale")},
+            {"value": "2 Magistrale", "text": _("2 Magistrale")},
+            {"value": "Dottorato", "text": _("Dottorato")}
         ]
 
         interests = [
-            "",
-            _("Riparazione Hardware"),
-            _("Elettronica"),
-            _("Sviluppo Software"),
-            _("Sysadmin"),
-            _("Design e comunicazione visiva"),
-            _("Design per il riuso"),
-            _("Pubbliche relazioni"),
-            _("Altro")
+            {"value": "", "text": ""},
+            {"value": "Riparazione Hardware", "text": _("Riparazione Hardware")},
+            {"value": "Elettronica", "text": _("Elettronica")},
+            {"value": "Sviluppo Software", "text": _("Sviluppo Software")},
+            {"value": "Sysadmin", "text": _("Sysadmin")},
+            {"value": "Design e comunicazione visiva", "text": _("Design e comunicazione visiva")},
+            {"value": "Design per il riuso", "text": _("Design per il riuso")},
+            {"value": "Pubbliche relazioni", "text": _("Pubbliche relazioni")},
+            {"value": "Altro", "text": _("Altro")}
         ]
         return dict(page='form-edit', courses=courses, years=years, interests=interests)
 

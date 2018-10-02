@@ -3,6 +3,7 @@
 
 from tg import expose, flash, redirect, abort
 from tg import predicates, request
+from tg.i18n import set_lang
 from tgext.mailer import get_mailer, Message
 from weeehire.lib.base import BaseController
 from weeehire.model import DBSession, User, Recruiter, Option
@@ -13,6 +14,7 @@ class SovietController(BaseController):
     
     @expose('weeehire.templates.soviet')
     def index(self, filter=None, **kw):
+        set_lang('it')
         if filter == 'awaiting':
             users = DBSession.query(User).filter(User.user_id != 1).filter_by(status=None).all()
         elif filter == 'approved':

@@ -21,9 +21,9 @@
 					srcset="${tg.url('/img/logo325.png')} 325w, ${tg.url('/img/logo650.png')} 650w, ${tg.url('/img/logo974.png')} 974w, ${tg.url('/img/logo3248.png')} 3248w"
 			sizes="(min-width: 768px) 350px, (min-width: 350px) 300px, 150px" alt="WEEE Open"/></a>
         <a py:if="request.identity" href="/logout_handler" class="pull-right"><br/>Logout</a>
-        <a href="${tg.url('/lang', params=dict(l='en', came_from=url(request.path)))}" class="pull-right"><br/>EN</a>
-        <a class="pull-right"><br/>-</a>
-        <a href="${tg.url('/lang', params=dict(l='it', came_from=url(request.path)))}" class="pull-right"><br/>IT</a>
+        <a py:if="not request.identity" href="${tg.url('/lang', params=dict(l='en', came_from=url(request.path)))}" class="pull-right"><br/>EN</a>
+        <a py:if="not request.identity" class="pull-right"><br/>-</a>
+        <a py:if="not request.identity" href="${tg.url('/lang', params=dict(l='it', came_from=url(request.path)))}" class="pull-right"><br/>IT</a>
 	</div>
   <div class="container">
     <!-- Flash messages -->

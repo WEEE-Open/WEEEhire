@@ -26,8 +26,8 @@
                     <label class="control-label col-sm-2 col-md-1" for="pref">Interesse</label>
                     <div class="col-sm-4 col-md-5">
                         <select id="pref" class="form-control" required="required" name="interest" onchange="updateHints()">
-							<option py:for="i in interests" value="${i}">${i}</option>
-						</select>
+                            <option py:for="i in interests" value="${i['value']}">${i['text']}</option>
+                        </select>
                     </div>
                 </div>
                 <div class="form-group">
@@ -40,7 +40,7 @@
                     <label class="control-label col-sm-1" for="year">Anno</label>
                     <div class="col-sm-2 col-md-2">
                         <select class="form-control" required="required" name="year" id="year" onchange="dottorandize()">
-							<option py:for="y in years" value="${y}">${y}</option>
+							<option py:for="y in years" value="${y['value']}">${y['text']}</option>
 						</select>
                     </div>
                 </div>
