@@ -122,7 +122,7 @@ msgid ""
 "Compila il questionario per fare richiesta di ammissione in team. Premi "
 "il bottone qui sotto per iniziare."
 msgstr ""
-"Compile the form to apply for joining the team. Press the button below to"
+"Compile the application form to join the team. Press the button below to"
 " start"
 
 #: weeehire/templates/form-index.xhtml:11
@@ -160,7 +160,7 @@ msgid ""
 "Ti abbiamo mandato un'email per informarti, ma se non fosse arrivata per "
 "favore contattata "
 msgstr ""
-"We've sent you an email to inform you, but if you haven't received it, "
+"We've sent you a notification email, but if you haven't received it, "
 "please contact "
 
 #: weeehire/templates/form-status.xhtml:13
@@ -196,7 +196,7 @@ msgstr "Surname"
 #: weeehire/templates/form.xhtml:22 weeehire/templates/soviet-read.xhtml:30
 #: weeehire/templates/soviet.xhtml:30
 msgid "Matricola"
-msgstr "Serial N"
+msgstr ""
 
 #: weeehire/templates/form.xhtml:26 weeehire/templates/soviet-read.xhtml:35
 msgid "Interesse"
