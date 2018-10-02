@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: weeehire 0.1\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2018-10-02 12:49+0200\n"
+"POT-Creation-Date: 2018-10-02 17:33+0200\n"
 "PO-Revision-Date: 2018-10-01 16:20+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -18,19 +18,19 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.6.0\n"
 
-#: weeehire/controllers/form.py:110
+#: weeehire/controllers/form.py:108
 msgid "Inserisci il tuo numero di matricola nel formato indicato."
 msgstr ""
 
-#: weeehire/controllers/form.py:114
+#: weeehire/controllers/form.py:112
 msgid "Matricola già in uso!"
 msgstr ""
 
-#: weeehire/controllers/form.py:143
+#: weeehire/controllers/form.py:141
 msgid "Reclutamento WEEE Open"
 msgstr ""
 
-#: weeehire/controllers/form.py:146
+#: weeehire/controllers/form.py:144
 #, python-format
 msgid ""
 "Ciao!\n"
@@ -60,7 +60,7 @@ msgstr ""
 "/nGood luck ;)\n"
 "The software WEEEhire for the WEEE Open team\n"
 
-#: weeehire/controllers/form.py:160
+#: weeehire/controllers/form.py:158
 #, python-format
 msgid ""
 "Candidatura inviata con successo!\n"
@@ -71,19 +71,19 @@ msgstr ""
 "Save this link in your favorites to check the status. We've sent you the "
 "same link to %s as well"
 
-#: weeehire/controllers/form.py:207
+#: weeehire/controllers/form.py:205
 msgid "Tutti i tuoi dati sono stati cancellati!"
 msgstr "All your data have been deleted!"
 
-#: weeehire/controllers/root.py:58 weeehire/controllers/root.py:64
+#: weeehire/controllers/root.py:56 weeehire/controllers/root.py:62
 msgid "Username e/o password non validi"
 msgstr "Username and/or password not valid"
 
-#: weeehire/controllers/root.py:60
+#: weeehire/controllers/root.py:58
 msgid "Utente non verificato"
 msgstr ""
 
-#: weeehire/controllers/root.py:81
+#: weeehire/controllers/root.py:79
 #, python-format
 msgid "Bentornato, %s!"
 msgstr ""
@@ -127,7 +127,7 @@ msgstr ""
 
 #: weeehire/templates/form-index.xhtml:11
 msgid "Inizia"
-msgstr ""
+msgstr "Start"
 
 #: weeehire/templates/form-status.xhtml:3
 msgid "Status"
@@ -135,31 +135,33 @@ msgstr ""
 
 #: weeehire/templates/form-status.xhtml:8
 msgid "Stato della richiesta"
-msgstr ""
+msgstr "Request status"
 
 #: weeehire/templates/form-status.xhtml:9
 msgid "Valutazione in corso"
-msgstr ""
+msgstr "Evaluating"
 
 #: weeehire/templates/form-status.xhtml:10
 msgid "Ammesso/a al colloquio"
-msgstr ""
+msgstr "Admitted to the interview"
 
 #: weeehire/templates/form-status.xhtml:11
 msgid "Domanda respinta"
-msgstr ""
+msgstr "Request rejected"
 
 #: weeehire/templates/form-status.xhtml:12
 msgid ""
 "Salva questa pagina nei preferiti e torna a controllare lo stato più "
 "avanti."
-msgstr ""
+msgstr "Save this page in your favorites and come back to check the status later."
 
 #: weeehire/templates/form-status.xhtml:13
 msgid ""
 "Ti abbiamo mandato un'email per informarti, ma se non fosse arrivata per "
 "favore contattata "
 msgstr ""
+"We've sent you an email to inform you, but if you haven't received it, "
+"please contact "
 
 #: weeehire/templates/form-status.xhtml:13
 msgid " ("
@@ -167,101 +169,112 @@ msgstr ""
 
 #: weeehire/templates/form-status.xhtml:13
 msgid ") su Telegram per passare al colloquio."
-msgstr ""
+msgstr ") on Telegram for the interview."
 
 #: weeehire/templates/form-status.xhtml:16
 msgid "Elimina candidatura"
-msgstr ""
+msgstr "Delete application"
 
 #: weeehire/templates/form-status.xhtml:17
 msgid "Scarica tutti i miei dati"
-msgstr ""
+msgstr "Download all my data"
 
 #: weeehire/templates/form-status.xhtml:20
 msgid "Visto come siamo GDPR-compliant?"
-msgstr ""
+msgstr "Look how we are GDPR-compliant!"
 
 #: weeehire/templates/form.xhtml:12 weeehire/templates/soviet-read.xhtml:18
 #: weeehire/templates/soviet.xhtml:28
 msgid "Nome"
-msgstr ""
+msgstr "Name"
 
 #: weeehire/templates/form.xhtml:16 weeehire/templates/soviet-read.xhtml:23
 #: weeehire/templates/soviet.xhtml:29
 msgid "Cognome"
-msgstr ""
+msgstr "Surname"
 
 #: weeehire/templates/form.xhtml:22 weeehire/templates/soviet-read.xhtml:30
 #: weeehire/templates/soviet.xhtml:30
 msgid "Matricola"
-msgstr ""
+msgstr "Serial N"
 
 #: weeehire/templates/form.xhtml:26 weeehire/templates/soviet-read.xhtml:35
 msgid "Interesse"
-msgstr ""
+msgstr "Interest"
 
 #: weeehire/templates/form.xhtml:34 weeehire/templates/soviet-read.xhtml:42
 msgid "Percorso"
-msgstr ""
+msgstr "Study Course"
 
 #: weeehire/templates/form.xhtml:40 weeehire/templates/soviet-read.xhtml:47
 msgid "Anno"
-msgstr ""
+msgstr "Year"
 
 #: weeehire/templates/form.xhtml:48 weeehire/templates/soviet-read.xhtml:54
 msgid "Lettera motivazionale"
-msgstr ""
+msgstr "Motivational letter"
 
 #: weeehire/templates/form.xhtml:51
 msgid ""
 "Seleziona l'area del team che più ti interessa e qui compariranno delle "
 "linee guida su cosa scrivere."
 msgstr ""
+"Select the area of the team that you prefer the most and you'll see some "
+"guidelines for writing the letter."
 
 #: weeehire/templates/form.xhtml:54
 msgid ""
 "Descrivi qualsiasi tua esperienza di riparazione di computer (fissi o "
 "portatili), o assemblaggio, o saldatura di componenti elettronici."
 msgstr ""
+"Describe anything about your experience in computer repairing (desktop or"
+" laptops), assembling, soldering of electronic components."
 
 #: weeehire/templates/form.xhtml:55
 msgid ""
 "Se non sai qualcosa, cosa fai per imparare in autonomia? Puoi anche "
 "fornire degli esempi."
 msgstr ""
+"If you don't know something, what do you usually do for learning it "
+"autonomously? You can tell us some examples as well."
 
 #: weeehire/templates/form.xhtml:56 weeehire/templates/form.xhtml:64
 msgid ""
 "Se hai mai usato Linux, parlane liberamente: su tutti i computer che "
 "ripariamo installiamo Linux."
 msgstr ""
+"If you ever used Linux, feel free to talk about it: we install Linux on "
+"every computer that we repair."
 
 #: weeehire/templates/form.xhtml:57
 msgid ""
 "Menziona anche quanto tempo potresti dedicare alle attività in team e se "
 "fai altro di interessante nel tempo libero oltre a riparare computer."
 msgstr ""
+"Mention also how many time you can dedicate to the activities in team and"
+" if you're doing something else interesting in your spare time apart from"
+" repairing computers."
 
 #: weeehire/templates/form.xhtml:58 weeehire/templates/form.xhtml:66
 #: weeehire/templates/form.xhtml:74 weeehire/templates/form.xhtml:81
 #: weeehire/templates/form.xhtml:88 weeehire/templates/form.xhtml:96
 #: weeehire/templates/form.xhtml:104
 msgid "Queste"
-msgstr ""
+msgstr "These"
 
 #: weeehire/templates/form.xhtml:58 weeehire/templates/form.xhtml:66
 #: weeehire/templates/form.xhtml:74 weeehire/templates/form.xhtml:81
 #: weeehire/templates/form.xhtml:88 weeehire/templates/form.xhtml:96
 #: weeehire/templates/form.xhtml:104
 msgid "sono solo linee guida"
-msgstr ""
+msgstr "are only guidelines"
 
 #: weeehire/templates/form.xhtml:58 weeehire/templates/form.xhtml:66
 #: weeehire/templates/form.xhtml:74 weeehire/templates/form.xhtml:81
 #: weeehire/templates/form.xhtml:88 weeehire/templates/form.xhtml:96
 #: weeehire/templates/form.xhtml:104
 msgid ", scrivi tutto ciò che ti sembra rilevante dire."
-msgstr ""
+msgstr ", write anything that you consider relevant."
 
 #: weeehire/templates/form.xhtml:61
 msgid ""
@@ -279,17 +292,20 @@ msgstr ""
 
 #: weeehire/templates/form.xhtml:63
 msgid "La"
-msgstr ""
+msgstr "Most"
 
 #: weeehire/templates/form.xhtml:63
 msgid "maggior parte del software realizzato in team"
-msgstr ""
+msgstr "of the software developed in our team"
 
 #: weeehire/templates/form.xhtml:63
 msgid ""
 "(osserva in particolare Tarallo, turbofresa, bot e weeelab) è in PHP o "
 "Python. Cosa ne pensi di quei linguaggi e del codice di quei progetti?"
 msgstr ""
+"(in particular Tarallo, turbofresa, bot and weeelab) is written in PHP or"
+" Python. What do you think about these programming languages and the code"
+" of the projects?"
 
 #: weeehire/templates/form.xhtml:65
 msgid ""
@@ -500,6 +516,18 @@ msgstr ""
 
 #: weeehire/templates/master.xhtml:23
 msgid "Logout"
+msgstr ""
+
+#: weeehire/templates/master.xhtml:24
+msgid "EN"
+msgstr ""
+
+#: weeehire/templates/master.xhtml:25
+msgid "-"
+msgstr ""
+
+#: weeehire/templates/master.xhtml:26
+msgid "IT"
 msgstr ""
 
 #: weeehire/templates/master.xhtml:8

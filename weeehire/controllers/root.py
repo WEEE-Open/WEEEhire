@@ -106,7 +106,5 @@ class RootController(BaseController):
     def lang(self, l, came_from=lurl('/')):
         """Changes the language for the current session"""
         set_lang(l)
-        print(get_lang(all=True))
-        print(came_from)
         return redirect(came_from)
 

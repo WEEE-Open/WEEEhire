@@ -3,6 +3,7 @@
 
 from tg import expose, redirect, response, request, flash, url, abort
 from tg.i18n import ugettext as _
+from tg.i18n import lazy_ugettext as l_
 
 from weeehire.lib.base import BaseController
 from weeehire.model import DBSession, User, Option

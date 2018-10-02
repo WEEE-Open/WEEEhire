@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: weeehire 0.1\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2018-10-02 12:49+0200\n"
+"POT-Creation-Date: 2018-10-02 17:33+0200\n"
 "PO-Revision-Date: 2018-10-02 17:02+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: it\n"
@@ -18,19 +18,19 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.6.0\n"
 
-#: weeehire/controllers/form.py:110
+#: weeehire/controllers/form.py:108
 msgid "Inserisci il tuo numero di matricola nel formato indicato."
 msgstr ""
 
-#: weeehire/controllers/form.py:114
+#: weeehire/controllers/form.py:112
 msgid "Matricola già in uso!"
 msgstr ""
 
-#: weeehire/controllers/form.py:143
+#: weeehire/controllers/form.py:141
 msgid "Reclutamento WEEE Open"
 msgstr ""
 
-#: weeehire/controllers/form.py:146
+#: weeehire/controllers/form.py:144
 #, python-format
 msgid ""
 "Ciao!\n"
@@ -48,7 +48,7 @@ msgid ""
 "Il software WEEEHire per conto del team WEEE Open\n"
 msgstr ""
 
-#: weeehire/controllers/form.py:160
+#: weeehire/controllers/form.py:158
 #, python-format
 msgid ""
 "Candidatura inviata con successo!\n"
@@ -56,19 +56,19 @@ msgid ""
 "inviato lo stesso link anche a %s"
 msgstr ""
 
-#: weeehire/controllers/form.py:207
+#: weeehire/controllers/form.py:205
 msgid "Tutti i tuoi dati sono stati cancellati!"
 msgstr ""
 
-#: weeehire/controllers/root.py:58 weeehire/controllers/root.py:64
+#: weeehire/controllers/root.py:56 weeehire/controllers/root.py:62
 msgid "Username e/o password non validi"
 msgstr ""
 
-#: weeehire/controllers/root.py:60
+#: weeehire/controllers/root.py:58
 msgid "Utente non verificato"
 msgstr ""
 
-#: weeehire/controllers/root.py:81
+#: weeehire/controllers/root.py:79
 #, python-format
 msgid "Bentornato, %s!"
 msgstr ""
@@ -483,6 +483,18 @@ msgstr ""
 
 #: weeehire/templates/master.xhtml:23
 msgid "Logout"
+msgstr ""
+
+#: weeehire/templates/master.xhtml:24
+msgid "EN"
+msgstr ""
+
+#: weeehire/templates/master.xhtml:25
+msgid "-"
+msgstr ""
+
+#: weeehire/templates/master.xhtml:26
+msgid "IT"
 msgstr ""
 
 #: weeehire/templates/master.xhtml:8
