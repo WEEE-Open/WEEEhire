@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: weeehire 0.1\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2018-10-02 17:33+0200\n"
+"POT-Creation-Date: 2018-10-02 19:32+0200\n"
 "PO-Revision-Date: 2018-10-02 17:02+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: it\n"
@@ -17,6 +17,62 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.6.0\n"
+
+#: weeehire/controllers/form.py:84
+msgid "1 Triennale"
+msgstr ""
+
+#: weeehire/controllers/form.py:85
+msgid "2 Triennale"
+msgstr ""
+
+#: weeehire/controllers/form.py:86
+msgid "3 Triennale"
+msgstr ""
+
+#: weeehire/controllers/form.py:87
+msgid "1 Magistrale"
+msgstr ""
+
+#: weeehire/controllers/form.py:88
+msgid "2 Magistrale"
+msgstr ""
+
+#: weeehire/controllers/form.py:89
+msgid "Dottorato"
+msgstr ""
+
+#: weeehire/controllers/form.py:94
+msgid "Riparazione Hardware"
+msgstr ""
+
+#: weeehire/controllers/form.py:95
+msgid "Elettronica"
+msgstr ""
+
+#: weeehire/controllers/form.py:96
+msgid "Sviluppo Software"
+msgstr ""
+
+#: weeehire/controllers/form.py:97
+msgid "Sysadmin"
+msgstr ""
+
+#: weeehire/controllers/form.py:98
+msgid "Design e comunicazione visiva"
+msgstr ""
+
+#: weeehire/controllers/form.py:99
+msgid "Design per il riuso"
+msgstr ""
+
+#: weeehire/controllers/form.py:100
+msgid "Pubbliche relazioni"
+msgstr ""
+
+#: weeehire/controllers/form.py:101
+msgid "Altro"
+msgstr ""
 
 #: weeehire/controllers/form.py:108
 msgid "Inserisci il tuo numero di matricola nel formato indicato."

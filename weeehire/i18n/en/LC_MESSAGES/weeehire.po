@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: weeehire 0.1\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2018-10-02 17:33+0200\n"
+"POT-Creation-Date: 2018-10-02 19:32+0200\n"
 "PO-Revision-Date: 2018-10-01 16:20+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -18,17 +18,73 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.6.0\n"
 
+#: weeehire/controllers/form.py:84
+msgid "1 Triennale"
+msgstr "1 Bachelor's Deg"
+
+#: weeehire/controllers/form.py:85
+msgid "2 Triennale"
+msgstr ""
+
+#: weeehire/controllers/form.py:86
+msgid "3 Triennale"
+msgstr ""
+
+#: weeehire/controllers/form.py:87
+msgid "1 Magistrale"
+msgstr ""
+
+#: weeehire/controllers/form.py:88
+msgid "2 Magistrale"
+msgstr ""
+
+#: weeehire/controllers/form.py:89
+msgid "Dottorato"
+msgstr ""
+
+#: weeehire/controllers/form.py:94
+msgid "Riparazione Hardware"
+msgstr ""
+
+#: weeehire/controllers/form.py:95
+msgid "Elettronica"
+msgstr ""
+
+#: weeehire/controllers/form.py:96
+msgid "Sviluppo Software"
+msgstr ""
+
+#: weeehire/controllers/form.py:97
+msgid "Sysadmin"
+msgstr ""
+
+#: weeehire/controllers/form.py:98
+msgid "Design e comunicazione visiva"
+msgstr ""
+
+#: weeehire/controllers/form.py:99
+msgid "Design per il riuso"
+msgstr ""
+
+#: weeehire/controllers/form.py:100
+msgid "Pubbliche relazioni"
+msgstr ""
+
+#: weeehire/controllers/form.py:101
+msgid "Altro"
+msgstr ""
+
 #: weeehire/controllers/form.py:108
 msgid "Inserisci il tuo numero di matricola nel formato indicato."
-msgstr ""
+msgstr "Insert your matricola in the correct format."
 
 #: weeehire/controllers/form.py:112
 msgid "Matricola già in uso!"
-msgstr ""
+msgstr "Matricola already in use!"
 
 #: weeehire/controllers/form.py:141
 msgid "Reclutamento WEEE Open"
-msgstr ""
+msgstr "WEEE Open Recruitment"
 
 #: weeehire/controllers/form.py:144
 #, python-format
@@ -81,12 +137,12 @@ msgstr "Username and/or password not valid"
 
 #: weeehire/controllers/root.py:58
 msgid "Utente non verificato"
-msgstr ""
+msgstr "User not verified"
 
 #: weeehire/controllers/root.py:79
 #, python-format
 msgid "Bentornato, %s!"
-msgstr ""
+msgstr "Welcome back, %s!"
 
 #: weeehire/controllers/secure.py:18
 msgid "Only for people with the \"manage\" permission"
@@ -122,8 +178,8 @@ msgid ""
 "Compila il questionario per fare richiesta di ammissione in team. Premi "
 "il bottone qui sotto per iniziare."
 msgstr ""
-"Compile the application form to join the team. Press the button below to"
-" start"
+"Compile the application form to join the team. Press the button below to "
+"start"
 
 #: weeehire/templates/form-index.xhtml:11
 msgid "Inizia"
@@ -251,7 +307,7 @@ msgid ""
 "Menziona anche quanto tempo potresti dedicare alle attività in team e se "
 "fai altro di interessante nel tempo libero oltre a riparare computer."
 msgstr ""
-"Mention also how many time you can dedicate to the activities in team and"
+"Mention also how much time you can dedicate to the activities in team and"
 " if you're doing something else interesting in your spare time apart from"
 " repairing computers."
 
@@ -282,6 +338,9 @@ msgid ""
 "\"per l'esame di ... ho creato un programma che fa ...\" o \"ho fatto il "
 "sito web per la panetteria all'angolo\"."
 msgstr ""
+"Tell us about your experience in software development. It's ok to write "
+"something like \"for the exam ... I've created a program for ...\" or "
+"\"I've made a website for the bakery shop near my house\"."
 
 #: weeehire/templates/form.xhtml:62
 msgid ""
@@ -289,6 +348,9 @@ msgid ""
 "tutorial su internet, iniziare a scrivere codice e cercare man mano su "
 "Stack Overflow, etc...)?"
 msgstr ""
+"Besides following lessons, what is your learning method (e.g. following "
+"tutorials online, starting to write code and looking time to time on "
+"Stack Overflow, etc...)?"
 
 #: weeehire/templates/form.xhtml:63
 msgid "La"
@@ -311,7 +373,7 @@ msgstr ""
 msgid ""
 "Menziona anche quanto tempo potresti dedicare alle attività in team e se "
 "fai altro di interessante nel tempo libero oltre a digitare codice."
-msgstr ""
+msgstr "Mention also how much time you can dedicate to the activities in team and "
 
 #: weeehire/templates/form.xhtml:69
 msgid ""
@@ -391,7 +453,7 @@ msgid ""
 "Menziona anche quanto tempo potresti dedicare al team e se fai "
 "qualcos'altro di interessante nel tempo libero oltre a configurare "
 "server."
-msgstr ""
+msgstr "Mention also how much time you can dedicate to the activities in team and "
 
 #: weeehire/templates/form.xhtml:91
 msgid ""
@@ -424,7 +486,7 @@ msgid ""
 "Menziona anche quanto tempo potresti dedicare al team e se fai "
 "qualcos'altro di interessante nel tempo libero oltre a progettare "
 "circuiti."
-msgstr ""
+msgstr "Mention also how much time you can dedicate to the activities in team and "
 
 #: weeehire/templates/form.xhtml:99
 msgid ""
@@ -460,39 +522,41 @@ msgstr ""
 msgid ""
 "Menziona anche quanto tempo potresti dedicare alle attività in team e se "
 "fai altro di interessante nel tempo libero."
-msgstr ""
+msgstr "Mention also how much time you can dedicate to the activities in team and "
 
 #: weeehire/templates/form.xhtml:107
 msgid "Stupiscici."
-msgstr ""
+msgstr "Impress us."
 
 #: weeehire/templates/form.xhtml:116
 msgid "Confermo che tutti i dati inseriti sono corretti e che ho letto la sezione"
 msgstr ""
+"I declare that all the inserted informations are correct and that I've "
+"read the "
 
 #: weeehire/templates/form.xhtml:116
 msgid "Entra nel team"
-msgstr ""
+msgstr "Join the team "
 
 #: weeehire/templates/form.xhtml:116
 msgid "del vostro sito web."
-msgstr ""
+msgstr "section of your website."
 
 #: weeehire/templates/form.xhtml:118
 msgid "Ho letto le"
-msgstr ""
+msgstr "I've read the "
 
 #: weeehire/templates/form.xhtml:119
 msgid "Informazioni sul trattamento dei dati personali"
-msgstr ""
+msgstr "Privacy Policy "
 
 #: weeehire/templates/form.xhtml:119
 msgid "e acconsento al trattamento dei dati personali."
-msgstr ""
+msgstr "and I accept its conditions."
 
 #: weeehire/templates/form.xhtml:125 weeehire/templates/soviet-contact.xhtml:28
 msgid "Invia"
-msgstr ""
+msgstr "Send"
 
 #: weeehire/templates/index.xhtml:3 weeehire/templates/server.xhtml:3
 msgid "WEEE are hiring!"
