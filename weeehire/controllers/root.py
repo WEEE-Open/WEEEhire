@@ -4,6 +4,7 @@
 from tg import expose, flash, lurl
 from tg import request, redirect, tmpl_context
 from tg.i18n import ugettext as _
+from tg.i18n import get_lang, set_lang
 from tg.exceptions import HTTPFound
 
 from weeehire.lib.base import BaseController
@@ -93,8 +94,19 @@ class RootController(BaseController):
 
     @expose('weeehire.templates.privacy')
     def privacy(self):
+        """Shows the privacy policy page"""
         return dict(page='privacy-page')
 
     @expose('weeehire.templates.server')
     def server(self):
+        """Uovo di Pasqua"""
         return dict(page='server-img')
+
+    @expose()
+    def lang(self, l, came_from=lurl('/')):
+        """Changes the language for the current session"""
+        set_lang(l)
+        print(get_lang(all=True))
+        print(came_from)
+        return redirect(came_from)
+
