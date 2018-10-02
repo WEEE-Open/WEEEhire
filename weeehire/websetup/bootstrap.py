@@ -42,6 +42,11 @@ def bootstrap(command, conf, vars):
         o.value = env['NO_REPLY_EMAIL']
         model.DBSession.add(o)
 
+        o = model.Option()
+        o.key = "new_request_notify"
+        o.value = "true"
+        model.DBSession.add(o)
+
         model.DBSession.flush()
         transaction.commit()
     except IntegrityError:

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: weeehire 0.1\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2018-10-02 19:32+0200\n"
+"POT-Creation-Date: 2018-10-02 23:34+0200\n"
 "PO-Revision-Date: 2018-10-01 16:20+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -90,7 +90,6 @@ msgstr "WEEE Open Recruitment"
 #, python-format
 msgid ""
 "Ciao!\n"
-"\n"
 "Abbiamo ricevuto la tua candidatura per il team WEEE Open, questa è la "
 "pagina da cui potrai verificare lo stato della tua domanda:\n"
 "\n"
@@ -104,7 +103,6 @@ msgid ""
 "Il software WEEEHire per conto del team WEEE Open\n"
 msgstr ""
 "Hi!\n"
-"\n"
 "We have received your application for the WEEE Open team, this is the "
 "page where you will be able to check the status of your request:\n"
 "\n"
@@ -113,10 +111,11 @@ msgstr ""
 "If the request will be approved, you will receive an email at this "
 "address containing the contact informations of your interviewer. The same"
 " informations will be reported in the above link as well.\n"
-"/nGood luck ;)\n"
+"\n"
+"Good luck ;)\n"
 "The software WEEEhire for the WEEE Open team\n"
 
-#: weeehire/controllers/form.py:158
+#: weeehire/controllers/form.py:157
 #, python-format
 msgid ""
 "Candidatura inviata con successo!\n"
@@ -127,7 +126,7 @@ msgstr ""
 "Save this link in your favorites to check the status. We've sent you the "
 "same link to %s as well"
 
-#: weeehire/controllers/form.py:205
+#: weeehire/controllers/form.py:204
 msgid "Tutti i tuoi dati sono stati cancellati!"
 msgstr "All your data have been deleted!"
 

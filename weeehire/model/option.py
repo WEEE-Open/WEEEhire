@@ -16,6 +16,11 @@ class Option(DeclarativeBase):
 
     @classmethod
     def get_value(cls, key):
-        return DBSession.query(cls).filter_by(key=key).first().value
+        value = DBSession.query(cls).filter_by(key=key).first().value
+        if value == "true":
+            return True
+        if value == "false":
+            return False
+        return value
 
 __all__ = ['Option']

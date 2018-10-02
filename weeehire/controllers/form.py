@@ -142,7 +142,6 @@ class FormController(BaseController):
                           sender=noreply_email,
                           recipients=[user.email_address],
                           body=(_("""Ciao!
-
 Abbiamo ricevuto la tua candidatura per il team WEEE Open, questa è la pagina da cui potrai verificare lo stato della tua domanda:
 
 %s
@@ -155,7 +154,17 @@ Il software WEEEHire per conto del team WEEE Open
                                 )
                           )
         mailer.send(message)
-        flash(_("Candidatura inviata con successo!\nSalva questa pagina nei preferiti per controllare lo stato. Ti abbiamo inviato lo stesso link anche a %s") % user.email_address)
+
+        if Option.get_value('new_request_notify'):
+            admin_email = User.by_user_id(1).email_address
+            message = Message(subject="WEEEhire - Nuova richiesta ricevuta",
+                              sender=noreply_email,
+                              recipients=[admin_email],
+                              body=(url('/soviet/read?uid=', None, True) + str(user.user_id))
+                              )
+            mailer.send(message)
+        flash(_(
+            "Candidatura inviata con successo!\nSalva questa pagina nei preferiti per controllare lo stato. Ti abbiamo inviato lo stesso link anche a %s") % user.email_address)
         return redirect(status_link)
 
     @expose('weeehire.templates.form-status')
