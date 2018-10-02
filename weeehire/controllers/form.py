@@ -3,7 +3,6 @@
 
 from tg import expose, redirect, response, request, flash, url, abort
 from tg.i18n import ugettext as _
-from tg.i18n import get_lang, set_lang
 
 from weeehire.lib.base import BaseController
 from weeehire.model import DBSession, User, Option
@@ -36,7 +35,6 @@ def is_valid_sn(sn):
 class FormController(BaseController):
     @expose('weeehire.templates.form-index')
     def index(self, **kw):
-        print(get_lang())
         return dict(page='form-index')
 
     @expose('weeehire.templates.form')

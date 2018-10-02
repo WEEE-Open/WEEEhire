@@ -48,8 +48,6 @@ gearbox setup-app
 gearbox serve --reload --debug
 ```
 
-This web-application is powered by the [TurboGears](http://www.turbogears.org) Python web framework.
-
 ## Translations
 
 To update .po files with new strings:
@@ -71,3 +69,5 @@ To add an entirely new language (japanese in this example):
 python setup.py extract_messages
 python setup.py init_catalog -l jp
 ```
+
+This web-application is powered by the [TurboGears](http://www.turbogears.org) Python web framework.
