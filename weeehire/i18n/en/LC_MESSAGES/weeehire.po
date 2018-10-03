@@ -427,12 +427,16 @@ msgid ""
 "Indica anche quanto tempo potresti dedicare a queste attività e se hai "
 "qualche altro interesse."
 msgstr ""
+"Mention also how much time you could dedicate to these activities and if "
+"you have any other interests."
 
 #: weeehire/templates/form.xhtml:84
 msgid ""
 "Descrivi la tua esperienza nell'amministrazione di server (Linux o BSD), "
 "menzionando anche i software utilizzati."
 msgstr ""
+"Describe your experience with server administration (Linux or BSD), "
+"mentioning also the used softwares."
 
 #: weeehire/templates/form.xhtml:85
 msgid ""
@@ -440,12 +444,17 @@ msgid ""
 "configurazione (e.g. Ansible), virtualizzazione, container (e.g. Docker),"
 " o amministrazione di rete."
 msgstr ""
+"It's also appreciated any experience with configuration management "
+"(e.g. Ansible), virtualization, container (e.g. Docker), "
+"or network administration softwares."
 
 #: weeehire/templates/form.xhtml:86
 msgid ""
 "Hai altre competenze o caratteristiche rilevanti che potrebbero essere "
 "utili per il ruolo che vuoi ricoprire?"
 msgstr ""
+"Do you have other skills or relevant characteristics that could be useful "
+"for the role that you want to cover?"
 
 #: weeehire/templates/form.xhtml:87
 msgid ""
@@ -459,12 +468,16 @@ msgid ""
 "Uno degli obiettivi del team è la progettazione di strumenti elettronici "
 "per la diagnostica a basso livello e il riuso dell'hardware recuperato."
 msgstr ""
+"One of the goals of the team is the development of electronic instruments "
+"for low-level electronic diagnosis and for the hardware reuse."
 
 #: weeehire/templates/form.xhtml:92
 msgid ""
 "Qual è il tuo rapporto con il mondo dell'elettronica? Ti interessa di più"
 " l'elettronica analogica o digitale o ti interessano entrambe?"
 msgstr ""
+"How is your relationship with the electronics world? Are you interested more in "
+"digital, analog electronics or you like both of them equally?"
 
 #: weeehire/templates/form.xhtml:93
 msgid ""
@@ -473,12 +486,17 @@ msgid ""
 "stato realizzato (breadboard, millefori, circuito stampato, componenti "
 "through-hole o SMD, etc...)."
 msgstr ""
+"If you ever realized any electronic circuit or project apart from the ones "
+"done during the academic courses, write about it refering also to the method with "
+"whom it has been realized (breadboard, prototype board, PCB, THC components or SMD, etc...)."
 
 #: weeehire/templates/form.xhtml:94
 msgid ""
 "Indica anche se hai dimestichezza con qualche software di Electronic "
 "Design Automation (progettazione, simulazione, test e verifica, etc...)."
 msgstr ""
+"Tell us if you have experience with any Electronic Design Automation software "
+"(project, simulation, test and verify, etc...)."
 
 #: weeehire/templates/form.xhtml:95
 msgid ""
@@ -492,30 +510,35 @@ msgid ""
 "Non tutti i computer che ci arrivano sono riparabili, ma vorremmo "
 "comunque minimizzare la quantità di materiale che finisce nel bidone."
 msgstr ""
+"Not all the computers that we get are repairable, but we'd still like "
+"to minimize the quantity of junk that goes into the wastebasket."
 
 #: weeehire/templates/form.xhtml:100
 msgid ""
 "Se hai manualità e/o esperienze nel riuso creativo e/o making è il "
 "momento di dirlo."
 msgstr ""
+"If you have skills and/or experiences in creative reuse and/or making this is the time "
+"to say it."
 
 #: weeehire/templates/form.xhtml:101
 msgid "Puoi anche aggiungere se hai idee su come potremmo riutilizzare"
-msgstr ""
+msgstr "You can also add (if you have) some ideas about how we could reuse "
 
 #: weeehire/templates/form.xhtml:101
 msgid "case"
-msgstr ""
+msgstr "empty "
 
 #: weeehire/templates/form.xhtml:101
 msgid ""
 "vuoti, schede madri dall'estetica peculiare o i piatti a specchio di hard"
 " disk rotti."
 msgstr ""
+"cases, particularly beautiful motherboards or hard drives disk plates"
 
 #: weeehire/templates/form.xhtml:102
 msgid "Accenna anche a che metodo seguiresti per progettare queste cose."
-msgstr ""
+msgstr "Mention also a method that you'd likely follow to develop these things."
 
 #: weeehire/templates/form.xhtml:103
 msgid ""
