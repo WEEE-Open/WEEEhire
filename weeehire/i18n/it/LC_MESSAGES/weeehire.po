@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: weeehire 0.1\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2018-10-02 23:34+0200\n"
+"POT-Creation-Date: 2018-10-04 23:30+0200\n"
 "PO-Revision-Date: 2018-10-02 17:02+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: it\n"
@@ -103,7 +103,7 @@ msgid ""
 "Il software WEEEHire per conto del team WEEE Open\n"
 msgstr ""
 
-#: weeehire/controllers/form.py:157
+#: weeehire/controllers/form.py:166
 #, python-format
 msgid ""
 "Candidatura inviata con successo!\n"
@@ -111,7 +111,7 @@ msgid ""
 "inviato lo stesso link anche a %s"
 msgstr ""
 
-#: weeehire/controllers/form.py:204
+#: weeehire/controllers/form.py:214
 msgid "Tutti i tuoi dati sono stati cancellati!"
 msgstr ""
 
@@ -869,5 +869,17 @@ msgstr ""
 #~ "\n"
 #~ "Buona fortuna ;)\n"
 #~ "Il software WEEEHire per conto del team WEEE Open\n"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Congratulazioni! Sei ammesso/a al colloquio"
+#~ " e verrai contattato a breve da "
+#~ "uno dei responsabili del team."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Congratulazioni! Sei ammesso/a al colloquio."
+#~ " Riceverai presto una mail da uno "
+#~ "dei responsabili del Team."
 #~ msgstr ""
 

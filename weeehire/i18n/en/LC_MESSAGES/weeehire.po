@@ -8,17 +8,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: weeehire 0.1\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2018-10-02 23:34+0200\n"
+"POT-Creation-Date: 2018-10-04 23:30+0200\n"
 "PO-Revision-Date: 2018-10-03 15:48+0100\n"
 "Last-Translator: quel_tale <lvps@users.noreply.github.com>\n"
 "Language: en\n"
 "Language-Team: en <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.6.0\n"
-"X-Generator: Lokalize 2.0\n"
 
 #: weeehire/controllers/form.py:84
 msgid "1 Triennale"
@@ -117,7 +116,7 @@ msgstr ""
 "Good luck ;)\n"
 "The software WEEEhire for the WEEE Open team\n"
 
-#: weeehire/controllers/form.py:157
+#: weeehire/controllers/form.py:166
 #, python-format
 msgid ""
 "Candidatura inviata con successo!\n"
@@ -128,7 +127,7 @@ msgstr ""
 "Save this link in your favorites to check the status. We've sent you the "
 "same link to %s as well"
 
-#: weeehire/controllers/form.py:204
+#: weeehire/controllers/form.py:214
 msgid "Tutti i tuoi dati sono stati cancellati!"
 msgstr "All your data have been deleted!"
 
@@ -179,9 +178,8 @@ msgid ""
 "Compila il questionario per fare richiesta di ammissione in team. Premi "
 "il bottone qui sotto per iniziare."
 msgstr ""
-"Fill the application form if you want to join the team. Press the button"
-" below to "
-"start."
+"Fill the application form if you want to join the team. Press the button "
+"below to start."
 
 #: weeehire/templates/form-index.xhtml:11
 msgid "Inizia"
@@ -211,16 +209,15 @@ msgstr "Rejected"
 msgid ""
 "Salva questa pagina nei preferiti e torna a controllare lo stato più "
 "avanti."
-msgstr ""
-"Save this page in your favorites and come back later to check the status."
+msgstr "Save this page in your favorites and come back later to check the status."
 
 #: weeehire/templates/form-status.xhtml:13
 msgid ""
 "Ti abbiamo mandato un'email per informarti, ma se non fosse arrivata per "
 "favore contattata "
 msgstr ""
-"We sent you a notification email, but if you haven't received it, "
-"please contact "
+"We sent you a notification email, but if you haven't received it, please "
+"contact "
 
 #: weeehire/templates/form-status.xhtml:13
 msgid " ("
@@ -278,8 +275,8 @@ msgid ""
 "Seleziona l'area del team che più ti interessa e qui compariranno delle "
 "linee guida su cosa scrivere."
 msgstr ""
-"Select the area of the team that you like and you'll see some "
-"guidelines for the letter here."
+"Select the area of the team that you like and you'll see some guidelines "
+"for the letter here."
 
 #: weeehire/templates/form.xhtml:54
 msgid ""
@@ -294,8 +291,8 @@ msgid ""
 "Se non sai qualcosa, cosa fai per imparare in autonomia? Puoi anche "
 "fornire degli esempi."
 msgstr ""
-"If you don't know something, what do you do to learn it yourself, usually? "
-"You can give us some examples as well."
+"If you don't know something, what do you do to learn it yourself, "
+"usually? You can give us some examples as well."
 
 #: weeehire/templates/form.xhtml:56 weeehire/templates/form.xhtml:64
 msgid ""
@@ -310,9 +307,8 @@ msgid ""
 "Menziona anche quanto tempo potresti dedicare alle attività in team e se "
 "fai altro di interessante nel tempo libero oltre a riparare computer."
 msgstr ""
-"Mention how much time you have for team activities, too, and "
-"if you have any other hobby or interests other than "
-"repairing computers."
+"Mention how much time you have for team activities, too, and if you have "
+"any other hobby or interests other than repairing computers."
 
 #: weeehire/templates/form.xhtml:58 weeehire/templates/form.xhtml:66
 #: weeehire/templates/form.xhtml:74 weeehire/templates/form.xhtml:81
@@ -341,10 +337,9 @@ msgid ""
 "\"per l'esame di ... ho creato un programma che fa ...\" o \"ho fatto il "
 "sito web per la panetteria all'angolo\"."
 msgstr ""
-"Tell us about your experience in software development. It's also fine to say "
-"\"for the ... exam I've created a program that does ...\" or \"I've made a"
-" website "
-"for the bakery near my house\"."
+"Tell us about your experience in software development. It's also fine to "
+"say \"for the ... exam I've created a program that does ...\" or \"I've "
+"made a website for the bakery near my house\"."
 
 #: weeehire/templates/form.xhtml:62
 msgid ""
@@ -352,9 +347,9 @@ msgid ""
 "tutorial su internet, iniziare a scrivere codice e cercare man mano su "
 "Stack Overflow, etc...)?"
 msgstr ""
-"Besides attending lectures, what do you do to learn? E.g. watching "
-"or reading tutorials online, starting to write code and looking things "
-"up on Stack Overflow as you go, etc..."
+"Besides attending lectures, what do you do to learn? E.g. watching or "
+"reading tutorials online, starting to write code and looking things up on"
+" Stack Overflow as you go, etc..."
 
 #: weeehire/templates/form.xhtml:63
 msgid "La"
@@ -369,19 +364,17 @@ msgid ""
 "(osserva in particolare Tarallo, turbofresa, bot e weeelab) è in PHP o "
 "Python. Cosa ne pensi di quei linguaggi e del codice di quei progetti?"
 msgstr ""
-"(look at Tarallo, turbofresa, bot and weeelab specifically) is written in PHP"
-" or "
-"Python. What do you think of these programming languages and the code "
-"of these projects?"
+"(look at Tarallo, turbofresa, bot and weeelab specifically) is written in"
+" PHP or Python. What do you think of these programming languages and the "
+"code of these projects?"
 
 #: weeehire/templates/form.xhtml:65
 msgid ""
 "Menziona anche quanto tempo potresti dedicare alle attività in team e se "
 "fai altro di interessante nel tempo libero oltre a digitare codice."
 msgstr ""
-"Mention how much time you have for team activities, too, and "
-"if you have any other hobby or interests other than typing"
-" code."
+"Mention how much time you have for team activities, too, and if you have "
+"any other hobby or interests other than typing code."
 
 #: weeehire/templates/form.xhtml:69
 msgid ""
@@ -390,24 +383,23 @@ msgid ""
 "biglietti da visita, magliette, cartellone con spiegazione di cosa fa il "
 "team, etc..."
 msgstr ""
-"Sometimes we participate to events and we'd like to be "
-"recognizable, so we need some \"merchandise\": "
-"business cards, t-shirts, a poster that explains what our "
-"team does, etc..."
+"Sometimes we participate to events and we'd like to be recognizable, so "
+"we need some \"merchandise\": business cards, t-shirts, a poster that "
+"explains what our team does, etc..."
 
 #: weeehire/templates/form.xhtml:70
 msgid ""
 "Descrivi la tua esperienza nel realizzare lavori di questo tipo, se ne "
 "hai. Che programmi useresti per realizzare questo materiale?"
 msgstr ""
-"Describe your experience in this kind of work, if you "
-"have any. Which software would you use to realize such products?"
+"Describe your experience in this kind of work, if you have any. Which "
+"software would you use to realize such products?"
 
 #: weeehire/templates/form.xhtml:71 weeehire/templates/form.xhtml:79
 msgid "Se dovessi spiegare in due righe cosa fa il team, cosa diresti?"
 msgstr ""
-"If you had to explain in a few lines what does the team do, what would you "
-"write?"
+"If you had to explain in a few lines what does the team do, what would "
+"you write?"
 
 #: weeehire/templates/form.xhtml:72
 msgid "Cosa ne pensi degli aspetti ambientali del progetto?"
@@ -434,11 +426,8 @@ msgid "meme"
 msgstr "memes"
 
 #: weeehire/templates/form.xhtml:77
-msgid ""
-"nonsense, etc...) sui social network, in particolare Facebook e Instagram."
-msgstr ""
-", etc...) on social networks, in particular Facebook and "
-"Instagram."
+msgid "nonsense, etc...) sui social network, in particolare Facebook e Instagram."
+msgstr ", etc...) on social networks, in particular Facebook and Instagram."
 
 #: weeehire/templates/form.xhtml:78
 msgid ""
@@ -453,8 +442,8 @@ msgid ""
 "Indica anche quanto tempo potresti dedicare a queste attività e se hai "
 "qualche altro interesse."
 msgstr ""
-"Mention how much time you have for these activities, too, and "
-"if you have any other hobby or interests."
+"Mention how much time you have for these activities, too, and if you have"
+" any other hobby or interests."
 
 #: weeehire/templates/form.xhtml:84
 msgid ""
@@ -470,17 +459,17 @@ msgid ""
 "configurazione (e.g. Ansible), virtualizzazione, container (e.g. Docker),"
 " o amministrazione di rete."
 msgstr ""
-"We also appreciated any experience with configuration management  "
-"(e.g. Ansible) software, virtualization, containers (e.g. Docker), "
-"or network administration."
+"We also appreciated any experience with configuration management  (e.g. "
+"Ansible) software, virtualization, containers (e.g. Docker), or network "
+"administration."
 
 #: weeehire/templates/form.xhtml:86
 msgid ""
 "Hai altre competenze o caratteristiche rilevanti che potrebbero essere "
 "utili per il ruolo che vuoi ricoprire?"
 msgstr ""
-"Do you have other skills or relevant characteristics that could be useful "
-"for this role?"
+"Do you have other skills or relevant characteristics that could be useful"
+" for this role?"
 
 #: weeehire/templates/form.xhtml:87
 msgid ""
@@ -488,25 +477,24 @@ msgid ""
 "qualcos'altro di interessante nel tempo libero oltre a configurare "
 "server."
 msgstr ""
-"Mention how much time you have for team activities, too, and "
-"if you have any other hobby or interests other than "
-"configuring servers."
+"Mention how much time you have for team activities, too, and if you have "
+"any other hobby or interests other than configuring servers."
 
 #: weeehire/templates/form.xhtml:91
 msgid ""
 "Uno degli obiettivi del team è la progettazione di strumenti elettronici "
 "per la diagnostica a basso livello e il riuso dell'hardware recuperato."
 msgstr ""
-"One of the goals of the team is to develop electronic tools "
-"for low-level hardware diagnosis and the reuse of recovered hardware."
+"One of the goals of the team is to develop electronic tools for low-level"
+" hardware diagnosis and the reuse of recovered hardware."
 
 #: weeehire/templates/form.xhtml:92
 msgid ""
 "Qual è il tuo rapporto con il mondo dell'elettronica? Ti interessa di più"
 " l'elettronica analogica o digitale o ti interessano entrambe?"
 msgstr ""
-"What's your relationship with electronics? Are you more interested "
-"in analog or digital electronics or do you like both of them equally?"
+"What's your relationship with electronics? Are you more interested in "
+"analog or digital electronics or do you like both of them equally?"
 
 #: weeehire/templates/form.xhtml:93
 msgid ""
@@ -515,10 +503,10 @@ msgid ""
 "stato realizzato (breadboard, millefori, circuito stampato, componenti "
 "through-hole o SMD, etc...)."
 msgstr ""
-"If you ever made any electronic circuit or project other than those "
-"for academic courses, tell us. Explain also the method you've used to "
-"build them (breadboard, prototype board, PCB, through-hole "
-"components or SMD, etc...)."
+"If you ever made any electronic circuit or project other than those for "
+"academic courses, tell us. Explain also the method you've used to build "
+"them (breadboard, prototype board, PCB, through-hole components or SMD, "
+"etc...)."
 
 #: weeehire/templates/form.xhtml:94
 msgid ""
@@ -534,9 +522,8 @@ msgid ""
 "qualcos'altro di interessante nel tempo libero oltre a progettare "
 "circuiti."
 msgstr ""
-"Mention how much time you have for team activities, too, and "
-"if you have any other hobby or interests other than "
-"designing circuits."
+"Mention how much time you have for team activities, too, and if you have "
+"any other hobby or interests other than designing circuits."
 
 #: weeehire/templates/form.xhtml:99
 msgid ""
@@ -551,14 +538,12 @@ msgid ""
 "Se hai manualità e/o esperienze nel riuso creativo e/o making è il "
 "momento di dirlo."
 msgstr ""
-"If you have any DIY skills and/or experiences in creative reuse and/or"
-" \"making\" "
-"this is the moment to tell us."
+"If you have any DIY skills and/or experiences in creative reuse and/or "
+"\"making\" this is the moment to tell us."
 
 #: weeehire/templates/form.xhtml:101
 msgid "Puoi anche aggiungere se hai idee su come potremmo riutilizzare"
-msgstr ""
-"You can also add some ideas (if you have any) on how we could reuse empty "
+msgstr "You can also add some ideas (if you have any) on how we could reuse empty "
 
 #: weeehire/templates/form.xhtml:101
 msgid "case"
@@ -569,7 +554,8 @@ msgid ""
 "vuoti, schede madri dall'estetica peculiare o i piatti a specchio di hard"
 " disk rotti."
 msgstr ""
-", particularly beautiful motherboards or shiny plates from hard disk drives."
+", particularly beautiful motherboards or shiny plates from hard disk "
+"drives."
 
 #: weeehire/templates/form.xhtml:102
 msgid "Accenna anche a che metodo seguiresti per progettare queste cose."
@@ -580,16 +566,15 @@ msgid ""
 "Menziona anche quanto tempo potresti dedicare alle attività in team e se "
 "fai altro di interessante nel tempo libero."
 msgstr ""
-"Mention how much time you have for team activities, too, and "
-"if you have any other hobby or interests."
+"Mention how much time you have for team activities, too, and if you have "
+"any other hobby or interests."
 
 #: weeehire/templates/form.xhtml:107
 msgid "Stupiscici."
 msgstr "Impress us."
 
 #: weeehire/templates/form.xhtml:116
-msgid ""
-"Confermo che tutti i dati inseriti sono corretti e che ho letto la sezione"
+msgid "Confermo che tutti i dati inseriti sono corretti e che ho letto la sezione"
 msgstr ""
 "I declare that all the inserted information are correct and that I've "
 "read the "
@@ -852,8 +837,7 @@ msgid "Diritto di proporre reclamo a un'autorità di controllo"
 msgstr ""
 
 #: weeehire/templates/privacy.xhtml:34
-msgid ""
-"Gli utenti hanno diritto di proporre reclamo a un'autorità di controllo."
+msgid "Gli utenti hanno diritto di proporre reclamo a un'autorità di controllo."
 msgstr ""
 
 #: weeehire/templates/soviet-contact.xhtml:3
@@ -952,5 +936,3 @@ msgstr ""
 #: weeehire/templates/soviet.xhtml:47 weeehire/templates/soviet.xhtml:58
 msgid "Apri"
 msgstr ""
-
-

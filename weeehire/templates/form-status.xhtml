@@ -6,11 +6,11 @@
     <body py:block="body" py:strip="True">
       <div class="row col-md-12 text-center">
 		<h1>Stato della richiesta</h1>
-		<h2 py:if="not user.published or user.status is None" class="status-waiting">Valutazione in corso</h2>
-		<h2 py:if="user.published and user.status is True" class="status-approved">Ammesso/a al colloquio</h2>
+		<h2 py:if="not user.published or user.status is None or user.recruiter is None" class="status-waiting">Valutazione in corso</h2>
+		<h2 py:if="user.published and user.status is True and user.recruiter" class="status-approved">Ammesso/a al colloquio</h2>
 		<h2 py:if="user.published and user.status is False" class="status-rejected">Domanda respinta</h2>
-		<p py:if="not user.published or user.status is None">Salva questa pagina nei preferiti e torna a controllare lo stato più avanti.</p>
-		<p py:if="user.published and user.status is True">Ti abbiamo mandato un'email per informarti, ma se non fosse arrivata per favore contattata ${user.recruiter.name} (<a href="https://t.me/${user.recruiter.telegram[1:]}">${user.recruiter.telegram}</a>) su Telegram per passare al colloquio.</p>
+		<p py:if="not user.published or user.status is None or user.recruiter is None">Salva questa pagina nei preferiti e torna a controllare lo stato più avanti.</p>
+		<p py:if="user.published and user.status is True and user.recruiter">Ti abbiamo mandato un'email per informarti, ma se non fosse arrivata per favore contattata ${user.recruiter.name} (<a href="https://t.me/${user.recruiter.telegram[1:]}">${user.recruiter.telegram}</a>) su Telegram per passare al colloquio.</p>
       </div>
       <div class="row col-md-12 text-center space-above">
 		 <a id="remove" class="btn btn-danger" href="${deletion_link}">Elimina candidatura</a>
