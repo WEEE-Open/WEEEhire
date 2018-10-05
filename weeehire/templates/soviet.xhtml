@@ -27,7 +27,7 @@
                   <th>ID</th>
                   <th>Nome</th>
                   <th>Cognome</th>
-                  <th>Matricola</th>
+                  <th>Interesse</th>
                   <th>Stato</th>
                   <th>Form</th>
                   <th/>
@@ -38,7 +38,7 @@
                   <td py:if="user.published" class="grayout">${user.user_id}</td>
                   <td py:if="user.published" class="grayout">${user.first_name}</td>
                   <td py:if="user.published" class="grayout">${user.last_name}</td>
-                  <td py:if="user.published" class="grayout">${user.user_name}</td>
+                  <td py:if="user.published" class="grayout">${user.interest}</td>
                   <td py:if="user.published and user.status is True and not user.recruiter">
                     <a class="btn btn-sm btn-primary" href="${tg.url('/soviet/contact')}?uid=${user.user_id}">Contatta</a></td>
                   <td py:if="user.published and user.recruiter" class="grayout">Contattato (${user.recruiter.name})</td>
@@ -50,7 +50,7 @@
                   <td py:if="not user.published">${user.user_id}</td>
                   <td py:if="not user.published">${user.first_name}</td>
                   <td py:if="not user.published">${user.last_name}</td>
-                  <td py:if="not user.published">${user.user_name}</td>
+                  <td py:if="not user.published">${user.interest}</td>
                   <td py:if="not user.published and user.status is None"><button class="btn btn-sm btn-default btn-static">Da decidere</button></td>
                   <td py:if="not user.published and user.status is True"><button class="btn btn-sm btn-success btn-static">Approvato</button></td>
                   <td py:if="not user.published and user.status is False"><button class="btn btn-sm btn-danger btn-static">Scartato</button></td>
