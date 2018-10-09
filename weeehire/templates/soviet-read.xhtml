@@ -6,8 +6,8 @@
     <body py:block="body" py:strip="True">
       <div class="row text-center">
         <div class="col-md-10 col-md-push-1">
-          <h2 py:if="user.published and user.status is True" class="status-approved">Approvato</h2>
-          <h2 py:if="user.published and user.status is False" class="status-rejected">Scartato</h2>
+          <h2 py:if="user.status is True" class="status-approved">Approvato</h2>
+          <h2 py:if="user.status is False" class="status-rejected">Scartato</h2>
           <br/>
         </div>
       </div>
