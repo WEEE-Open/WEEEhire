@@ -92,6 +92,7 @@ class User(DeclarativeBase):
     study_course = Column(Unicode(255))
     year = Column(Unicode(16))
     interest = Column(Unicode(255))
+    lang = Column(Unicode(2))
     letter = Column(Unicode(8192))
     status = Column(Boolean(), default=None)
     published = Column(Boolean(), default=False)
