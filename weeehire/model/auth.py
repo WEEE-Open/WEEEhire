@@ -93,7 +93,6 @@ class User(DeclarativeBase):
     year = Column(Unicode(16))
     interest = Column(Unicode(255))
     letter = Column(Unicode(8192))
-    compiled = Column(DateTime, default=None)
     status = Column(Boolean(), default=None)
     published = Column(Boolean(), default=False)
     recruiter_id = Column(Integer, ForeignKey('recruiters.id'))

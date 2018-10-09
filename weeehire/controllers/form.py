@@ -126,7 +126,6 @@ class FormController(BaseController):
         user.year = kw['year']
         user.interest = kw['interest']
         user.letter = kw['letter']
-        user.compiled = datetime.now()
         user.token = token
         user.password = passwd
         user.created = datetime.now()
