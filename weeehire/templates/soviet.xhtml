@@ -5,19 +5,25 @@
 
     <body py:block="body" py:strip="True">
       <div class="row">
-        <div class="col-md-7">
-          <label class="control-label">Filtra per :</label>
-          <a class="btn btn-sm btn-default"  href="${tg.url('soviet')}">Vedi tutti</a>
-          <a class="btn btn-sm btn-default" href="${tg.url('soviet?filter=awaiting')}">Da decidere</a>
-          <a class="btn btn-sm btn-success" href="${tg.url('soviet?filter=approved')}">Approvati</a>
-          <a class="btn btn-sm btn-danger"  href="${tg.url('soviet?filter=rejected')}">Scartati</a>
-          <a class="btn btn-sm btn-primary" href="${tg.url('soviet?filter=contact')}">Da contattare</a>
-          <a class="btn btn-sm btn-success" href="${tg.url('soviet?filter=done')}">Contattati</a>
+        <h4>Filtri</h4>
+        <div class="col-md-3">
+          <label class="control-label" for="status">Stato:</label>
+          <select class="form-control col-sm-1" id="status">
+            <option py:for="s in rstatus" value="${s['value']}">${s['text']}</option>
+          </select>
         </div>
+        <div class="col-md-3">
+          <label class="control-label" for="interest">Interesse:</label>
+          <select class="form-control col-sm-1" id="interest">
+            <option py:for="i in interests" value="${i['value']}">${i['text']}</option>
+          </select>
+        </div>
+        <a class="btn btn-sm btn-default" onclick="apply_filters()">Applica filtri</a>
         <div class="text-right">
           <a class="btn btn-primary text-right" onclick="ask_confirm_pub()">Pubblica risultati</a>
         </div>
       </div>
+      <br/>
       <div class="row">
         <div class="col-md-12">
           <div class="table-responsive">
@@ -76,6 +82,23 @@
                   var endpoint = "${tg.url('/soviet/publish')}";
                   window.location.replace(endpoint);
               }
+          }
+          function apply_filters() {
+              var status = document.getElementById("status").value;
+              var interest = document.getElementById("interest").value;
+              var link = "${tg.url('/soviet')}";
+              if(status) {
+                  link += "?status=" + status;
+                  if(interest) {
+                      link += "\x26interest=" + interest;
+                  }
+              }
+              else {
+                  if(interest) {
+                      link += "?interest=" + interest;
+                  }
+              }
+              window.location = link;
           }
       </script>
     </body>

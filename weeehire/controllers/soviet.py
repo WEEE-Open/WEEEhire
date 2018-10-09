@@ -13,28 +13,51 @@ class SovietController(BaseController):
     allow_only = predicates.has_permission('manage')
     
     @expose('weeehire.templates.soviet')
-    def index(self, filter=None, **kw):
+    def index(self, status=None, interest=None, **kw):
         set_lang('it')
-        if filter == 'awaiting':
+        rstatus = [
+            {"value": "", "text": ""},
+            {"value": "none", "text": "Da decidere"},
+            {"value": "approved", "text": "Approvato"},
+            {"value": "rejected", "text": "Scartato"},
+            {"value": "contact", "text": "Da contattare"},
+            {"value": "done", "text": "Contattato"}
+        ]
+        interests = [
+            {"value": "", "text": ""},
+            {"value": "hardware", "text": "Riparazione Hardware"},
+            {"value": "electronics", "text": "Elettronica"},
+            {"value": "software", "text": "Sviluppo Software"},
+            {"value": "sysadmin", "text": "Sysadmin"},
+            {"value": "designvc", "text": "Design e comunicazione visiva"},
+            {"value": "designreuse", "text": "Design per il riuso"},
+            {"value": "publicrel", "text": "Pubbliche relazioni"},
+            {"value": "other", "text": "Altro"}
+        ]
+        if status == 'none':
             users = DBSession.query(User).filter(User.user_id != 1).filter_by(status=None).all()
-        elif filter == 'approved':
+        elif status == 'approved':
             users = DBSession.query(User).filter(User.user_id != 1) \
                 .filter_by(status=True).filter_by(published=False).all()
-        elif filter == 'rejected':
+        elif status == 'rejected':
             users = DBSession.query(User).filter(User.user_id != 1).filter_by(status=False).all()
-        elif filter == 'contact':
+        elif status == 'contact':
             users = DBSession.query(User).filter(User.user_id != 1) \
                 .filter_by(status=True) \
                 .filter_by(published=True) \
                 .filter_by(recruiter=None).all()
-        elif filter == 'done':
+        elif status == 'done':
             users = DBSession.query(User).filter(User.user_id != 1) \
                 .filter_by(status=True) \
                 .filter_by(published=True) \
                 .filter(User.recruiter).all()
         else:
             users = DBSession.query(User).filter(User.user_id != 1).all()
-        return dict(page='soviet-index', users=users)
+        if interest:
+            interest = next((i for i in interests if i['value'] == interest))['text']
+            print(interest)
+            users = [u for u in users if u.interest == interest]
+        return dict(page='soviet-index', users=users, interests=interests, rstatus=rstatus)
 
     @expose('weeehire.templates.soviet-read')
     def read(self, uid, **kw):
