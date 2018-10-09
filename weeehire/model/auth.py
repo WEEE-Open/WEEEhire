@@ -96,6 +96,7 @@ class User(DeclarativeBase):
     letter = Column(Unicode(8192))
     status = Column(Boolean(), default=None)
     published = Column(Boolean(), default=False)
+    notes = Column(Unicode(4096))
     recruiter_id = Column(Integer, ForeignKey('recruiters.id'))
     recruiter = relationship('Recruiter')
     token = Column(Unicode(32))
