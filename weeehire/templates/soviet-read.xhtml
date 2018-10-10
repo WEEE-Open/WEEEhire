@@ -66,6 +66,19 @@
                  href="${tg.url('/soviet/clear')}?uid=${user.user_id}">Reset</a>
             </div>
           </form>
+          <form action="${tg.url('/soviet/save_notes')}" method="post" accept-charset="UTF-8" class="form-horizontal form-nonstorto">
+            <div class="form-group">
+              <input type="hidden" id="uid" name="uid" value="${user.user_id}"/>
+              <label class="control-label col-sm-12" for="notes">Note</label>
+              <div class="col-sm-12">
+			    <textarea id="notes" class="form-control resize-vertical"
+                          name="notes" rows="10">${user.notes}</textarea>
+			  </div>
+            </div>
+            <div class="form-group">
+              <button id="save-btn" type="submit" class="btn btn-sm btn-success">Salva</button>
+            </div>
+          </form>
         </div>
       </div>
     </body>

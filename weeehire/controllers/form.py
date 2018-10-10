@@ -186,7 +186,7 @@ Il software WEEEHire per conto del team WEEE Open
         if user:
             if user.token == auth:
                 response.headerlist.append(('Content-Disposition',
-                                            str('attachment;filename=%s-gdpr-data.json' % user.user_name)))
+                                            str('attachment;filename=%s-data.json' % user.user_name)))
                 user_dict = dict(
                     id=user.user_id,
                     username=user.user_name,
@@ -197,7 +197,9 @@ Il software WEEEHire per conto del team WEEE Open
                     study_course=user.study_course,
                     study_year=user.year,
                     interest=user.interest,
-                    motivation_letter=user.letter
+                    language=user.lang,
+                    motivation_letter=user.letter,
+                    date_compiled=user.created
                 )
                 return dumps(user_dict, indent=2)
         abort(404)

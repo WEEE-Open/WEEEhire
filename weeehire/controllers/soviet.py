@@ -74,6 +74,12 @@ class SovietController(BaseController):
         return dict(page='soviet-read', user=user)
 
     @expose()
+    def save_notes(self, **kw):
+        user = User.by_user_id(kw['uid'])
+        user.notes = kw['notes']
+        return redirect('/soviet/read', params=dict(uid=kw['uid']))
+
+    @expose()
     def accept(self, uid, **kw):
         if not uid:
             abort(404)
