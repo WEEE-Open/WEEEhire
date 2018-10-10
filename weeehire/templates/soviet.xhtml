@@ -70,6 +70,10 @@
           </div>
         </div>
       </div>
+      <div class="footer">
+        <a py:if="notify" class="btn btn-sm btn-success" href="${tg.url('/soviet/toggle_notifications')}">Notifiche ON</a>
+        <a py:if="not notify" class="btn btn-sm btn-danger" href="${tg.url('/soviet/toggle_notifications')}">Notifiche OFF</a>
+      </div>
       <script type="text/javascript">
           function ask_confirm_del(id) {
               if(confirm("Sei sicuro?")) {
