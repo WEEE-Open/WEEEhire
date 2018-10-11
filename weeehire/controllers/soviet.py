@@ -65,8 +65,16 @@ class SovietController(BaseController):
             recruiter = Recruiter.by_id(recruiter)
             users = [u for u in users if u.recruiter == recruiter]
 
+        counter = len(users)
         notify = Option.get_value('new_request_notify')
-        return dict(page='soviet-index', users=users, interests=interests, rstatus=rstatus, recruiters=recruiters, notify=notify)
+        return dict(page='soviet-index',
+                    users=users,
+                    interests=interests,
+                    rstatus=rstatus,
+                    recruiters=recruiters,
+                    counter=counter,
+                    notify=notify
+                    )
 
     @expose('weeehire.templates.soviet-read')
     def read(self, uid, **kw):
