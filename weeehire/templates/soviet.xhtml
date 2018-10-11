@@ -9,13 +9,22 @@
         <div class="col-md-3">
           <label class="control-label" for="status">Stato:</label>
           <select class="form-control col-sm-1" id="status">
+            <option/>
             <option py:for="s in rstatus" value="${s['value']}">${s['text']}</option>
           </select>
         </div>
         <div class="col-md-3">
           <label class="control-label" for="interest">Interesse:</label>
           <select class="form-control col-sm-1" id="interest">
+            <option/>
             <option py:for="i in interests" value="${i['value']}">${i['text']}</option>
+          </select>
+        </div>
+        <div class="col-md-2">
+          <label class="control-label" for="recruiter">Contattato da:</label>
+          <select class="form-control col-sm-1" id="recruiter">
+            <option/>
+            <option py:for="r in recruiters" value="${r.id}">${r.name}</option>
           </select>
         </div>
         <a class="btn btn-sm btn-default" onclick="apply_filters()">Applica filtri</a>
@@ -75,6 +84,11 @@
         <a py:if="not notify" class="btn btn-sm btn-danger" href="${tg.url('/soviet/toggle_notifications')}">Notifiche OFF</a>
       </div>
       <script type="text/javascript">
+      // <![CDATA[
+          function get_param(name){
+              if(name=(new RegExp('[?&]'+encodeURIComponent(name)+'=([^&]*)')).exec(location.search))
+              return decodeURIComponent(name[1]);
+          }
           function ask_confirm_del(id) {
               if(confirm("Sei sicuro?")) {
                   var endpoint = "${tg.url('/soviet/delete?uid=')}"+String(id);
@@ -90,20 +104,37 @@
           function apply_filters() {
               var status = document.getElementById("status").value;
               var interest = document.getElementById("interest").value;
+              var recruiter = document.getElementById("recruiter").value;
               var link = "${tg.url('/soviet')}";
               if(status) {
                   link += "?status=" + status;
                   if(interest) {
-                      link += "\x26interest=" + interest;
+                      link += "&interest=" + interest;
+                      if(recruiter) {
+                          link += "&recruiter=" + recruiter;
+                      }
+                  }
+                  else if(recruiter) {
+                      link += "&recruiter=" + recruiter;
                   }
               }
-              else {
-                  if(interest) {
-                      link += "?interest=" + interest;
+              else if(interest) {
+                  link += "?interest=" + interest;
+                  if(recruiter) {
+                      link += "&recruiter=" + recruiter;
                   }
+              }
+              else if(recruiter) {
+                  link += "?recruiter=" + recruiter;
               }
               window.location = link;
           }
+
+          document.getElementById("status").value = get_param('status');
+          document.getElementById("interest").value = get_param('interest');
+          document.getElementById("recruiter").value = get_param('recruiter');
+
+      // ]]>
       </script>
     </body>
 </html>

@@ -13,11 +13,10 @@ class SovietController(BaseController):
     allow_only = predicates.has_permission('manage')
     
     @expose('weeehire.templates.soviet')
-    def index(self, status=None, interest=None, **kw):
+    def index(self, status=None, interest=None, recruiter=None, **kw):
         set_lang('it')
 
         rstatus = [
-            {"value": "", "text": ""},
             {"value": "none", "text": "Da decidere"},
             {"value": "approved", "text": "Approvato"},
             {"value": "rejected", "text": "Scartato"},
@@ -26,7 +25,6 @@ class SovietController(BaseController):
         ]
 
         interests = [
-            {"value": "", "text": ""},
             {"value": "hardware", "text": "Riparazione Hardware"},
             {"value": "electronics", "text": "Elettronica"},
             {"value": "software", "text": "Sviluppo Software"},
@@ -36,6 +34,8 @@ class SovietController(BaseController):
             {"value": "publicrel", "text": "Pubbliche relazioni"},
             {"value": "other", "text": "Altro"}
         ]
+
+        recruiters = DBSession.query(Recruiter).all()
 
         if status == 'none':
             users = DBSession.query(User).filter(User.user_id != 1).filter_by(status=None).all()
@@ -61,8 +61,12 @@ class SovietController(BaseController):
             interest = next((i for i in interests if i['value'] == interest))['text']
             users = [u for u in users if u.interest == interest]
 
+        if recruiter:
+            recruiter = Recruiter.by_id(recruiter)
+            users = [u for u in users if u.recruiter == recruiter]
+
         notify = Option.get_value('new_request_notify')
-        return dict(page='soviet-index', users=users, interests=interests, rstatus=rstatus, notify=notify)
+        return dict(page='soviet-index', users=users, interests=interests, rstatus=rstatus, recruiters=recruiters, notify=notify)
 
     @expose('weeehire.templates.soviet-read')
     def read(self, uid, **kw):

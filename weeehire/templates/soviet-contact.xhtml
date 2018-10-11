@@ -12,7 +12,7 @@
                     <label class="control-label col-sm-2" for="recruiter">Reclutatore</label>
                     <div class="col-sm-10">
                         <select class="form-control" required="required" name="recruiter" id="recruiter">
-                            <option selected="selected" disabled="disabled"></option>
+                            <option selected="selected" disabled="disabled"/>
 							<option py:for="r in recruiters" value="${r.telegram}" data-name="${r.name}" onchange="templatize()">${r.telegram}</option>
 						</select>
                     </div>
