@@ -33,6 +33,7 @@
     </div>
     <script>
     // <![CDATA[
+    let lang = "${user.lang}";
     let recruiter = document.getElementById('recruiter');
     let mail = document.getElementById('mail');
     let firstname = document.getElementById('the-great-form').dataset.firstname;
@@ -46,6 +47,7 @@
         let name = recruiter.options[recruiter.selectedIndex].dataset.name;
         let telegram = recruiter.value;
         //let recruiter_email = 'questo_va_preso_dal_db@e_dal_dataset.com';
+        if(lang === 'it') {
         mail.value = `Ciao $${firstname},
 
 Ci fa piacere il tuo interesse per il nostro progetto!
@@ -54,8 +56,7 @@ Abbiamo valutato le tue risposte al questionario e ci sembri un buon candidato:
 ...
 ...
 ...
-
-A questo punto vorremmo scambiare due parole in maniera più diretta con te, sia per discutere delle attività che potresti svolgere nel team e per chiarire gli aspetti e organizzativi, sia in modo che tu possa farci domande, se vuoi.
+A questo punto vorremmo scambiare due parole in maniera più diretta con te, sia per discutere delle attività che potresti svolgere nel Team e per chiarire gli aspetti e organizzativi, sia in modo che tu possa farci domande, se vuoi.
 
 Poiché utilizziamo Telegram per coordinare tutte le attività del team, ti chiedo di contattarmi lì: il mio username è $${telegram}, scrivimi pure.
 
@@ -63,7 +64,25 @@ A presto,
 $${name}
 Team WEEE Open
 `;
-    }
+    } else if(lang === 'en') {
+        mail.value = `Hi $${firstname},
+
+We are glad that you are interested in our project!
+
+We read your application and it looks like you are a good candidate:
+...
+...
+...
+At this point we would like to meet you in person to discuss about the activities that you could do within the Team,
+to put some organizational aspects in clear and to let you ask some questions if you have any.
+
+Since we use Telegram for all the communications between team members, I'd like you to contact me there: my username is $${telegram}.
+
+See you soon,
+$${name}
+Team WEEE Open
+`;
+    }}
     recruiter.addEventListener('change', templatize.bind(null));
     templatize();
     // ]]>

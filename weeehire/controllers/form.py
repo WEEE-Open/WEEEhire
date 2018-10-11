@@ -3,6 +3,7 @@
 
 from tg import expose, redirect, response, request, flash, url, abort
 from tg.i18n import ugettext as _
+from tg.i18n import get_lang
 
 from weeehire.lib.base import BaseController
 from weeehire.model import DBSession, User, Option
@@ -125,6 +126,7 @@ class FormController(BaseController):
         user.study_course = kw['cdl']
         user.year = kw['year']
         user.interest = kw['interest']
+        user.lang = ('it' if not get_lang(all=False)[0] else get_lang(all=False)[0])
         user.letter = kw['letter']
         user.token = token
         user.password = passwd
