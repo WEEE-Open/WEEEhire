@@ -47,6 +47,11 @@ def bootstrap(command, conf, vars):
         o.value = "true"
         model.DBSession.add(o)
 
+        o = model.Option()
+        o.key = "recruiting"
+        o.value = "true"
+        model.DBSession.add(o)
+       
         model.DBSession.flush()
         transaction.commit()
     except IntegrityError:

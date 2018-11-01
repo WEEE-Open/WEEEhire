@@ -67,13 +67,15 @@ class SovietController(BaseController):
 
         counter = len(users)
         notify = Option.get_value('new_request_notify')
+        recruiting = Option.get_value('recruiting')
         return dict(page='soviet-index',
                     users=users,
                     interests=interests,
                     rstatus=rstatus,
                     recruiters=recruiters,
                     counter=counter,
-                    notify=notify
+                    notify=notify,
+                    recruiting=recruiting
                     )
 
     @expose('weeehire.templates.soviet-read')
@@ -183,3 +185,13 @@ class SovietController(BaseController):
         else:
             notifications.value = 'true'
         return redirect('/soviet')
+
+    @expose()
+    def toggle_recruiting(self):
+        recruiting = DBSession.query(Option).filter_by(key='recruiting').first()
+        if recruiting.value == 'true':
+            recruiting.value = 'false'
+        else:
+            recruiting.value = 'true'
+        return redirect('/soviet')
+

@@ -36,10 +36,15 @@ def is_valid_sn(sn):
 class FormController(BaseController):
     @expose('weeehire.templates.form-index')
     def index(self, **kw):
-        return dict(page='form-index')
+        recruiting = Option.get_value('recruiting');
+        if not recruiting:
+            flash(_("Siamo spiacenti, attualmente siamo al completo."), 'error')
+        return dict(page='form-index', recruiting=recruiting)
 
     @expose('weeehire.templates.form')
     def edit(self, **kw):
+        if not Option.get_value('recruiting'):
+            return redirect('/')
         courses = [
             "",
             "Automotive Engineering",

@@ -83,6 +83,8 @@
       <div class="footer">
         <a py:if="notify" class="btn btn-sm btn-success" href="${tg.url('/soviet/toggle_notifications')}">Notifiche ON</a>
         <a py:if="not notify" class="btn btn-sm btn-danger" href="${tg.url('/soviet/toggle_notifications')}">Notifiche OFF</a>
+		<a py:if="recruiting" class="btn btn-sm btn-success" href="${tg.url('/soviet/toggle_recruiting')}">Reclutamento ON</a>
+        <a py:if="not recruiting" class="btn btn-sm btn-danger" href="${tg.url('/soviet/toggle_recruiting')}">Reclutamento OFF</a>
       </div>
       <script type="text/javascript">
       // <![CDATA[
