@@ -182,7 +182,7 @@ Il software WEEEHire per conto del team WEEE Open
             if user.token == auth:
                 deletion_link = url("/form/delete?m=") + user.user_name + "&auth=" + user.token
                 gdpr_link = url("/form/gdpr_data?m=") + user.user_name + "&auth=" + user.token
-                if not Option.get_value('recruiting') and not user.published:
+                if not Option.get_value('recruiting') and not user.recruiter:
                     flash(_("Al momento siamo al completo. La tua candidatura verrà valutata nel prossimo semestre."))
                 return dict(page='form-status', user=user, deletion_link=deletion_link, gdpr_link=gdpr_link)
         abort(404)
