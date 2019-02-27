@@ -3,6 +3,7 @@
 
 from tg import expose, redirect, response, request, flash, url, abort
 from tg.i18n import ugettext as _
+from tg.i18n import get_lang
 
 from weeehire.lib.base import BaseController
 from weeehire.model import DBSession, User, Option
@@ -35,10 +36,15 @@ def is_valid_sn(sn):
 class FormController(BaseController):
     @expose('weeehire.templates.form-index')
     def index(self, **kw):
-        return dict(page='form-index')
+        recruiting = Option.get_value('recruiting')
+        if not recruiting:
+            flash(_("Siamo spiacenti, attualmente siamo al completo."), 'error')
+        return dict(page='form-index', recruiting=recruiting)
 
     @expose('weeehire.templates.form')
     def edit(self, **kw):
+        if not Option.get_value('recruiting'):
+            return redirect('/')
         courses = [
             "",
             "Automotive Engineering",
@@ -125,6 +131,7 @@ class FormController(BaseController):
         user.study_course = kw['cdl']
         user.year = kw['year']
         user.interest = kw['interest']
+        user.lang = ('it' if not get_lang(all=False)[0] else get_lang(all=False)[0])
         user.letter = kw['letter']
         user.token = token
         user.password = passwd
@@ -175,6 +182,8 @@ Il software WEEEHire per conto del team WEEE Open
             if user.token == auth:
                 deletion_link = url("/form/delete?m=") + user.user_name + "&auth=" + user.token
                 gdpr_link = url("/form/gdpr_data?m=") + user.user_name + "&auth=" + user.token
+                if not Option.get_value('recruiting') and not user.recruiter:
+                    flash(_("Al momento siamo al completo. La tua candidatura verrà valutata nel prossimo semestre."), 'error')
                 return dict(page='form-status', user=user, deletion_link=deletion_link, gdpr_link=gdpr_link)
         abort(404)
 
@@ -186,7 +195,7 @@ Il software WEEEHire per conto del team WEEE Open
         if user:
             if user.token == auth:
                 response.headerlist.append(('Content-Disposition',
-                                            str('attachment;filename=%s-gdpr-data.json' % user.user_name)))
+                                            str('attachment;filename=%s-data.json' % user.user_name)))
                 user_dict = dict(
                     id=user.user_id,
                     username=user.user_name,
@@ -197,7 +206,9 @@ Il software WEEEHire per conto del team WEEE Open
                     study_course=user.study_course,
                     study_year=user.year,
                     interest=user.interest,
-                    motivation_letter=user.letter
+                    language=user.lang,
+                    motivation_letter=user.letter,
+                    date_compiled=user.created
                 )
                 return dumps(user_dict, indent=2)
         abort(404)

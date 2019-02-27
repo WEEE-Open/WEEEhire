@@ -16,6 +16,10 @@ class Recruiter(DeclarativeBase):
     telegram = Column(Unicode(32), unique=True, nullable=False)
 
     @classmethod
+    def by_id(cls, id):
+        return DBSession.query(cls).filter_by(id=id).first()
+
+    @classmethod
     def by_telegram(cls, telegram):
         return DBSession.query(cls).filter_by(telegram=telegram).first()
 
