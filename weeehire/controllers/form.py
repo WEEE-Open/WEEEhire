@@ -25,7 +25,7 @@ def generate_password():
 def is_valid_sn(sn):
     if len(sn) != 7:
         return False
-    if sn[0].lower() not in ['s', 'd']:
+    if sn[0].lower() not in ('s', 'd'):
         return False
     sn = sn[1:7]
     if not sn.isdigit():
